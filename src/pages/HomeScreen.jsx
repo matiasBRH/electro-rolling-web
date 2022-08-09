@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const HomeScreen = () => {
+const HomeScreen = () => {
 
     return (
         <div className='container'>
