@@ -1,14 +1,18 @@
 import {React} from "react"
-import {} from "react-router-dom"
+import {BrowserRouter} from "react-router-dom"
+import NavBar from "./components/NavBar"
 import HomeScreen from "./pages/HomeScreen"
-
-// import NavBar from "./components/NavBar"
-// import Footer from "./components/Footer"
+import Footer from "./components/Footer"
+import "./App.css"
 
 function App() {
 
   return (
+    <BrowserRouter>
+      <NavBar/>
       <HomeScreen/>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 
