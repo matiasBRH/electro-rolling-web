@@ -12,8 +12,9 @@ import SearchScreen from '../pages/SearchScreen'
 const RoutesApp = () => {
 
   return (
+    
     <Routes >
-        <Route path="/" element={<HomeScreen/>}/>
+        <Route path='/' element={<HomeScreen/>}/>
         <Route path="/admin" element={<AdminScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>

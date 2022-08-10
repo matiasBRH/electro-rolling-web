@@ -1,0 +1,55 @@
+import React from 'react'
+import {NavLink} from "react-router-dom"
+import logo from "../assets/logo.png"
+import qr from "../assets/data_fiscal.png"
+import "../css/footer.css"
+
+
+const Footer = () => {
+
+    return (
+
+            <div className="footer navbar-dark bg-dark text-white">
+                <div className="row">
+                    <div className="footer-col col d-flex justify-content-around align-items-center">
+                        {/* columna 1 */}
+                        <div className="logo">
+                            <img className="img-logo-footer" src={logo} alt="logo" />
+                        </div>
+                        {/* columna 2 */}
+                        <div className="col-links">
+                            <ul>
+                                <li><h5>Mas de nosotros</h5></li>
+                                <li>Registrate</li>
+                                <li>Nosotros</li>
+                                <li>Legales</li>
+                            </ul>
+                        </div>
+                        {/* columna 3 */}
+                        <div className="col-links-2">
+                            <ul>
+                                <li><h5>Nuestras redes</h5></li>
+                                <li><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</li>
+                                <li><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</li>
+                                <li><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</li>
+                            </ul>
+                            <img className='img-qr ms-3' src={qr} alt="qrDataFiscal" />
+                        </div>
+                        {/* columna 4 */}
+                        <div className="col-links-contacto">
+                            <ul>
+                                <h5>Encontranos en</h5>
+                                <li><i class="fa fa-whatsapp me-2" aria-hidden="true"></i> Whatsapp</li>
+                                <li><i class="fa fa-map-marker me-2" aria-hidden="true"></i>General Paz 500, SMT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className="row text-center leyenda">
+                    <p> &copy; Todos los derechos reservados para los creadores. R-M-R-S</p>
+                </div>
+            </div>
+    )
+}
+
+export default Footer

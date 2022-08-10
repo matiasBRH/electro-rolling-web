@@ -1,0 +1,64 @@
+.footer{
+    
+}
+
+.img-logo-footer{
+    width: 80px;
+}
+
+.col-links ul{
+    list-style: none;
+}
+.col-links-2 ul{
+    list-style: none;
+}
+
+.col-links-contacto ul{
+    list-style: none;
+}
+
+.col-links-2{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.img-qr{
+    width: 98px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* En telefonos: */
+
+    .col-links{
+        display: none;
+    }
+
+    .img-qr{
+        display: none;
+    }
+
+    .col-links-contacto{
+        display: none;
+    }
+
+    .footer-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-col .logo{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .leyenda p{
+        display: none;
+    }
+
+}

@@ -8,11 +8,11 @@ export const NavbarApp = () => {
     return (
         <>
 
-            <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark'>
+            <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark w-100'>
                 <div className="container-fluid">
                     <div className="logo me-5">
-                        <a className="navbar-brand" href="#">
-                        <img className="img-logo" src={logo} alt="logo"/>
+                        <a className="navbar-brand" to="/">
+                            <img className="img-logo" src={logo} alt="logo"/>
                         </a>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
