@@ -1,9 +1,17 @@
 import React from 'react'
+import Destacados  from '../components/Destacados'
+
 
 const HomeScreen = () => {
 
     return (
         <>
+
+            <div className="row destacados">
+                <div className="col">
+                    <Destacados/>
+                </div>
+            </div>
             <div className="row text-center">
                 <div className="col-lg-2">
                     <h3>categorias</h3>

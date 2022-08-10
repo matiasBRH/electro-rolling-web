@@ -1,0 +1,15 @@
+.slide{
+    margin-top: 10px ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.slide img {
+    height: 50vh;
+}
+
+.carousel-inner img{
+    height: 400px;
+    object-fit: cover;
+    position: center center;
+}
