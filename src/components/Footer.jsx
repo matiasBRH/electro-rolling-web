@@ -20,9 +20,9 @@ const Footer = () => {
                         <div className="col-links">
                             <ul>
                                 <li><h5>Mas de nosotros</h5></li>
-                                <li>Registrate</li>
-                                <li>Nosotros</li>
-                                <li>Legales</li>
+                                <li><i class="fa fa-address-book-o" aria-hidden="true"></i> Registrate</li>
+                                <li><i class="fa fa-users" aria-hidden="true"></i> Nosotros</li>
+                                <li><i class="fa fa-gavel" aria-hidden="true"></i> Legales</li>
                             </ul>
                         </div>
                         {/* columna 3 */}
