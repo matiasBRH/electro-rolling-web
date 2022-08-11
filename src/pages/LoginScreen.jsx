@@ -20,8 +20,8 @@ const LoginScreen = () => {
             <br />
             <input
               type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
             />
             <br />
             <br />
@@ -29,12 +29,12 @@ const LoginScreen = () => {
             <br />
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="card-footer d-flex justify-content-evenly">
-            <button className="btn btn-success btn-lg" onClick={validarDatos}>
+            <button className="btn btn-success btn-lg">
               Iniciar Sesion
             </button>
             <button className="btn btn-success btn-lg">
@@ -42,7 +42,7 @@ const LoginScreen = () => {
             </button>
           </div>
         </div>
-        {message && (
+        {/* {message && (
           <div
             className={
               message?.ok
@@ -53,7 +53,7 @@ const LoginScreen = () => {
           >
             {message.msg}
           </div>
-        )}
+        )} */}
         {/* {message &&
           
             <div

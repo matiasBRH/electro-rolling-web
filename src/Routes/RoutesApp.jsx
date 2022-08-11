@@ -8,10 +8,12 @@ import FavoritosScreen from '../pages/FavoritosScreen'
 import HomeScreen from '../pages/HomeScreen'
 import RegisterScreen from '../pages/RegisterScreen'
 import SearchScreen from '../pages/SearchScreen'
+import LoginScreen from '../pages/LoginScreen'
 
 const RoutesApp = () => {
 
   return (
+    
     <Routes >
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/admin" element={<AdminScreen/>}/>
@@ -20,6 +22,7 @@ const RoutesApp = () => {
         <Route path="/search" element={<SearchScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/favorites" element={<FavoritosScreen/>}/>
+        <Route path="/login" element={<LoginScreen/>}/>
         <Route path="*" element={<ErrorScreen/>}/>
     </Routes>
   )
