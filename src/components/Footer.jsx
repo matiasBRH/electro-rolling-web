@@ -46,6 +46,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="row text-center leyenda">
+                <hr />
                     <p> &copy; Todos los derechos reservados para los creadores. R-M-R-S</p>
                 </div>
             </div>

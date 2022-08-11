@@ -1,5 +1,6 @@
 import React from 'react'
 import Destacados  from '../components/Destacados'
+import Grid from '../components/Grid'
 
 
 const HomeScreen = () => {
@@ -17,7 +18,7 @@ const HomeScreen = () => {
                     <h3>categorias</h3>
                 </div>
                 <div className="col-lg-8">
-                    <h1>Pagina principal</h1>
+                    <Grid/>
                 </div>
                 <div className="col-lg-2">
                     <h3>publicidad</h3>
