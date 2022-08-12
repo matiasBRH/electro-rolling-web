@@ -7,7 +7,7 @@ console.log(listaProductos);
 const Grid = () => {
     return (
         <div className="container">
-            <div className="row">
+
                 <div className="col-10 col-md-10">               
                     <div className="row">
                         {listaProductos.map((producto) => (
@@ -15,7 +15,6 @@ const Grid = () => {
                         ))}
                     </div>
                 </div>
-            </div>
         </div>
     );
 };

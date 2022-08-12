@@ -1,10 +1,7 @@
-
-.slide img {
-    height: 50vh;
+.sliderCard img{
+    height: 150px;
 }
 
-.carousel-inner img{
-    height: 400px;
-    object-fit: cover;
-    position: center center;
+.back-e {
+    background-color: rgba(14, 13, 13, 0.2);
 }

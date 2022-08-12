@@ -3,6 +3,7 @@ import {Routes,Route} from 'react-router-dom'
 import AboutScreen from '../pages/AboutScreen'
 import AdminScreen from '../pages/AdminScreen'
 import CartScreen from '../pages/CartScreen'
+import ContactoScreen from '../pages/ContactoScreen'
 import ErrorScreen from '../pages/ErrorScreen'
 import FavoritosScreen from '../pages/FavoritosScreen'
 import HomeScreen from '../pages/HomeScreen'
@@ -18,7 +19,8 @@ const RoutesApp = () => {
         <Route path="/admin" element={<AdminScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
-        <Route path="/search" element={<SearchScreen/>}/>
+        <Route path="/search/:termino" element={<SearchScreen/>}/>
+        <Route path="/contacto" element={<ContactoScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/favorites" element={<FavoritosScreen/>}/>
         <Route path="*" element={<ErrorScreen/>}/>

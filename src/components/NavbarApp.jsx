@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 import logo from "../assets/logo.png"
+import SearchProd from './SearchProd';
 
 
 export const NavbarApp = () => {
@@ -43,23 +44,19 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" to="/*">Destacado <i class="fa fa-thumb-tack" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/*">Contacto <i class="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/contacto">Contacto <i class="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i class="fa fa-star-o" aria-hidden="true"></i></NavLink>
                             </li>
-                            <form className="d-flex ms-5">
-                                <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" value={termino} onChange={handleChange}/>
-                                <button className="btn btn-outline-success" type="submit" onClick={handleClick}><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
-                            </form>
-                            
+                            <SearchProd/>                          
                         </ul>
                         <button type="button" class="btn btn-success mt-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Iniciar Sesion
                         </button>
 
                         <button type="button" class="btn ms-5">
-                            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="badge rounded-pill bg-secondary">4</span>
+                            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="badge rounded-pill bg-secondary">0</span>
                         </button>
                     </div>
                 </div>

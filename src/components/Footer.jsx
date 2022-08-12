@@ -39,7 +39,7 @@ const Footer = () => {
                         <div className="col-links-contacto">
                             <ul>
                                 <h5>Encontranos en</h5>
-                                <li><i class="fa fa-whatsapp me-2" aria-hidden="true"></i> Whatsapp</li>
+                                <li><i class="fa fa-whatsapp me-2" aria-hidden="true"></i> 3815123456</li>
                                 <li><i class="fa fa-map-marker me-2" aria-hidden="true"></i>General Paz 500, SMT</li>
                             </ul>
                         </div>

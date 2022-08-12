@@ -13,9 +13,11 @@
     "font-awesome": "^4.7.0",
     "ract": "^0.0.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
