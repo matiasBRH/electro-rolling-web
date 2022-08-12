@@ -6,6 +6,7 @@ import CartScreen from '../pages/CartScreen'
 import ErrorScreen from '../pages/ErrorScreen'
 import FavoritosScreen from '../pages/FavoritosScreen'
 import HomeScreen from '../pages/HomeScreen'
+import ProductScreen from '../pages/ProductScreen'
 import RegisterScreen from '../pages/RegisterScreen'
 import SearchScreen from '../pages/SearchScreen'
 
@@ -16,6 +17,7 @@ const RoutesApp = () => {
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/admin" element={<AdminScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
+        <Route path="/product" element={<ProductScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
         <Route path="/search" element={<SearchScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
