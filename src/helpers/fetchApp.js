@@ -88,7 +88,7 @@ export const postBlog = async (datos) => {
 };
 
 //Buscar blog por título--------------
-export const buscarBlog = async (termino) => {
+export const buscarProducto = async (termino) => {
     const resp = await fetch(`${url}/buscarb?search=${termino}`, {
         method: "GET",
         headers: {

@@ -20,18 +20,18 @@ const Footer = () => {
                         <div className="col-links">
                             <ul>
                                 <li><h5>Mas de nosotros</h5></li>
-                                <li><i class="fa fa-address-book-o" aria-hidden="true"></i> Registrate</li>
-                                <li><i class="fa fa-users" aria-hidden="true"></i> Nosotros</li>
-                                <li><i class="fa fa-gavel" aria-hidden="true"></i> Legales</li>
+                                <li><NavLink to="/about"><i class="fa fa-users" aria-hidden="true"></i> Conocenos </NavLink></li>
+                                <li><NavLink to="/*"><i class="fa fa-address-book-o" aria-hidden="true"></i> Registrate </NavLink></li>
+                                <li><NavLink to="/*"><i class="fa fa-gavel" aria-hidden="true"></i> Legales </NavLink></li>
                             </ul>
                         </div>
                         {/* columna 3 */}
                         <div className="col-links-2">
                             <ul>
                                 <li><h5>Nuestras redes</h5></li>
-                                <li><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</li>
-                                <li><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</li>
-                                <li><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</li>
+                                <li><NavLink to="/*"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </NavLink></li>
+                                <li><NavLink to="/*"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook </NavLink></li>
+                                <li><NavLink to="/*"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter </NavLink></li>
                             </ul>
                             <img className='img-qr ms-3' src={qr} alt="qrDataFiscal" />
                         </div>

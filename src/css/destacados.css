@@ -1,7 +1,10 @@
-.sliderCard img{
-    height: 150px;
+.cards-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
 }
 
-.back-e {
-    background-color: rgba(14, 13, 13, 0.2);
+.card img{
+    height: 100px;
 }
