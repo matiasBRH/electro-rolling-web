@@ -1,13 +1,13 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
-import AboutScreen from '../pages/AboutScreen'
-import AdminScreen from '../pages/AdminScreen'
-import CartScreen from '../pages/CartScreen'
-import ContactoScreen from '../pages/ContactoScreen'
-import ErrorScreen from '../pages/ErrorScreen'
-import FavoritosScreen from '../pages/FavoritosScreen'
 import HomeScreen from '../pages/HomeScreen'
+import AdminScreen from '../pages/AdminScreen'
 import SearchScreen from '../pages/SearchScreen'
+import CartScreen from '../pages/CartScreen'
+import AboutScreen from '../pages/AboutScreen'
+import ContactoScreen from '../pages/ContactoScreen'
+import FavoritosScreen from '../pages/FavoritosScreen'
+import ErrorScreen from '../pages/ErrorScreen'
 
 const RoutesApp = () => {
 

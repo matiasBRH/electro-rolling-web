@@ -47,7 +47,7 @@ export const NavbarApp = () => {
                         <div className="LogyReg d-flex">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
-                                Inicio de sesión
+                                    Inicio de sesión
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
