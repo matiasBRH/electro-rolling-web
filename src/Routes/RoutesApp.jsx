@@ -22,6 +22,7 @@ const RoutesApp = () => {
         <Route path="/admin" element={<AdminScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="*" element={<ErrorScreen/>}/>
+        
     </Routes>
   )
 }

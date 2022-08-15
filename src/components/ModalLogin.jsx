@@ -25,6 +25,11 @@ const ModalLogin = ({ show, handleClose }) => {
                     <input type="password" className="form-control" placeholder="*******"/>
                 </div>
             </form>
+            <button type="button" className="btn btn-link">¿Olvidaste tu contraseña?</button>
+            <a href="../pages/RegistroScreen"> <button type="button" className="btn btn-link">Registrate</button></a>
+           
+            
+
         </Modal.Body>
         <Modal.Footer>
             <Button variant="success" onClick={handleClose}>
@@ -33,6 +38,7 @@ const ModalLogin = ({ show, handleClose }) => {
             <Button variant="success" onClick={handleClose}>
                 Google
             </Button>
+            
         </Modal.Footer>
         </Modal>
     );
