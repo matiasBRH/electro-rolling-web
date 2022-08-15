@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductTableRow from '../components/productTableRow';
+import ProductTableRow from '../components/AdminTableRow';
 import { listaProductos } from "../data/products";
 
 const AdminScreen = () => {
@@ -22,7 +22,7 @@ const AdminScreen = () => {
               <th scope="col">Nombre</th>
               <th scope="col">Categoria</th>
               <th scope="col">Precio</th>
-              <th scope="col">Accion</th>
+              <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody id="mytable">

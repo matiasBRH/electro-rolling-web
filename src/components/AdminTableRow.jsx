@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductTableRow = (props) => {
+const AdminTableRow = (props) => {
   const {producto} = props
   return (
     <tr>
@@ -14,4 +14,4 @@ const ProductTableRow = (props) => {
   )
 }
 
-export default ProductTableRow
+export default AdminTableRow

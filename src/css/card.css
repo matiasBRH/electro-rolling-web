@@ -1,6 +1,6 @@
-body {
-    background-color: #EEEEEE
-}
+/* body {
+    background-color: red !important;
+} */
 
 a {
     text-decoration: none !important
@@ -137,8 +137,4 @@ a {
 
 .fa {
     color: #FF5722
-}
-
-.title {
-    
 }

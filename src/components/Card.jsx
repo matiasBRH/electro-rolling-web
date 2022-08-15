@@ -5,7 +5,7 @@ const Card = (props) => {
   console.log(props)
   const {producto} = props
   return (
-    <div className="col-3 col-md-3 col-lg-3">
+    <div className="col-6 col-md-6 col-lg-3">
     <div className="container d-flex justify-content-center">
     <figure className="card card-product-grid card-lg"> <a href="#" className="img-wrap" data-abc="true"><img src={producto.imagen}></img></a>
         <figcaption className="info-wrap">
