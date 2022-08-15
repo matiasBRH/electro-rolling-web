@@ -1,10 +1,9 @@
 import React from 'react'
-import Card from "./Card"
+import CardDestacadas from './CardDestacadas';
 import { listaProductos } from "../data/products";
 
 
 import "../css/destacados.css"
-import CardDestacadas from './CardDestacadas';
 
 const GridDestacados = (props) => {
     
