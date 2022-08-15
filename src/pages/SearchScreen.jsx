@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import React, {useEffect, useState} from 'react'
 import { useParams } from "react-router-dom";
 import Card from "../components/Card"
 import { buscarProducto } from "../helpers/fetchApp";
->>>>>>> a856fa6950ee2b6906bd89d764e92f20577abe8c
 
 const SearchScreen = () => {
   
