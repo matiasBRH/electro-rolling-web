@@ -1,0 +1,13 @@
+
+/* @media screen and (max-width: 590px){
+    #categoriasHome{
+        display: none;
+    }
+} */
+
+@media screen and (min-width: 590px){
+
+    /* .dropCat{
+        display: none;
+    } */
+}

@@ -41,20 +41,20 @@ export const NavbarApp = () => {
                             </li>
                             {/* <SearchProd/>*/}
                             <li className='d-flex'><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit">Buscar</button></li>
+                            <button class="btn btn-success" type="submit">Buscar</button></li>
                         </ul>
 
                         <div className="LogyReg d-flex">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
-                                    Inicio de sesión
+                                    Ingresar
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
                         </div>
 
                         <button type="button" className="btn">
-                            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="badge rounded-pill bg-secondary">0</span>
+                            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="badge rounded-pill bg-secondary"> 0</span>
                         </button>
                     </div>
                 </div>

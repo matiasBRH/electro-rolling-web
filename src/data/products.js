@@ -1,7 +1,7 @@
 export const listaProductos = [  
     {
         "id": 1,
-        "nombre": "CELULAR SAMSUNG GALAXY Z FLIP 3 5G NEW CHIP BEIGE",
+        "nombre": "CELULAR SAMSUNG GALAXY Z FLIP 3",
         "categoria": "Celulares",
         "description": "Se pliega en el bolsillo. Entra en tu cartera. Se desliza en tus jeans más apretados. Cuando lo sacás, se abre un smartphone 5G con pantalla completa que se adapta a tus ángulos favoritos.No hay dudas. Queríamos rediseñar el concepto del teléfono, y lo hicimos.",
         "precio": "219999",

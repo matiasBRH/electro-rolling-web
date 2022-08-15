@@ -16,13 +16,9 @@ const GridDestacados = (props) => {
         <>
             <div className="mt-5 text-center">
                 <div className="row">
-                    <div className="col">
-                        <div className="row row-cols-1 row-cols-md-4 g-4">
-                                {listaProductos.map((producto) => (
-                                <CardDestacadas key={producto.id} producto={producto} />
-                                ))}
-                        </div>
-                    </div>
+                    {listaProductos.map((producto) => (
+                        <CardDestacadas key={producto.id} producto={producto} />
+                    ))}
                 </div>
             </div>
         </>
