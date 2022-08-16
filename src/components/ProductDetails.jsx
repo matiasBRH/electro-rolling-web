@@ -5,7 +5,7 @@ const ProductDetails = () => {
   return (
    <main className="mt-5 pt-4">
     
-    <div className="container d-md-none">
+    <div className="container container-breadcrumb">
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="#">Electro Rolling</a></li>

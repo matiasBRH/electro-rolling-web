@@ -18,3 +18,12 @@
     font-size: 35px;
     
 }
+
+@media (max-width: 720px) {
+    .container-breadcrumb {
+      display: none;
+    }
+    .product-img-container{
+        border-style: none;
+    }
+  }
