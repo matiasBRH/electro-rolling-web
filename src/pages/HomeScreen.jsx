@@ -8,6 +8,7 @@ import oferta3 from "../assets/oferta3.jpg"
 
 import "../css/destacados.css"
 
+
 const HomeScreen = () => {
 
     return (
@@ -55,9 +56,11 @@ const HomeScreen = () => {
                 <hr />
             </div>
             
-            <div className="row d-flex justify-content-between">
-                <div className="col-lg-5">
-                    <GridDestacados/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 col-md-12 col-12">
+                        <GridDestacados/>
+                    </div>
                 </div>
             </div>
         </>

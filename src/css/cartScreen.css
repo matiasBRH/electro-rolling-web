@@ -1,0 +1,73 @@
+/* .mainCarrito{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.imgCarrito{
+    width: 100px;
+    height: 100px;
+}
+
+.colImg{
+    width: 70px;
+}
+
+td button{
+    width: 50px;
+}
+
+#table_body:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+#table_body:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+tbody{
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    border-radius: 5%;
+}
+
+.sumador{
+    width: 280px;
+}
+
+.precio{
+    margin-left: 20px;
+}
+
+.subTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: baseline;
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 650px){
+    .listProd{
+        display: none;
+    }
+}

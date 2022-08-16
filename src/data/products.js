@@ -16,35 +16,13 @@ export const listaProductos = [
         "imagen": "http://medias.musimundo.com/medias/00367048-142839-142839-01-142839-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3NjcwNHxpbWFnZS9qcGVnfGgyYy9oZTkvMTAzODA0NzAwMjYyNzAvMDAzNjcwNDgtMTQyODM5LTE0MjgzOV8wMS0xNDI4MzlfMDEuanBnX3NpemU1MTV8YjZkNjhmMDc2ZDk1YjA4MmU4Y2I5NDk3YjY5YjFkNTg1YTM4ZDYxZDlmMjVjZGZlMGQwYTE0ZDM3MDNiZjFiZQ"       
     },
     {
-        "id": 3,
+        "id": 8,
         "nombre": "CELULAR SAMSUNG S20 FE VERDE",
         "categoria": "Celulares",
         "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
         "precio": "134999",
-        "imagen": "http://medias.musimundo.com/medias/00367048-142839-142839-01-142839-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3NjcwNHxpbWFnZS9qcGVnfGgyYy9oZTkvMTAzODA0NzAwMjYyNzAvMDAzNjcwNDgtMTQyODM5LTE0MjgzOV8wMS0xNDI4MzlfMDEuanBnX3NpemU1MTV8YjZkNjhmMDc2ZDk1YjA4MmU4Y2I5NDk3YjY5YjFkNTg1YTM4ZDYxZDlmMjVjZGZlMGQwYTE0ZDM3MDNiZjFiZQ"       
+        "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
     },
-    {
-        "id": 4,
-        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
-        "categoria": "Celulares",
-        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
-        "precio": "134999",
-        "imagen": "http://medias.musimundo.com/medias/00367048-142839-142839-01-142839-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3NjcwNHxpbWFnZS9qcGVnfGgyYy9oZTkvMTAzODA0NzAwMjYyNzAvMDAzNjcwNDgtMTQyODM5LTE0MjgzOV8wMS0xNDI4MzlfMDEuanBnX3NpemU1MTV8YjZkNjhmMDc2ZDk1YjA4MmU4Y2I5NDk3YjY5YjFkNTg1YTM4ZDYxZDlmMjVjZGZlMGQwYTE0ZDM3MDNiZjFiZQ"       
-    },
-    {
-        "id": 5,
-        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
-        "categoria": "Celulares",
-        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
-        "precio": "134999",
-        "imagen": "http://medias.musimundo.com/medias/00367048-142839-142839-01-142839-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3NjcwNHxpbWFnZS9qcGVnfGgyYy9oZTkvMTAzODA0NzAwMjYyNzAvMDAzNjcwNDgtMTQyODM5LTE0MjgzOV8wMS0xNDI4MzlfMDEuanBnX3NpemU1MTV8YjZkNjhmMDc2ZDk1YjA4MmU4Y2I5NDk3YjY5YjFkNTg1YTM4ZDYxZDlmMjVjZGZlMGQwYTE0ZDM3MDNiZjFiZQ"       
-    },
-    {
-        "id": 6,
-        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
-        "categoria": "Celulares",
-        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
-        "precio": "134999",
-        "imagen": "http://medias.musimundo.com/medias/00367048-142839-142839-01-142839-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3NjcwNHxpbWFnZS9qcGVnfGgyYy9oZTkvMTAzODA0NzAwMjYyNzAvMDAzNjcwNDgtMTQyODM5LTE0MjgzOV8wMS0xNDI4MzlfMDEuanBnX3NpemU1MTV8YjZkNjhmMDc2ZDk1YjA4MmU4Y2I5NDk3YjY5YjFkNTg1YTM4ZDYxZDlmMjVjZGZlMGQwYTE0ZDM3MDNiZjFiZQ"       
-    }
+
+    
 ]

@@ -1,12 +1,29 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
-import {Link, NavLink} from "react-router-dom"
+import {Link, NavLink, useNavigate} from "react-router-dom"
 import ModalLogin from "../components/ModalLogin"
 
 import logo from "../assets/logo.png"
 
 export const NavbarApp = () => {
 
+
+    const navigate = useNavigate();
+    const [inputValue, setInputValue] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (inputValue) {
+
+        navigate(`/search/${inputValue}`);
+        // buscarBlog(inputValue).then((respuesta) => {
+        //   console.log(respuesta);
+        //   navigate(`/search/${inputValue}`);
+        // });
+        }
+    };
+
+
+    // Seccion para abrir modal de Login
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -36,26 +53,27 @@ export const NavbarApp = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/contacto">Contacto <i class="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item me-2">
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i class="fa fa-star-o" aria-hidden="true"></i></NavLink>
                             </li>
                             {/* <SearchProd/>*/}
-                            <li className='d-flex'><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-success" type="submit">Buscar</button></li>
+                            <li className='d-flex'>
+                                <form className='col' onSubmit={handleSubmit}>
+                                    <input class="form-control me-2" type="text" placeholder="Buscar" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+                                    {/* <button class="btn btn-success" type="submit">Buscar</button>. */}
+                                </form>
+                            </li>
                         </ul>
 
-                        <div className="LogyReg d-flex">
+                        <div className="d-flex">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
                                     Ingresar
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
+                            <NavLink className="nav-link" to="/cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
-
-                        <button type="button" className="btn">
-                            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span class="badge rounded-pill bg-secondary"> 0</span>
-                        </button>
                     </div>
                 </div>
             </nav>
