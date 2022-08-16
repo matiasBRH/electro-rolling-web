@@ -37,6 +37,9 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" to="/contacto">Contacto <i class="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/about">Sobre nosotros <i class="fa fa-users" aria-hidden="true"></i></NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i class="fa fa-star-o" aria-hidden="true"></i></NavLink>
                             </li>
                             {/* <SearchProd/>*/}

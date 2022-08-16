@@ -25,8 +25,8 @@ const ModalLogin = ({ show, handleClose }) => {
                     <input type="password" className="form-control" placeholder="*******"/>
                 </div>
             </form>
-            <button type="button" className="btn btn-link">¿Olvidaste tu contraseña?</button>
-            <a href="../pages/RegistroScreen"> <button type="button" className="btn btn-link">Registrate</button></a>
+            <a href="../pages/password"><button type="button" className="btn btn-link">¿Olvidaste tu contraseña?</button></a>
+            <a href="../pages/registro"> <button type="button" className="btn btn-link">Registrate</button></a>
            
             
 
