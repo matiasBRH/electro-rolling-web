@@ -9,6 +9,7 @@ import ContactoScreen from '../pages/ContactoScreen'
 import FavoritosScreen from '../pages/FavoritosScreen'
 import RegistroScreen from '../pages/RegistroScreen'
 import PasswordScreen from '../pages/PasswordScreen'
+import SendScreen from '../pages/SendScreen'
 import ErrorScreen from '../pages/ErrorScreen'
 
 const RoutesApp = () => {
@@ -25,6 +26,7 @@ const RoutesApp = () => {
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/registro" element={<RegistroScreen/>}/>
         <Route path="/password" element={<PasswordScreen/>}/>
+        <Route path="/send" element={<SendScreen/>}/>
 
         <Route path="*" element={<ErrorScreen/>}/>
         

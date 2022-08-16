@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { NavLink } from "react-router-dom";
 
 const ModalLogin = ({ show, handleClose }) => {
 
@@ -25,9 +26,11 @@ const ModalLogin = ({ show, handleClose }) => {
                     <input type="password" className="form-control" placeholder="*******"/>
                 </div>
             </form>
-            <a href="../pages/password"><button type="button" className="btn btn-link">¿Olvidaste tu contraseña?</button></a>
-            <a href="../pages/registro"> <button type="button" className="btn btn-link">Registrate</button></a>
-           
+            <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
+            <NavLink to='/registro'><Button variant='link' onClick={handleClose}>Registrate</Button></NavLink>
+
+
+            
             
 
         </Modal.Body>

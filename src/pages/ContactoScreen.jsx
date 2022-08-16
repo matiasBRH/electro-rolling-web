@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "../css/destacados.css"
 
+
 const Contacto = () => {
+
 
 
     return (
@@ -26,9 +28,12 @@ const Contacto = () => {
                                 <textarea class="form-control" id="ContactoMensaje" rows="6" placeholder="Escriba su consulta"></textarea>                            
                             </div>
                             <div className="mb-3 md-2">
-                            <button type="button" class="btn btn-light">Enviar</button>
-                            <button type="reset" class="btn btn-light me-4 px-3">Limpiar
-                            </button>
+                            
+                            <button type="button" class="btn btn-success me-4">Enviar</button>
+
+                            <button type="reset" class="btn btn-success me-4 px-3">Limpiar
+                                </button>
+
                             </div>
                         
                         </form>
