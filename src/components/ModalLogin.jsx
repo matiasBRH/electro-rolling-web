@@ -2,7 +2,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const ModalLogin = ({ show, handleClose }) => {
-
     return (
 
         <Modal show={show} onHide={handleClose}>
