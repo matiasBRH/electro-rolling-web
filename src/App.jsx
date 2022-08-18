@@ -7,6 +7,8 @@ import RegisterScreen from "./pages/RegisterScreen";
 
 function App() {
   return (
+    
+
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<RoutesApp />} />

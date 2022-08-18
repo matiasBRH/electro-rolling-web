@@ -17,9 +17,7 @@ const Grid = () => {
             ))}
           </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Grid;
