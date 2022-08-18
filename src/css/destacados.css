@@ -3,3 +3,9 @@ img-card {
     /* object-fit:fill; */
     /* position: center center; */
 }
+
+.carousel-inner img{
+    height: 300px;
+    object-fit:fill;
+    position: center center;
+}
