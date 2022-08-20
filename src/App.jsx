@@ -9,7 +9,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<RoutesApp />}/>
+      <NavbarApp/>
+      <RoutesApp/>
+      <Footer/>
       </Routes>
     </BrowserRouter>
   );
