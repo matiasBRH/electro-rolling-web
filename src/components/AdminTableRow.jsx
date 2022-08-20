@@ -5,7 +5,7 @@ const AdminTableRow = (props) => {
   return (
     <tr>
       <td>{producto.id}</td>
-      <td><img width="50px" src={producto.imagen} class="avatar" alt=""></img></td>
+      <td><img width="50px" src={producto.img} class="avatar" alt=""></img></td>
       <td>{producto.nombre}</td>
       <td>{producto.categoria}</td>
       <td>$ {producto.precio}</td>

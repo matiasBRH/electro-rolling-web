@@ -7,7 +7,7 @@ const Card = (props) => {
   return (
     <div className="col-6 col-md-6 col-lg-3">
     <div className="container d-flex justify-content-center">
-    <figure className="card card-product card-product-grid card-lg"> <a href="#" className="img-wrap" data-abc="true"><img src={producto.imagen}></img></a>
+    <figure className="card card-product card-product-grid card-lg"> <a href="#" className="img-wrap" data-abc="true"><img src={producto.img}></img></a>
         <figcaption className="info-wrap">
             <div className="row">
                 <div className="col-md-9"> <a href="#" className="title" data-abc="true">{producto.nombre}</a> </div>
