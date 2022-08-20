@@ -3,7 +3,6 @@ import Modal from "react-bootstrap/Modal";
 import { NavLink } from "react-router-dom";
 
 const ModalLogin = ({ show, handleClose }) => {
-
     return (
 
         <Modal show={show} onHide={handleClose}>

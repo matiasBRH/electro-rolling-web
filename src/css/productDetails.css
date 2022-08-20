@@ -1,0 +1,29 @@
+.product-img-container{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    background-color: white;
+}
+.product-img-container img{
+    display: block;        
+    margin-left: auto;
+    margin-right: auto;
+}
+.product-img-logo{
+    width: 100px;
+    max-height: 15px;
+}
+
+.price{
+    font-size: 35px;
+    
+}
+
+@media (max-width: 720px) {
+    .container-breadcrumb {
+      display: none;
+    }
+    .product-img-container{
+        border-style: none;
+    }
+  }

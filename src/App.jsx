@@ -1,24 +1,22 @@
-import {BrowserRouter} from 'react-router-dom'
-import RoutesApp from './Routes/RoutesApp' 
-import NavbarApp from './components/NavbarApp'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-import './App.css'
-
-
+import "./App.css";
+import RoutesApp from "./Routes/RoutesApp";
+import LoginScreen from "./pages/LoginScreen";
+import RegisterScreen from "./pages/RegisterScreen";
 
 function App() {
-
   return (
     
 
     <BrowserRouter>
-      <NavbarApp/>
-      <RoutesApp/>
-      <Footer/>
+      <Routes>
+        <Route path="/*" element={<RoutesApp />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/registro" element={<RegisterScreen />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
