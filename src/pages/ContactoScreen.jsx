@@ -1,50 +1,92 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import "../css/destacados.css"
+import emailjs from "emailjs-com"
+import { NavLink } from 'react-bootstrap';
+
+const ContactoScreen = () => {
+
+    const[formValues, setformValues]= useState({
+        nombre: "",
+        email: "",
+    });
+
+    const {nombre, email}=formValues;
+
+    const handleChange=({target})=>{
+     setformValues({
+        ...formValues,
+        [target.name]:target.value
+     })
+    }
+
+    useEffect(() => {
+      console.log("Se actualizó el formulario")
+    },[formValues])
 
 
-const Contacto = () => {
 
+    const sendMail=(e)=>{
+      e.preventDefault();
 
-
+      emailjs.sendForm("service_fartkbh", "template_o4ni2xb", e.target, "feEXNVTGo4JtcJNqF").then(response => console.log(response)).catch(error => console.log(error));
+      
+      e.target.reset();
+    }
+    
     return (
         <>
-            <div class="container my-4 back-e">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6" id="fondo">
+            <div className="container my-4 back-e">
+                <div className="row">
+                    <div className="col-sm-12 col-md-6 col-lg-6" id="fondo">
                         <h2> CONTACTO </h2>
                         <hr/>
-                        <form>
-                            <div class="mb-3">
-                                <label for="ContactoNombre" class="form-label2">Nombre</label>
-                                <input type="text" class="form-control" id="ContactoNombre" aria-describedby="emailHelp" placeholder="Ingrese su nombre" required/>
+                        <form className='form-mail' onSubmit={sendMail}>
+                            <div className="mb-3">
+                                <label className="form-label2">Nombre</label>
+                                <input 
+                                type="text" 
+                                className="form-control" 
+                                name="nombre"
+                                placeholder="Ingrese su nombre"
+                                value={nombre}
+                                onChange={handleChange}
+                                />
                             </div>
-                            <div class="mb-3">
-                                <label for="ContactoEmail" class="form-label2">Correo electrónico</label>
-                                <input type="email" class="form-control" id="ContactoEmail" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico" required/>
-                                <div id="emailHelp" class="form-text"> <i>No compartiremos tu correo electrónico con nadie más.</i></div>
+                            <div className="mb-3">
+                                <label className="form-label2">Correo electrónico</label>
+                                <input 
+                                type="email" 
+                                className="form-control" 
+                                name="email"
+                                placeholder="Ingrese su correo electrónico" 
+                                value={email}
+                                onChange={handleChange}
+                                />
+                                <div className="form-text"> <i>No compartiremos tu correo electrónico con nadie más.</i></div>
                             </div>
-                            <div class="mb-3">
-                                <label for="ContactoMensaje" class="form-label2">Deja tu mensaje</label>
-                                <textarea class="form-control" id="ContactoMensaje" rows="6" placeholder="Escriba su consulta"></textarea>                            
+                            <div className="mb-3">
+                                <label className="form-label2">Deja tu mensaje</label>
+                                <textarea className="form-control" 
+                                
+                                rows="6" 
+                                placeholder="Escriba su consulta"
+                                name="message"
+                                >
+                                </textarea>                    
                             </div>
+
                             <div className="mb-3 md-2">
-                            
-                            <button type="button" class="btn btn-success me-4">Enviar</button>
-
-                            <button type="reset" class="btn btn-success me-4 px-3">Limpiar
-                                </button>
-
+                               <input type="submit" className='btn btn-success me-4' value="Enviar" />
                             </div>
-                        
                         </form>
                     </div>
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <h2> MÁS INFORMACIÓN</h2>
                         <hr/>
                         <ul>
-                    <li><i class="fa fa-map-marker"></i> Argentina</li>
-                    <li><i class="fa fa-phone"></i> (666) 666 666 666</li>
-                    <li><i class="fa fa-envelope"></i> ElectroRolling@Website.com</li>
+                    <li><i className="fa fa-map-marker"></i> Argentina</li>
+                    <li><i className="fa fa-phone"></i> (666) 666 666 666</li>
+                    <li><i className="fa fa-envelope"></i> ElectroRolling@Website.com</li>
                 </ul> 
                 <hr />
                 <p>Si tienes algun problema, no dudes en consultarnos o contactarte con nuestro servicio de telefonia!</p>
@@ -52,7 +94,7 @@ const Contacto = () => {
                 <hr />
                 <div className='md-6 col-lg-6'>
                     <h4>¡Nuestro WhatsApp</h4>
-                    <a href="http://Whatsapp.com"><i class="fa fa-whatsapp fa-4x"></i></a>
+                    <a href="http://Whatsapp.com"><i className="fa fa-whatsapp fa-4x"></i></a>
                 </div>
                     </div>
                   
@@ -63,4 +105,4 @@ const Contacto = () => {
     )
 }
 
-export default Contacto
+export default ContactoScreen
