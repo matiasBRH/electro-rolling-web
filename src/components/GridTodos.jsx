@@ -6,7 +6,7 @@ import BtnPaginacion from "./BtnPaginacion";
 
 // console.log(listaProductos);
 
-const Grid = () => {
+const GridTodos = () => {
   const [posts, setPosts] = useState({
     products: [],
     total: 0,
@@ -95,4 +95,4 @@ window.onscroll = function() {scrollFunction()};
   );
 };
 
-export default Grid;
+export default GridTodos;
