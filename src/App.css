@@ -40,3 +40,23 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.btn-search {
+  background: linear-gradient(
+    to right,
+    #ce1ab2 0%,
+    #7b20a4 50%,
+    #81139f 100%
+  ) !important;
+  color: white !important;
+}
+
+input:focus {
+  box-shadow: none !important;
+  outline: 0 none !important;
+}
+
+.img_banner {
+  width: 100%;
+  object-fit: cover;
+}
