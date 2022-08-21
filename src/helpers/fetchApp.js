@@ -1,4 +1,4 @@
-const url = "https://electroroliing.herokuapp.com/api";
+const url = "http://localhost:8080/api";
 
 //traer usuarios
 export const validarToken = async () => {
@@ -172,3 +172,18 @@ export const buscarBlog = async (termino) => {
       console.log(data)
       return data;
     };
+
+
+    //Traer una producto por su id
+  export const getProductById = async (id) => {
+  const resp = await fetch(`${url}/productos/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+    },
+  });
+  const data = await resp.json();
+
+  return data;
+};

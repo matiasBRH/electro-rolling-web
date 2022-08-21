@@ -17,7 +17,7 @@ const RoutesApp = () => {
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/admin" element={<AdminScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
-        <Route path="/product" element={<ProductScreen/>}/>
+        <Route path="/productos/:id" element={<ProductScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
         <Route path="/search" element={<SearchScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>

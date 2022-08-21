@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
     "font-awesome": "^4.7.0",
     "react": "^18.2.0",
