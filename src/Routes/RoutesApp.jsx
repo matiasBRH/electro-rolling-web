@@ -7,7 +7,7 @@ import FavoritosScreen from '../pages/FavoritosScreen'
 import RegistroScreen from '../pages/RegistroScreen'
 import PasswordScreen from '../pages/PasswordScreen'
 import SendScreen from '../pages/SendScreen'
-import ErrorScreen from '../pages/ErrorScren';
+import ErrorScreen from "../pages/ErrorScreen";
 
 const RoutesApp = () => {
   return (
