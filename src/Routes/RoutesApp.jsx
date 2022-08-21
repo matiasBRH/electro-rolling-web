@@ -21,7 +21,7 @@ const RoutesApp = () => {
         <Route path="/" element={<HomeScreen />} />        
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/contacto" element={<ContactoScreen/>}/>
-                <Route path="/favorites" element={<FavoritosScreen/>}/>
+        <Route path="/favorites" element={<FavoritosScreen/>}/>
         <Route path="/register" element={<RegistroScreen/>}/>
         <Route path="/password" element={<PasswordScreen/>}/>
         <Route path="/send" element={<SendScreen/>}/>  
