@@ -86,13 +86,13 @@ const ContactoScreen = () => {
                         <ul>
                     <li><i className="fa fa-map-marker"></i> Argentina</li>
                     <li><i className="fa fa-phone"></i> (666) 666 666 666</li>
-                    <li><i className="fa fa-envelope"></i> ElectroRolling@Website.com</li>
+                    <li><i className="fa fa-envelope"></i> ElectroRolling@gmail.com</li>
                 </ul> 
                 <hr />
                 <p>Si tienes algun problema, no dudes en consultarnos o contactarte con nuestro servicio de telefonia!</p>
                 <p>EvilGeniusMovies.com</p>
                 <hr />
-                <div className='md-6 col-lg-6'>
+                <div className='md-6 col-lg-6' id="wsp">
                     <h4>¡Nuestro WhatsApp</h4>
                     <a href="http://Whatsapp.com"><i className="fa fa-whatsapp fa-4x"></i></a>
                 </div>

@@ -1,5 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
+
 img-card {
     height: 200px;
     /* object-fit:fill; */
     /* position: center center; */
+}
+
+.fa {
+    color: orangered;
+}
+
+.text-center{
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
 }
