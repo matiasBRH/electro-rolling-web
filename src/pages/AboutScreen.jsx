@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutScreen = () => {
   return (
-    <div>AboutScreen</div>
+    <h3>Sobre nosotros</h3>
   )
 }
 
