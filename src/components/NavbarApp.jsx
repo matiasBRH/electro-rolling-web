@@ -45,13 +45,13 @@ export const NavbarApp = () => {
                     <div className="collapse navbar-collapse links" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to="/">Home <i class="fa fa-home" aria-hidden="true"></i></Link>
+                                <Link className="nav-link" aria-current="page" to="/">Home <i className="fa fa-home" aria-hidden="true"></i></Link>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/*">Destacado <i class="fa fa-thumb-tack" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/*">Destacado <i className="fa fa-thumb-tack" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/contacto">Contacto <i class="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/contacto">Contacto <i className="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item me-2">
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i class="fa fa-star-o" aria-hidden="true"></i></NavLink>
@@ -59,7 +59,7 @@ export const NavbarApp = () => {
                             {/* <SearchProd/>*/}
                             <li className='d-flex'>
                                 <form className='col' onSubmit={handleSubmit}>
-                                    <input class="form-control me-2" type="text" placeholder="Buscar" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+                                    <input className="form-control me-2" type="text" placeholder="Buscar" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
                                     {/* <button class="btn btn-success" type="submit">Buscar</button>. */}
                                 </form>
                             </li>
@@ -72,7 +72,7 @@ export const NavbarApp = () => {
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
-                            <NavLink className="nav-link" to="/cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
+                            <NavLink className="nav-link" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
                     </div>
                 </div>

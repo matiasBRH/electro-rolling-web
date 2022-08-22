@@ -56,10 +56,18 @@ const HomeScreen = () => {
                 <hr />
             </div>
             
-            <div className="container">
+            <div className="container" id='prodDestacados'>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-12">
                         <GridDestacados/>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="container" id='inputOfertas'>
+                <div className="row">
+                    <div className="col">
+                        <h6>Enterate de nuestras mejores ofertas!</h6>
                     </div>
                 </div>
             </div>
