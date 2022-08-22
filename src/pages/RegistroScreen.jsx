@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/registro.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { NavLink } from "react-router-dom"
 
 const RegistroScreen = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="container mb-5 mt-5">
       <div className="row my-3 mb-4 mt-5">
@@ -52,7 +61,24 @@ const RegistroScreen = () => {
               />
             </div>
             <div className="d-grid">
-              <button className="btn btn-success mt-3 px-2">Registrar</button>
+            <Button variant="success" onClick={handleShow}>Registrar</Button>
+
+      <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>¡Registro exitoso!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Su registro se completó con éxito</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+          <NavLink className="nav-link" to="/"><Button variant="success" onClick={handleClose}>
+            Regresar
+          </Button></NavLink>
+         
+        </Modal.Footer>
+      </Modal>
+  
             </div>
         </div>
       </div>

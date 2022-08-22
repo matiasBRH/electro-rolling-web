@@ -1,7 +1,13 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const PasswordScreen = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="container mb-5 mt-5">
     <div className="row my-3 mb-4 mt-5">
@@ -52,7 +58,20 @@ const PasswordScreen = () => {
           </div>
 
           <div className="d-grid">
-          <NavLink to="/send"><button className="btn btn-success">Recuperar</button></NavLink>
+          <Button variant="success mt-3" onClick={handleShow}>Recuperar</Button>
+           <Modal show={show} onHide={handleClose}>
+           <Modal.Header closeButton>
+           <Modal.Title>¡Contraseña actualizada!</Modal.Title>
+           </Modal.Header>
+           <Modal.Body>Te envíamos un email con un link de confirmación.</Modal.Body>
+           <Modal.Footer>
+           <Button variant="success" onClick={handleClose}>
+            Aceptar
+           </Button>
+           </Modal.Footer>
+          </Modal>
+          
+          
             
           </div>
       </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import "../css/destacados.css"
 import emailjs from "emailjs-com"
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const ContactoScreen = () => {
@@ -33,6 +35,10 @@ const ContactoScreen = () => {
       e.target.reset();
     }
     
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <>
             <div className="container my-4 back-e">
@@ -76,7 +82,19 @@ const ContactoScreen = () => {
                             </div>
 
                             <div className="mb-3 md-2">
-                               <input type="submit" className='btn btn-success me-4' value="Enviar" />
+                            <Button type="submit" onClick={handleShow} className="btn btn-success me-4" value="Enviar">
+                             Enviar 
+                            </Button>
+                            <Modal show={show} onHide={handleClose} animation={false}>
+                            <Modal.Header closeButton>
+                            <Modal.Title>¡Mensaje envíado!</Modal.Title>
+                           </Modal.Header>
+                           <Modal.Body>¡Nos pondremos en contacto con vos cuanto antes!</Modal.Body>
+                           <Modal.Footer>
+                           <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
+                           <Button variant="success" onClick={handleClose}>Aceptar</Button>
+                           </Modal.Footer>
+                           </Modal>
                             </div>
                         </form>
                     </div>
