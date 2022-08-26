@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import "../css/destacados.css"
 import emailjs from "emailjs-com"
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const ContactoScreen = () => {
@@ -33,6 +35,10 @@ const ContactoScreen = () => {
       e.target.reset();
     }
     
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <>
             <div className="container my-4 back-e">
@@ -76,7 +82,19 @@ const ContactoScreen = () => {
                             </div>
 
                             <div className="mb-3 md-2">
-                               <input type="submit" className='btn btn-success me-4' value="Enviar" />
+                            <Button type="submit" onClick={handleShow} className="btn btn-success me-4" value="Enviar">
+                             Enviar 
+                            </Button>
+                            <Modal show={show} onHide={handleClose} animation={false}>
+                            <Modal.Header closeButton>
+                            <Modal.Title>¡Mensaje envíado!</Modal.Title>
+                           </Modal.Header>
+                           <Modal.Body>¡Nos pondremos en contacto con vos cuanto antes!</Modal.Body>
+                           <Modal.Footer>
+                           <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
+                           <Button variant="success" onClick={handleClose}>Aceptar</Button>
+                           </Modal.Footer>
+                           </Modal>
                             </div>
                         </form>
                     </div>
@@ -86,13 +104,13 @@ const ContactoScreen = () => {
                         <ul>
                     <li><i className="fa fa-map-marker"></i> Argentina</li>
                     <li><i className="fa fa-phone"></i> (666) 666 666 666</li>
-                    <li><i className="fa fa-envelope"></i> ElectroRolling@Website.com</li>
+                    <li><i className="fa fa-envelope"></i> ElectroRolling@gmail.com</li>
                 </ul> 
                 <hr />
                 <p>Si tienes algun problema, no dudes en consultarnos o contactarte con nuestro servicio de telefonia!</p>
                 <p>EvilGeniusMovies.com</p>
                 <hr />
-                <div className='md-6 col-lg-6'>
+                <div className='md-6 col-lg-6' id="wsp">
                     <h4>¡Nuestro WhatsApp</h4>
                     <a href="http://Whatsapp.com"><i className="fa fa-whatsapp fa-4x"></i></a>
                 </div>
