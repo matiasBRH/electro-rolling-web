@@ -11,7 +11,7 @@ const SearchScreen = () => {
   console.log(termino);
 
   useEffect(() => {
-    buscarBlog(termino).then((respuesta) => {
+    buscarProducto(termino).then((respuesta) => {
       console.log(respuesta.results);
       setBlogs(respuesta.results);
     });

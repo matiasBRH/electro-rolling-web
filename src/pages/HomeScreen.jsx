@@ -18,30 +18,30 @@ const HomeScreen = () => {
             {/* Arreglar como se deforma la imagen cuando se hace responsive */}
             <div className="row">
                 <div className="col">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+                        <div className="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item item">
-                                <img src={oferta3} class="d-block w-100" alt="promocion"/>
+                        <div className="carousel-inner">
+                            <div className="carousel-item item">
+                                <img src={oferta3} className="d-block w-100" alt="promocion"/>
                             </div>
-                            <div class="carousel-item item active">
-                                <img src={oferta1} class="d-block w-100" alt="promocion"/>
+                            <div className="carousel-item item active">
+                                <img src={oferta1} className="d-block w-100" alt="promocion"/>
                             </div>
-                            <div class="carousel-item item">
-                                <img src={oferta2} class="d-block w-100" alt="promocion"/>
+                            <div className="carousel-item item">
+                                <img src={oferta2} className="d-block w-100" alt="promocion"/>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
@@ -62,11 +62,11 @@ const HomeScreen = () => {
                 </div>
 
                 {/* <div className="col-lg-2 me-1 mb-2">
-                    <div class="publicidad-container" id="ocultar-div">
-                        <div id="CarouselHeader2" class="carousel slide" data-bs-ride="carousel">
+                    <div className="publicidad-container" id="ocultar-div">
+                        <div id="CarouselHeader2" className="carousel slide" data-bs-ride="carousel">
                             
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#CarouselHeader2" data-bs-slide-to="0" class="active"
+                            <div className="carousel-indicators">
+                                <button type="button" data-bs-target="#CarouselHeader2" data-bs-slide-to="0" className="active"
                                 aria-current="true" aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#CarouselHeader2" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
@@ -74,15 +74,15 @@ const HomeScreen = () => {
                                 aria-label="Slide 3"></button>
                             </div>
             
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                <img src={publicidad1} class="d-block w-100" alt="publicidad 1"/>
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                <img src={publicidad1} className="d-block w-100" alt="publicidad 1"/>
                                 </div>
-                                <div class="carousel-item">
-                                <img src={publicidad2} class="d-block w-100" alt="publicidad 2"/>
+                                <div className="carousel-item">
+                                <img src={publicidad2} className="d-block w-100" alt="publicidad 2"/>
                                 </div>
-                                <div class="carousel-item">
-                                <img src={publicidad3} class="d-block w-100" alt="publicidad 3"/>
+                                <div className="carousel-item">
+                                <img src={publicidad3} className="d-block w-100" alt="publicidad 3"/>
                                 </div>
                             </div>
                         </div>

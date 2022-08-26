@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
-import logo from "../assets/logo.png"
+import logo from "../assets/logoER2.png"
 import qr from "../assets/data_fiscal.png"
 import "../css/footer.css"
 
@@ -39,8 +39,8 @@ const Footer = () => {
                         <div className="col-links-contacto">
                             <ul>
                                 <h5>Encontranos en</h5>
-                                <li><i class="fa fa-whatsapp me-2" aria-hidden="true"></i> 3815123456</li>
-                                <li><i class="fa fa-map-marker me-2" aria-hidden="true"></i>General Paz 500, SMT</li>
+                                <li><i className="fa fa-whatsapp me-2" aria-hidden="true"></i> 3815123456</li>
+                                <li><i className="fa fa-map-marker me-2" aria-hidden="true"></i>General Paz 500, SMT</li>
                             </ul>
                         </div>
                     </div>
