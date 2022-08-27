@@ -23,4 +23,36 @@ export const listaProductos = [
         "precio": "134999",
         "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
     }, 
+    {
+        "id": 4,
+        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
+        "categoria": "notebooks",
+        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
+        "precio": "134999",
+        "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
+    }, 
+    {
+        "id": 5,
+        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
+        "categoria": "notebooks",
+        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
+        "precio": "134999",
+        "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
+    }, 
+    {
+        "id": 6,
+        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
+        "categoria": "notebooks",
+        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
+        "precio": "134999",
+        "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
+    }, 
+    {
+        "id": 7,
+        "nombre": "CELULAR SAMSUNG S20 FE VERDE",
+        "categoria": "notebooks",
+        "description": "Sabemos que es difícil que sueltes el teléfono, por lo que debería ser un complemento perfecto de tu estilo. Elige entre una amplia variedad de tonos a la moda con un elegante acabado mate, ya sean atrevidos, sutiles o clásicos.",
+        "precio": "134999",
+        "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg"       
+    }, 
 ]

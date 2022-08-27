@@ -1,8 +1,8 @@
 import React from 'react'
-import "../css/destacados.css"
 import about1 from "../assets/aboutus1.jpg"
 import about2 from "../assets/aboutus2.jpg"
 import about3 from "../assets/aboutus3.jpg"
+import "../css/destacados.css"
 
 const AboutScreen = () => {
   return (

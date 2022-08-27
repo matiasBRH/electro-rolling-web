@@ -67,14 +67,14 @@ export const NavbarApp = () => {
                             </li>
                         </ul>
 
-                        <div className="d-flex">
+                        <div className="d-flex me-2 d-flex align-baseline">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
                                     Ingresar
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
-                            <NavLink className="nav-link text-white" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
+                            <NavLink className="nav-link btn btn-success" to="/cart"><i className="fa fa-shopping-cart fa-2x ms-1 me-2" aria-hidden="true"></i></NavLink>
                         </div>
                     </div>
                 </div>
