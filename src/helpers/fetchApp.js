@@ -132,8 +132,8 @@ export const buscarBlog = async (termino) => {
 
 
     //Traer 10 productos
-    export const getProduct = async (registro = 0) => {
-      const resp = await fetch(`${url}/productos?desde=${registro}&limite=10`, {
+    export const getProduct = async (registro = 0,limite) => {
+      const resp = await fetch(`${url}/productos?desde=${registro}&limite=${limite}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -189,8 +189,8 @@ export const buscarBlog = async (termino) => {
 };
 
 
-export const buscarProducto = async (termino) => {
-  const resp = await fetch(`${url}/search?search=${termino}`, {
+export const buscarProducto = async (termino, registro = 0,limite) => {
+  const resp = await fetch(`${url}/search?search=${termino}?desde=${registro}&limite=${limite}`, {
       method: "GET",
       headers: {
           "Content-type": "application/json; charset=UTF-8",

@@ -25,7 +25,7 @@ const SearchProd = () => {
             <input type="search" className="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="button-addon2" value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}></input>
 
-            <button class="btn btn-success" type="button" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <button className="btn btn-success" type="button" id="button-addon2"><i className="fa fa-search" aria-hidden="true"></i></button>
 
             {/* <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}/> */}

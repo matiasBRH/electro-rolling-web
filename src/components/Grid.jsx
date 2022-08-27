@@ -13,11 +13,12 @@ const Grid = () => {
   });
 
   const [registro, setRegistro] = useState(0);
+  const limite = 10;  
 
   const [loading, setLoading] = useState(true);
   const [mensaje, setMensaje] = useState("");
   useEffect(()=>{
-    getProduct(registro).then((respuesta)=>{
+    getProduct(registro, limite).then((respuesta)=>{
       console.log(respuesta);
       if (respuesta?.msg) {
         setMensaje(respuesta.msg);
@@ -71,11 +72,22 @@ window.onscroll = function() {scrollFunction()};
     <div className="container">
       <div className="row">
         <div className="col-2"></div> 
+
+        {loading ? (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="loader">Loading...</div>
+          </div>
+        </div>
+      </div>
+) :
+(
         <div className="col-10 col-md-10">
 
           <div className="row">
             {posts.products.map((producto) => (
-              <Card key={producto.id} producto={producto} />
+              <Card key={producto._id} producto={producto} />
             ))}
           </div>
           <BtnPaginacion
@@ -85,7 +97,7 @@ window.onscroll = function() {scrollFunction()};
                 prevPage={prevPage}
               />
         </div>
-
+)}
         
 
       </div>
