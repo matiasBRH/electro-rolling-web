@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .destacadas{
     width: 200px;
     margin: 0;
@@ -40,40 +40,5 @@
     object-fit:fill;
     position: center center;
 }
-=======
 
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
-body{
-    overflow-x: hidden;
-    
-}
-img-card {
-    height: 200px;
-    /* object-fit:fill; */
-    /* position: center center; */
-}
-
-.fa {
-    color: orangered;
-}
-
-.text-center{
-    font-family: 'Playfair Display', serif, bold;
-    font-size: 25px;
-    color: orangered;
-}
-
-.carousel-inner .carousel-item {
-    height: 400px;
-    margin-bottom: 15px;
-   padding: 0px;
-  }
-  
-  .carousel-inner .carousel-item img {
-    height: 400px;
-    width: 100vh;
-    filter: grayscale(0.8);
-    object-fit: cover;
-  }
-  
->>>>>>> 4eb96c90dcc2411e97ad2a4c2bee71c7c0523b10

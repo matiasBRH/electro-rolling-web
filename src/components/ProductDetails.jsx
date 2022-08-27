@@ -5,7 +5,7 @@ import '../css/productDetails.css'
 import '../css/cssEffects.css'
 
 import { useParams } from "react-router-dom";
-import { getProductById } from "../helpers/fetchApp";
+import { getProductById } from "../helpers/fetchApi";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -101,11 +101,6 @@ const ProductDetails = () => {
         </div>
 
       </div>
-
-
-     
-     
-
     </div>
     </>
     )}

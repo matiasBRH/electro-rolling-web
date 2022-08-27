@@ -74,7 +74,7 @@ export const NavbarApp = () => {
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
-                            <NavLink className="nav-link" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
+                            <NavLink className="nav-link text-white" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
                     </div>
                 </div>

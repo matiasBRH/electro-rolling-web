@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { postUsuario } from "../helpers/fetchApp";
+import { postUsuario } from "../helpers/fetchApi";
 import '../css/registro.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';

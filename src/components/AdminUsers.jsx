@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminTableRowUsers from '../components/AdminTableRowUsers';
-import { getAllUsers } from '../helpers/fetchApp';
+import { getAllUsers } from '../helpers/fetchApi';
 
 const AdminUsers = () => {
     
