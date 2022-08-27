@@ -33,3 +33,55 @@ img-card {
     object-fit: cover;
   }
   
+
+  
+
+
+
+
+
+
+
+
+  
+.destacadas{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img{
+    width: 150px;
+    height: 180px;
+    object-fit:fill;
+    position: center center;
+}
+
+.card{
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    transition: all 300ms ease;
+    cursor:default
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+.card-body h6{
+    font-size: small;
+}
+.card-body{
+    padding: 0px;
+}
+
+.carousel-inner img{
+    height: 300px;
+    object-fit:fill;
+    position: center center;
+}

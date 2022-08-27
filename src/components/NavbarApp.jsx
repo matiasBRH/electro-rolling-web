@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
-import {Link, NavLink} from "react-router-dom"
+import {Link, NavLink, useNavigate} from "react-router-dom"
 import ModalLogin from "../components/ModalLogin"
 
 import logo from "../assets/icon.png"
@@ -9,6 +8,24 @@ import "../css/navBar.css"
 
 export const NavbarApp = () => {
 
+
+    const navigate = useNavigate();
+    const [inputValue, setInputValue] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (inputValue) {
+
+        navigate(`/search/${inputValue}`);
+        // buscarBlog(inputValue).then((respuesta) => {
+        //   console.log(respuesta);
+        //   navigate(`/search/${inputValue}`);
+        // });
+        }
+    };
+
+
+    // Seccion para abrir modal de Login
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -49,17 +66,17 @@ export const NavbarApp = () => {
                             </li>
                         </ul>
 
-                        <div className="LogyReg d-flex">
+                        <div className="d-flex">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
-                                    Inicio de sesión
+                                    Ingresar
                                 </button>
                             </div>
                             <ModalLogin show={show} handleClose={handleClose} />
+                            <NavLink className="nav-link btn" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
-
                         <button type="button" className="btn">
-                            <i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span className="badge rounded-pill bg-secondary">0</span>
+                            <span className="badge rounded-pill bg-secondary">0</span>
                         </button>
                     </div>
                 </div>

@@ -13,20 +13,20 @@ import Footer from "../components/Footer";
 import AdminScreen from "../pages/AdminScreen";
 import ProductScreen from "../pages/ProductScreen";
 import CartScreen from "../pages/CartScreen";
-import CategoryScreen from "../pages/CategoryScreen";
+import CategoryScreen from '../pages/CategoryScreen'
 
 const RoutesApp = () => {
   return (
+
     <>
-    <NavbarApp />
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />        
-        <Route path="/about" element={<AboutScreen />} />
+    <NavbarApp />   
+    <Routes >
+        <Route path='/' element={<HomeScreen/>}/>
+        <Route path="/about" element={<AboutScreen/>}/>
         <Route path="/contacto" element={<ContactoScreen/>}/>
         <Route path="/admin" element={<AdminScreen/>}/>
-        <Route path="/about" element={<AboutScreen/>}/>
         <Route path="/productos/:id" element={<ProductScreen/>}/>
-        <Route path="/categoria/:id" element={<CategoryScreen/>}/>
+        <Route path="/category/:id" element={<CategoryScreen/>}/>
         <Route path="/search/:termino" element={<SearchScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/favorites" element={<FavoritosScreen/>}/>
@@ -34,7 +34,7 @@ const RoutesApp = () => {
         <Route path="/password" element={<PasswordScreen/>}/>
         <Route path="/search" element={<SearchScreen />} />             
         <Route path="*" element={<ErrorScreen/>}/>        
-        </Routes>
+      </Routes>
     <Footer/>
     </>
   )

@@ -8,7 +8,7 @@ import publicidad1 from "../assets/publicidad 1.jpg"
 import publicidad2 from "../assets/publicidad 2.jpg"
 import publicidad3 from "../assets/publicidad 3.jpg"
 
-import "../css/publi.css"
+// import "../css/publi.css"
 
 const HomeScreen = () => {
 

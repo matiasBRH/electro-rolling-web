@@ -23,15 +23,17 @@ const Footer = () => {
                                 <li><NavLink className="text-white text-decoration-none" to="/about"><i class="fa fa-users" aria-hidden="true"></i> Sobre nosotros </NavLink></li>
                                 <li><NavLink className="text-white text-decoration-none" to="/*"><i class="fa fa-address-book-o" aria-hidden="true"></i> Términos y condiciones </NavLink></li>
                                 <li><NavLink className="text-white text-decoration-none" to="/*"><i class="fa fa-gavel" aria-hidden="true"></i> Legales </NavLink></li>
+
                             </ul>
                         </div>
                         {/* columna 3 */}
                         <div className="col-links-2">
                             <ul>
                                 <li><h5>Nuestras redes</h5></li>
-                                <li><NavLink className="text-white text-decoration-none" to="/*"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </NavLink></li>
-                                <li><NavLink className="text-white text-decoration-none" to="/*"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook </NavLink></li>
-                                <li><NavLink className="text-white text-decoration-none" to="/*"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter </NavLink></li>
+                                <li><a className="text-white text-decoration-none" href='https://www.instagram.com/?hl=es' target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </a></li>
+                                <li><a className="text-white text-decoration-none" href='https://www.facebook.com/' target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook </a></li>
+                                <li><a className="text-white text-decoration-none" href='https://twitter.com/' target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter </a></li>
+
                             </ul>
                             <img className='img-qr ms-3' src={qr} alt="qrDataFiscal" />
                         </div>

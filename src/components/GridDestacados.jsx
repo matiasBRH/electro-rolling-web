@@ -1,10 +1,9 @@
 import React from 'react'
-import Card from "./Card"
+import CardDestacadas from './CardDestacadas';
 import { listaProductos } from "../data/products";
 
 
 import "../css/destacados.css"
-import CardDestacadas from './CardDestacadas';
 
 const GridDestacados = (props) => {
     
@@ -14,16 +13,10 @@ const GridDestacados = (props) => {
     return (
 
         <>
-            <div className="mt-5 text-center">
-                <div className="row">
-                    <div className="col">
-                        <div className="row row-cols-1 row-cols-md-4 g-4">
-                                {listaProductos.map((producto) => (
-                                <CardDestacadas key={producto.id} producto={producto} />
-                                ))}
-                        </div>
-                    </div>
-                </div>
+            <div className="mt-5 mb-5 ps-5 pe-5 text-center d-flex justify-content-center align-baseline flex-wrap">
+                    {listaProductos.map((producto) => (
+                        <CardDestacadas key={producto.id} producto={producto} />
+                    ))}
             </div>
         </>
     )
