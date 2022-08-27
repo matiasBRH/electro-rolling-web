@@ -6,8 +6,6 @@ import "../css/cartScreen.css"
 
 const CartScreen = () => {
 
-
-
   return (
     <>
       <div className="container mt-5">
@@ -55,7 +53,6 @@ const CartScreen = () => {
       </div>
     </>
   )
-  
 }
 
 export default CartScreen

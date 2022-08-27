@@ -1,8 +1,11 @@
-body {
-    background-color: #EEEEEE
-}
+/* body {
+    background-color: red !important;
+} */
 
-a {
+.card-product a {
+    text-decoration: none !important
+}
+.card-product link {
     text-decoration: none !important
 }
 
@@ -11,8 +14,8 @@ a {
     margin-bottom: 0
 }
 
-.card {
-    width: 400px;
+.card-product {
+    width: 500px;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -42,7 +45,7 @@ a {
     height: 220px
 }
 
-.card .img-wrap {
+.card-product .img-wrap {
     overflow: hidden
 }
 
@@ -56,8 +59,8 @@ a {
     padding: 16px
 }
 
-[class*='card-product'] .img-wrap img {
-    height: 100%;
+[class*='card-product'] .img-wrap img {    
+    width: 100%;
     max-width: 100%;
     width: auto;
     display: inline-block;
@@ -73,6 +76,12 @@ a {
 .card-product-grid .info-wrap {
     overflow: hidden;
     padding: 18px 20px
+}
+
+.card-title {
+    word-wrap:break-word;
+  font-size: 15px;
+  
 }
 
 [class*='card-product'] a.title {
@@ -111,7 +120,7 @@ a {
     border-top: 1px solid #e4e4e4
 }
 
-.btn {
+.btn-card-product {
     display: inline-block;
     font-weight: 600;
     color: #343a40;
@@ -129,12 +138,54 @@ a {
     border-radius: 0.2rem
 }
 
-.btn-primary {
+/* .btn-primary {
     color: #fff;
     background-color: #3167eb;
     border-color: #3167eb
-}
+} */
 
-.fa {
+/* .fa {
     color: #FF5722
+} */
+
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+html{
+    margin: 0 !important;
+        
 }
+body {            
+    background-color: rgb(18, 18, 18) !important;
+} */

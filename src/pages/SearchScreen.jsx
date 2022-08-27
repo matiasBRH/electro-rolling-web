@@ -12,7 +12,7 @@ const SearchScreen = () => {
 
   useEffect(() => {
 
-    buscarProd(termino).then((respuesta) => {
+    buscarProducto(termino).then((respuesta) => {
       console.log(respuesta.results);
       setProducto(respuesta.results);
     });
