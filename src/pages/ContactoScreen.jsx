@@ -15,24 +15,24 @@ const ContactoScreen = () => {
     const {nombre, email}=formValues;
 
     const handleChange=({target})=>{
-     setformValues({
-        ...formValues,
-        [target.name]:target.value
-     })
+        setformValues({
+            ...formValues,
+            [target.name]:target.value
+        })
     }
 
     useEffect(() => {
-      console.log("Se actualizó el formulario")
+        console.log("Se actualizó el formulario")
     },[formValues])
 
 
 
     const sendMail=(e)=>{
-      e.preventDefault();
+        e.preventDefault();
 
-      emailjs.sendForm("service_fartkbh", "template_o4ni2xb", e.target, "feEXNVTGo4JtcJNqF").then(response => console.log(response)).catch(error => console.log(error));
-      
-      e.target.reset();
+        emailjs.sendForm("service_fartkbh", "template_o4ni2xb", e.target, "feEXNVTGo4JtcJNqF").then(response => console.log(response)).catch(error => console.log(error));
+        
+        e.target.reset();
     }
     
     const [show, setShow] = useState(false);
@@ -115,7 +115,6 @@ const ContactoScreen = () => {
                     <a href="http://Whatsapp.com"><i className="fa fa-whatsapp fa-4x"></i></a>
                 </div>
                     </div>
-                  
                 </div>
             </div>
         </>

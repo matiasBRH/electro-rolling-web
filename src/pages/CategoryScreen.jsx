@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom"
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
-import { buscarProductoCategoria } from "../helpers/fetchApp";
+import { buscarProductoCategoria } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
 
 const CategoryScreen = () => {

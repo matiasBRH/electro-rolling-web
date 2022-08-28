@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 // import { listaProductos } from "../data/products";
-import { getProduct } from "../helpers/fetchApp";
+import { getProduct } from "../helpers/fetchApi";
 import BtnPaginacion from "./BtnPaginacion";
 
 // console.log(listaProductos);

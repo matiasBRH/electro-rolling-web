@@ -2,13 +2,10 @@ import React from 'react'
 import {NavLink} from "react-router-dom"
 import { listaProductos } from "../data/products";
 import TablaCart from '../components/TablaCart';
-
-
-
 import "../css/cartScreen.css"
 
 const CartScreen = () => {
-  
+
   return (
     <>
       <div className="container mt-5">

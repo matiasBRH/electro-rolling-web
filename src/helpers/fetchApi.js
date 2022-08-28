@@ -188,7 +188,7 @@ export const buscarBlog = async (termino) => {
   return data;
 };
 
-
+//Busqueda de producto x nombre
 export const buscarProducto = async (termino, registro = 0, limite = 15) => {
   const resp = await fetch(`${url}/search?search=${termino}&desde=${registro}&limite=${limite}`, {
       method: "GET",
@@ -202,6 +202,7 @@ export const buscarProducto = async (termino, registro = 0, limite = 15) => {
   return data;
 };
 
+//Busqueda de producto x categoria
 export const buscarProductoCategoria = async (termino, registro = 0, limite = 15) => {
   const resp = await fetch(`${url}/category?search=${termino}&desde=${registro}&limite=${limite}`, {
       method: "GET",
@@ -212,5 +213,20 @@ export const buscarProductoCategoria = async (termino, registro = 0, limite = 15
   });
 
   const data = await resp.json();
+  return data;
+};
+
+//Get de compras
+export const getProdCarrito = async () => {
+  const resp = await fetch(`${url}/compras`, {
+  method: "GET",
+  headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+  },
+});
+
+  const data = await resp.json();
+  console.log(data)
   return data;
 };

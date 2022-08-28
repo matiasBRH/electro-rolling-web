@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminTableRowProducts from '../components/AdminTableRowProducts';
-import { getAllProduct } from '../helpers/fetchApp';
+import { getAllProduct } from '../helpers/fetchApi';
 
 const AdminProducts = () => {
 

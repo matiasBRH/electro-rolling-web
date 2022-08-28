@@ -66,7 +66,7 @@ export const NavbarApp = () => {
                             </li>
                         </ul>
 
-                        <div className="d-flex">
+                        <div className="d-flex me-2 d-flex align-baseline">
                             <div>
                                 <button className="btn btn-success me-2" onClick={handleShow}>
                                     Ingresar

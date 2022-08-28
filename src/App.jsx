@@ -6,7 +6,9 @@ import RoutesApp from "./Routes/RoutesApp";
 import RegistroScreen from "./pages/RegistroScreen";
 
 function App() {
+
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<RoutesApp />} />
