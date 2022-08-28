@@ -189,8 +189,21 @@ export const buscarBlog = async (termino) => {
 };
 
 
-export const buscarProducto = async (termino, registro = 0,limite) => {
-  const resp = await fetch(`${url}/search?search=${termino}?desde=${registro}&limite=${limite}`, {
+export const buscarProducto = async (termino, registro = 0, limite = 15) => {
+  const resp = await fetch(`${url}/search?search=${termino}&desde=${registro}&limite=${limite}`, {
+      method: "GET",
+      headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+  });
+
+  const data = await resp.json();
+  return data;
+};
+
+export const buscarProductoCategoria = async (termino, registro = 0, limite = 15) => {
+  const resp = await fetch(`${url}/category?search=${termino}&desde=${registro}&limite=${limite}`, {
       method: "GET",
       headers: {
           "Content-type": "application/json; charset=UTF-8",

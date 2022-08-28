@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+// import { listaProductos } from "../data/products";
 import { getProduct } from "../helpers/fetchApp";
 import BtnPaginacion from "./BtnPaginacion";
 
-const Grid = () => {
+// console.log(listaProductos);
+
+const GridCopy = () => {
   const [posts, setPosts] = useState({
     products: [],
     total: 0,
@@ -45,7 +48,7 @@ const Grid = () => {
   };
 
 
-//Get the button:
+  //Get the button:
 
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -104,4 +107,4 @@ window.onscroll = function() {scrollFunction()};
   );
 };
 
-export default Grid;
+export default GridCopy;
