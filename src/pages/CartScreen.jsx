@@ -28,12 +28,12 @@ const CartScreen = () => {
           <div className="sumador card p-2 h-50 mb-3 col-6 col-md-3 col-lg-3">
 
               <div className="subTotal">
-                  <h6 class="text-muted mb-1">Subtotal</h6>
+                  <h6 className="text-muted mb-1">Subtotal</h6>
                   <h6 className='text-muted precio'>$</h6>
               </div>
 
               <div className="total">
-                  <h5 class="mb-1">Total</h5>
+                  <h5 className="mb-1">Total</h5>
                   <h5 className='precio'>$</h5>
               </div>
 

@@ -18,7 +18,7 @@ const Card = (props) => {
                 </div>
             </div>
         </figcaption>
-        <div className="bottom-wrap"> <Link href="#" className="btn btn-card-product btn-primary float-right" data-abc="true" to={`/productos/${producto._id}`}> Ver Info </Link>
+        <div className="bottom-wrap"> <Link className="btn btn-card-product btn-primary float-right" data-abc="true" to={`/productos/${producto._id}`}> Ver Info </Link>
             <div className="price-wrap"> <span className="price h5"><NumberFormat value={producto.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$'} /></span> <br></br> <small className="text-success">Envío Gratis</small> </div>
         </div>
     </figure>

@@ -23,12 +23,7 @@ const ProductDetails = () => {
       }
       setLoading(false);
     });
-    // getPostById(id).then((respuesta) => {
-    //   console.log(respuesta);
-    //   setPost(respuesta);
-    //   setLoading(false);
-    // });
-  }, []);
+  }, [id]);
   
   return (
    <main className="mt-5 pt-4">

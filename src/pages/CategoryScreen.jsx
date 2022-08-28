@@ -22,7 +22,6 @@ const CategoryScreen = () => {
   const [loading, setLoading] = useState(true);
   const [mensaje, setMensaje] = useState("");
 
-  const { termino } = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -84,7 +83,7 @@ const topFunction=()=>{
     <div className="container">
       <div className="row">
         <div className="col-2">
-            <div class="btn-group-vertical">
+            <div className="btn-group-vertical">
                 <button className="btn btn-primary"><NavLink className="nav-link" to="/category/televisores">Televisores</NavLink></button>
                 <button className="btn btn-primary"><NavLink className="nav-link" to="/category/celulares">Celulares</NavLink></button>
                 <button className="btn btn-primary"><NavLink className="nav-link" to="/category/heladeras">Heladeras</NavLink></button>
