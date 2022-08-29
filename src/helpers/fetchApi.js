@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api";
+const url = "https://electroroliing.herokuapp.com/api";
 
 //traer usuarios
 export const validarToken = async () => {
@@ -132,8 +132,8 @@ export const buscarBlog = async (termino) => {
 
 
     //Traer 10 productos
-    export const getProduct = async (registro = 0) => {
-      const resp = await fetch(`${url}/productos?desde=${registro}&limite=10`, {
+    export const getProduct = async (registro = 0,limite) => {
+      const resp = await fetch(`${url}/productos?desde=${registro}&limite=${limite}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -188,9 +188,9 @@ export const buscarBlog = async (termino) => {
   return data;
 };
 
-
-export const buscarProducto = async (termino) => {
-  const resp = await fetch(`${url}/search?search=${termino}`, {
+//Busqueda de producto x nombre
+export const buscarProducto = async (termino, registro = 0, limite = 15) => {
+  const resp = await fetch(`${url}/search?search=${termino}&desde=${registro}&limite=${limite}`, {
       method: "GET",
       headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -199,5 +199,34 @@ export const buscarProducto = async (termino) => {
   });
 
   const data = await resp.json();
+  return data;
+};
+
+//Busqueda de producto x categoria
+export const buscarProductoCategoria = async (termino, registro = 0, limite = 15) => {
+  const resp = await fetch(`${url}/category?search=${termino}&desde=${registro}&limite=${limite}`, {
+      method: "GET",
+      headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+  });
+
+  const data = await resp.json();
+  return data;
+};
+
+//Get de compras
+export const getProdCarrito = async () => {
+  const resp = await fetch(`${url}/compras`, {
+  method: "GET",
+  headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+  },
+});
+
+  const data = await resp.json();
+  console.log(data)
   return data;
 };

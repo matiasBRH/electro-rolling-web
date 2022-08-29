@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
-import {Link, NavLink} from "react-router-dom"
+import {Link, NavLink, useNavigate} from "react-router-dom"
 import NumberFormat from 'react-number-format';
 import '../css/productDetails.css'
 import '../css/cssEffects.css'
 
 import { useParams } from "react-router-dom";
-import { getProductById } from "../helpers/fetchApp";
+import { getProductById } from "../helpers/fetchApi";
 
 const ProductDetails = () => {
+
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// let tarea = document.getElementById("text_tarea");
+// carrito.push(tarea.value);
+// localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
+
+  console.log(carrito)
+
   const { id } = useParams();
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
   const [mensaje, setMensaje] = useState("");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     getProductById(id).then((respuesta) => {
@@ -23,12 +36,26 @@ const ProductDetails = () => {
       }
       setLoading(false);
     });
-    // getPostById(id).then((respuesta) => {
-    //   console.log(respuesta);
-    //   setPost(respuesta);
-    //   setLoading(false);
-    // });
-  }, []);
+  }, [id]);
+
+  const agregarCarrito=()=>{
+   
+    let arrayID=0
+    if (carrito.length==0){      
+       arrayID = 0
+    } else {
+       arrayID = carrito[carrito.length - 1].id + 1;
+    }
+    
+    let newProduct = {
+      "id": arrayID,
+      "productID": id,
+      "precio": post.precio
+    };
+    carrito.push(newProduct);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    navigate(`/cart`);
+  }
   
   return (
    <main className="mt-5 pt-4">
@@ -46,8 +73,8 @@ const ProductDetails = () => {
     <div className="container container-breadcrumb animate__animated animate__fadeIn">
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><Link className="nav-link" aria-current="page" to="/">Electro Rolling</Link></li>
-              <li className="breadcrumb-item"><a href="#">{post.categoria}</a></li>
+              <li className="breadcrumb-item"><Link className="nav-link" aria-current="page" to="/">HOME</Link></li>
+              <li className="breadcrumb-item"><Link to={`/category/${post.categoria.toLowerCase()}`}>{post.categoria}</Link></li>
               <li className="breadcrumb-item active" aria-current="page">{post.nombre}</li>
             </ol>
           </nav>
@@ -90,7 +117,7 @@ const ProductDetails = () => {
 
             <form className="d-flex justify-content-left">
               <input type="number" value="1" aria-label="Search" className="form-control" style={{width: 100}}/>
-              <button className="btn btn-primary btn-md my-0 p" type="submit">AGREGAR AL CARRO
+              <button className="btn btn-primary btn-md my-0 p" onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
                 <i className="fas fa-shopping-cart ml-1"></i>
               </button>
 

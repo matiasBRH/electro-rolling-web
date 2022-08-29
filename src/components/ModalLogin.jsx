@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { NavLink } from "react-router-dom";
-import { postAuth } from "../helpers/fetchApp";
+import { postAuth } from "../helpers/fetchApi";
 
 const ModalLogin = ({ show, handleClose }) => {
 

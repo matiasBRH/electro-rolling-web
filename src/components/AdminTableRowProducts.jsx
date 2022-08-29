@@ -20,14 +20,14 @@ const AdminTableRowProducts = (props) => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onclick="showUserEditBox('+object['id']+')"
+          onClick="showUserEditBox('+object['id']+')"
         >
           Edit
         </button>
         <button
           type="button"
           className="btn btn-outline-danger"
-          onclick="userDelete('+object['id']+')"
+          onClick="userDelete('+object['id']+')"
         >
           Del
         </button>

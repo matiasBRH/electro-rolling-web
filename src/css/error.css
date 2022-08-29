@@ -1,0 +1,11 @@
+.container-404{
+    background: #1a84d3;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 200px;
+    max-width:300px ;
+    padding: 20px;
+    box-shadow: 0px 1px 10px rgba (0,0,0,0.3);
+    border-radius: 5px;
+    line-height: 1.7;
+}
