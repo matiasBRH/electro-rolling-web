@@ -1,5 +1,5 @@
 .img-logo-footer{
-    width: 180px;
+    width: 120px;
 }
 
 .col-links ul{
@@ -27,6 +27,13 @@
     height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 

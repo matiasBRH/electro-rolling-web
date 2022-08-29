@@ -27,7 +27,7 @@ export const NavbarApp = () => {
     
     useEffect(()=>{
         
-      }, [carrito]);
+    }, [carrito]);
     
 
 
@@ -53,19 +53,19 @@ export const NavbarApp = () => {
                     <div className="collapse navbar-collapse links" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/">Home <i className="fa fa-home" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" aria-current="page" to="/">Home <i className="fa fa-home loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/*">Destacado <i className="fa fa-thumb-tack" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/*">Destacado <i className="fa fa-thumb-tack loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/contacto">Contacto <i className="fa fa-commenting-o" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/contacto">Contacto <i className="fa fa-commenting-o loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">Sobre nosotros <i className="fa fa-users" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/about">Sobre nosotros <i className="fa fa-users loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/favorites">Favoritos <i className="fa fa-star-o" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/favorites">Favoritos <i className="fa fa-star-o loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
                             <SearchProd/>

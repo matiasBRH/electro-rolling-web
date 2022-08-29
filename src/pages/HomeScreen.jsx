@@ -15,7 +15,7 @@ const HomeScreen = () => {
 
         <>
             {/* Arreglar como se deforma la imagen cuando se hace responsive */}
-            <div className="row">
+            <div className="row filaCarrousel">
                 <div className="col">
                     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
@@ -45,8 +45,8 @@ const HomeScreen = () => {
                     </div>
                 </div>
             </div>
+            <hr id='hrHome' />
             
-            <hr />
 
             <div className="container" id='categoriasHome'>
                 <div className="row">

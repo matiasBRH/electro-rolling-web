@@ -32,8 +32,10 @@ const RegistroScreen = () => {
     e.preventDefault();
 
     postUsuario(formValues).then((respuesta) => {
+
       console.log(respuesta);
-      if (respuesta?.errors) {
+
+      if (respuesta?.errors){
         setMessage(respuesta.errors);
       } else {
         // setMessage([{ ok: true, msg: "Registro exitoso!" }]);
@@ -124,7 +126,6 @@ const RegistroScreen = () => {
           <NavLink className="nav-link" to="/"><Button variant="success" onClick={handleClose}>
             Regresar
           </Button></NavLink>
-         
         </Modal.Footer>
       </Modal>
   

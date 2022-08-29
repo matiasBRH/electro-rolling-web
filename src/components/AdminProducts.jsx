@@ -53,7 +53,7 @@ const AdminProducts = () => {
           <tbody id="mytable">
 
           {loading ? (
-               <tr>
+              <tr>
                 <th scope="row" colSpan="5"><div className="lds-ring"><div></div><div></div><div></div><div></div></div>Cargando...</th>
               </tr> 
               ) :
