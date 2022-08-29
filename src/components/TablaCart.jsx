@@ -6,7 +6,7 @@ const TablaCart = (props) => {
 
     console.log(props)
 
-    const {producto} = props.producto
+    const {producto, deleteCart} = props.producto
     const [post, setPost] = useState({});
     const [loading, setLoading] = useState(true);
     const [mensaje, setMensaje] = useState("");
@@ -23,9 +23,7 @@ const TablaCart = (props) => {
         });
       }, []);
 
-    const deleteCart=()=>{
 
-    }
 
     return (
 

@@ -17,7 +17,7 @@ const CategoryScreen = () => {
   let datos = {};
 
   const [registro, setRegistro] = useState(0);
-  const limite = 10;
+  const limite = 8;
 
   const [loading, setLoading] = useState(true);
   const [mensaje, setMensaje] = useState("");
@@ -32,7 +32,7 @@ const CategoryScreen = () => {
       } else {
         setPosts({
           products: respuesta.results,
-          total: respuesta.results.length,
+          total: respuesta.total,
         });
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
@@ -46,16 +46,16 @@ const CategoryScreen = () => {
   
 
   const nextPage = () => {
-    if (posts.total - registro > 10) {
+    if (posts.total - registro > 8) {
       console.log("OK");
-      setRegistro(registro + 10);
+      setRegistro(registro + 8);
     }
   };
 
   const prevPage = () => {
     if (registro > 0) {
       console.log("OK");
-      setRegistro(registro - 10);
+      setRegistro(registro - 8);
     }
   };
 

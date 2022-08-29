@@ -49,7 +49,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     
     let newProduct = {
       "id": arrayID,
-      "productID": id
+      "productID": id,
+      "precio": post.precio
     };
     carrito.push(newProduct);
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -72,8 +73,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     <div className="container container-breadcrumb animate__animated animate__fadeIn">
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><Link className="nav-link" aria-current="page" to="/">Electro Rolling</Link></li>
-              <li className="breadcrumb-item"><a href="#">{post.categoria}</a></li>
+              <li className="breadcrumb-item"><Link className="nav-link" aria-current="page" to="/">HOME</Link></li>
+              <li className="breadcrumb-item"><Link to={`/category/${post.categoria.toLowerCase()}`}>{post.categoria}</Link></li>
               <li className="breadcrumb-item active" aria-current="page">{post.nombre}</li>
             </ol>
           </nav>

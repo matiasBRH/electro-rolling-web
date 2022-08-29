@@ -1,12 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom"
-import { listaProductos } from "../data/products";
 import TablaCart from '../components/TablaCart';
 import "../css/cartScreen.css"
 
 const CartScreen = () => {
 
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
+  const [total, setTotal] = useState(0)
+
+  useEffect(()=>{
+    carrito.forEach((element) => {
+      console.log(element.precio)
+      setTotal(total+parseFloat(element.precio))
+      
+    });
+    testing()    
+  }, []);
+
+  const testing =()=>{
+    console.log(total)
+  }
+
+  const deleteCart = () => {
+    
+      console.log("borrado");
+    
+  };
+
+
+  const agregarProdCarrito =()=>{
+    let arrayID=0
+    if (carrito.length==0){      
+       arrayID = 0
+    } else {
+       arrayID = carrito[carrito.length - 1].id + 1;
+    }
+    
+    let newProduct = {
+      "id": arrayID,
+      "productID": "62fc443baacdf236b060ca9e"
+    };
+    setCarrito([...carrito, newProduct]);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
 
   return (
     <>
@@ -23,7 +59,7 @@ const CartScreen = () => {
         <div className="row">        
           <div className='listado col-12 col-md-8 col-lg-8'>
               {carrito.map((producto, index) => (
-                <TablaCart key={index} producto={producto} />
+                <TablaCart key={index} producto={producto} deleteCart={deleteCart} />
                 ))}
           </div>
 
@@ -47,7 +83,7 @@ const CartScreen = () => {
 
               <hr />
               <div className="botones">
-                <button className='btn btn-success'>Pagar</button>
+                <button className='btn btn-success' onClick={agregarProdCarrito}>Pagar</button>
                 <button className='btn btn-danger'>Cancelar</button>
               </div>
           </div>

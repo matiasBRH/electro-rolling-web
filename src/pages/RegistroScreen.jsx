@@ -36,7 +36,8 @@ const RegistroScreen = () => {
       if (respuesta?.errors) {
         setMessage(respuesta.errors);
       } else {
-        setMessage([{ ok: true, msg: "Registro exitoso!" }]);
+        // setMessage([{ ok: true, msg: "Registro exitoso!" }]);
+        handleShow()
         setFormValues({
           nombre: "",
           email: "",
@@ -108,7 +109,8 @@ const RegistroScreen = () => {
               />
             </div> */}
             <div className="d-grid">
-            <Button variant="success" onClick={handleShow}>Registrar</Button>
+            <button className="btn btn-success mt-3 px-2">Registrar</button>
+            {/* <Button variant="success" onClick={handleShow}>Registrar</Button> */}
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
