@@ -6,6 +6,8 @@ import "../css/cartScreen.css"
 
 const CartScreen = () => {
 
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
   return (
     <>
       <div className="container mt-5">
@@ -20,8 +22,8 @@ const CartScreen = () => {
       <div className="container mainCarrito">
         <div className="row">        
           <div className='listado col-12 col-md-8 col-lg-8'>
-              {listaProductos.map((producto) => (
-                <TablaCart key={producto.id} producto={producto} />
+              {carrito.map((producto, index) => (
+                <TablaCart key={index} producto={producto} />
                 ))}
           </div>
 

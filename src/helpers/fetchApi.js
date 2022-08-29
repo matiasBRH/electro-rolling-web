@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api";
+const url = "https://electroroliing.herokuapp.com/api";
 
 //traer usuarios
 export const validarToken = async () => {
