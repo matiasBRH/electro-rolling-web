@@ -40,11 +40,13 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   const agregarCarrito=()=>{
    
-    let arrayID=0
-    if (carrito.length==0){      
-       arrayID = 0
+    let arrayID = 0
+    
+    if (carrito.length==0)
+    {      
+        arrayID = 0
     } else {
-       arrayID = carrito[carrito.length - 1].id + 1;
+        arrayID = carrito[carrito.length - 1].id + 1;
     }
     
     let newProduct = {
@@ -58,7 +60,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   }
   
   return (
-   <main className="mt-5 pt-4">
+    <main className="mt-5">
     {loading ? (
       <div className="container">
         <div className="row">
@@ -67,8 +69,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
           </div>
         </div>
       </div>
-) :
-(
+      ) :
+      (
     <>
     <div className="container container-breadcrumb animate__animated animate__fadeIn">
         <nav aria-label="breadcrumb">
@@ -81,19 +83,12 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         </div>
 
     <div className="container dark-grey-text mt-5 animate__animated animate__fadeIn">        
-
       <div className="row wow fadeIn">
-
         <div className="col-md-6 mb-4 product-img-container pt-4 pb-4 card-details">
-
           <img src={post.img} className="img-fluid" alt=""/>
-
         </div>
-        <div className="col-md-6 mb-4">
-
-      
+        <div className="col-md-6 mb-4">    
           <div className="p-4">
-
             <div className="mb-3">
               <h2>{post.nombre}</h2>  
               <a href="">
@@ -111,6 +106,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
             </p>
 
             <p className="lead font-weight-bold">Descripción</p>
+            
             <hr/>
 
             <p>{post.detalle}</p>
@@ -120,19 +116,11 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
               <button className="btn btn-primary btn-md my-0 p" onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
                 <i className="fas fa-shopping-cart ml-1"></i>
               </button>
-
             </form>
 
           </div>
-
         </div>
-
       </div>
-
-
-     
-     
-
     </div>
     </>
     )}

@@ -1,3 +1,7 @@
+.footer{
+    margin-top:auto;
+}
+
 .img-logo-footer{
     width: 120px;
 }
@@ -5,6 +9,7 @@
 .col-links ul{
     list-style: none;
 }
+
 
 .col-links-2 ul{
     list-style: none;
@@ -27,13 +32,6 @@
     height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-.footer {
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 

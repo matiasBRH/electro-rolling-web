@@ -53,6 +53,7 @@ const RegistroScreen = () => {
     });
   };
 
+
   return (
     <div className="container mb-5 mt-5">
       <div className="row my-3 mb-4 mt-5">
@@ -96,10 +97,11 @@ const RegistroScreen = () => {
                 name="password"
                 value={formValues.password}
                 onChange={handleChange}
+                id="pass1"
                 required
               />
             </div>
-            {/* <div className="form-group">
+            <div className="form-group">
               <label>Repita la contraseña</label>
               <input
                 type="password"
@@ -107,9 +109,10 @@ const RegistroScreen = () => {
                 name="password"
                 value={formValues.p}
                 onChange={handleChange}
+                id="pass2"
                 required
               />
-            </div> */}
+            </div>
             <div className="d-grid">
             <button className="btn btn-success mt-3 px-2">Registrar</button>
             {/* <Button variant="success" onClick={handleShow}>Registrar</Button> */}

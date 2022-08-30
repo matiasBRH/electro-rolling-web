@@ -57,12 +57,16 @@ const HomeScreen = () => {
                 <hr />
             </div>
 
-            <div className="container" id='prodDestacados'>
+            <div className="container mt-5" id='prodDestacados'>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-12">
                     <GridDestacados/>
                     </div>
                 </div>
+            </div>
+            
+            <div>
+
             </div>
         </>
     )
