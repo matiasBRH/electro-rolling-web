@@ -66,12 +66,12 @@ const CategoryScreen = () => {
 window.onscroll = function() {scrollFunction()};
 
 const scrollFunction=()=> {
- const mybutton = document.getElementById("myBtn");
- if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-   mybutton.style.display = "block";
- } else {
-   mybutton.style.display = "none";
- }
+  const mybutton = document.getElementById("myBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
 
 // When the user clicks on the button, scroll to the top of the document
@@ -81,12 +81,12 @@ const topFunction=()=>{
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row mt-2">
         <div className="col-2">
             <div className="btn-group-vertical">
-                <button className="btn btn-primary"><NavLink className="nav-link" to="/category/televisores">Televisores</NavLink></button>
-                <button className="btn btn-primary"><NavLink className="nav-link" to="/category/celulares">Celulares</NavLink></button>
-                <button className="btn btn-primary"><NavLink className="nav-link" to="/category/heladeras">Heladeras</NavLink></button>
+                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/televisores">Televisores</NavLink></button>
+                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/celulares">Celulares</NavLink></button>
+                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/heladeras">Heladeras</NavLink></button>
             </div>    
         </div> 
 

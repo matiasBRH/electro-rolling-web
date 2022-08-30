@@ -8,6 +8,7 @@ import "../css/footer.css"
 const Footer = () => {
 
     return (
+        <footer>
 
             <div className="footer navbar-dark bg-dark text-white">
                 <div className="row">
@@ -52,6 +53,7 @@ const Footer = () => {
                     <p> &copy; Todos los derechos reservados para los creadores. R-M-R-S</p>
                 </div>
             </div>
+        </footer>
     )
 }
 

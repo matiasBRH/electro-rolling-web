@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {Link, NavLink, useNavigate} from "react-router-dom"
 import NumberFormat from 'react-number-format';
-import '../css/productDetails.css'
-import '../css/cssEffects.css'
-
 import { useParams } from "react-router-dom";
 import { getProductById } from "../helpers/fetchApi";
 
-const ProductDetails = () => {
+import '../css/productDetails.css'
+import '../css/cssEffects.css'
 
+const ProductDetails = () => {
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 // let tarea = document.getElementById("text_tarea");

@@ -68,6 +68,9 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i className="fa fa-star-o loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/admin">Administracion <i class="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>
+                            </li>
+                            <li className="nav-item">
                             <SearchProd/>
                             </li>
                         </ul>

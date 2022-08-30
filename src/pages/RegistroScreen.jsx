@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { postUsuario } from "../helpers/fetchApi";
-import '../css/registro.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from "react-router-dom"
+import '../css/registro.css';
 
 const RegistroScreen = () => {
 
