@@ -3,11 +3,12 @@ import about1 from "../assets/aboutus1.jpg"
 import about2 from "../assets/aboutus2.jpg"
 import about3 from "../assets/aboutus3.jpg"
 import "../css/destacados.css"
+import "../css/pantallaTotal.css"
 
 const AboutScreen = () => {
   return (
 
-    <div className="container">
+    <div className="container alturaParaFooter">
       <div className="row">
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">

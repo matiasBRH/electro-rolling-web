@@ -5,19 +5,3 @@
     
 }
 
-body {
-    display:flex;
-    flex-direction:column;
-    height: 100vh;
-    overflow-x: hidden;
-}
-
-.container-404{
-    display:flex;
-    flex-direction:column;
-    height: 43.66vh;
-}
-
-footer{
-    margin-top:auto;
-}

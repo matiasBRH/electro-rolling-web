@@ -31,10 +31,9 @@ const RoutesApp = () => {
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/favorites" element={<FavoritosScreen/>}/>
         <Route path="/register" element={<RegistroScreen/>}/>
-        <Route path="/password" element={<PasswordScreen/>}/>
-        <Route path="/search" element={<SearchScreen />} />             
+        <Route path="/password" element={<PasswordScreen/>}/>            
         <Route path="*" element={<ErrorScreen/>}/>        
-      </Routes>
+    </Routes>
     <Footer/>
     </>
   )

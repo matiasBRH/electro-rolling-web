@@ -3,7 +3,7 @@ import "../css/destacados.css"
 import emailjs from "emailjs-com"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import "../css/pantallaTotal.css"
 
 const ContactoScreen = () => {
 
@@ -41,7 +41,7 @@ const ContactoScreen = () => {
 
     return (
         <>
-            <div className="container my-4 back-e">
+            <div className="container alturaParaFooter my-4 back-e">
                 <div className="row">
                     <div className="col-sm-12 col-md-6 col-lg-6" id="fondo">
                         <h2> CONTACTO </h2>

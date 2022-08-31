@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import { buscarProducto } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
+import "../css/pantallaTotal.css"
 
 const SearchScreen = () => {
 //     console.log(useParams().id)

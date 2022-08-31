@@ -1,8 +1,10 @@
 import React from 'react'
-
+import "../css/pantallaTotal.css"
 const FavoritosScreen = () => {
   return (
-    <div>FavoritosScreen</div>
+    <div className="alturaParaFooter">
+
+    </div>
   )
 }
 

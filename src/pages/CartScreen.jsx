@@ -35,10 +35,10 @@ const CartScreen = () => {
   const agregarProdCarrito =()=>{
     let arrayID=0
     if (carrito.length==0){      
-       arrayID = 0
+        arrayID = 0
     } else {
-       arrayID = carrito[carrito.length - 1].id + 1;
-    }
+        arrayID = carrito[carrito.length - 1].id + 1;
+    } 
     
     let newProduct = {
       "id": arrayID,
@@ -49,7 +49,8 @@ const CartScreen = () => {
   }
 
   return (
-    <>
+
+    <div className="alturaParaFooter">
       <div className="container mt-5">
         <div className="row">
           <div className="col">
@@ -93,7 +94,7 @@ const CartScreen = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
