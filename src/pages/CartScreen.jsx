@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom"
 import TablaCart from '../components/TablaCart';
-import "../css/cartScreen.css"
 
 const CartScreen = () => {
 
@@ -10,20 +9,25 @@ const CartScreen = () => {
 
   useEffect(()=>{
     carrito.forEach((element) => {
-      console.log(element.precio)
-      setTotal(total+parseFloat(element.precio))
       
+      setTotal(total+parseFloat(element.precio))   
+      console.log(total)   
     });
     testing()    
-  }, []);
+  }, [carrito]);
 
   const testing =()=>{
     console.log(total)
   }
 
-  const deleteCart = () => {
-    
-      console.log("borrado");
+  const deleteCart = (id) => {    
+      console.log(id);
+      let carritoTemp=carrito
+      carritoTemp.splice(id, 1);
+      setCarrito([...carritoTemp])
+      console.log(carrito)
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      // juegos.splice(index, 1);
     
   };
 
@@ -59,7 +63,7 @@ const CartScreen = () => {
         <div className="row">        
           <div className='listado col-12 col-md-8 col-lg-8'>
               {carrito.map((producto, index) => (
-                <TablaCart key={index} producto={producto} deleteCart={deleteCart} />
+                <TablaCart key={index} index={index} producto={producto} deleteCart={deleteCart} />
                 ))}
           </div>
 
@@ -83,7 +87,7 @@ const CartScreen = () => {
 
               <hr />
               <div className="botones">
-                <button className='btn btn-success' onClick={agregarProdCarrito}>Pagar</button>
+                <button className='btn btn-success'>Pagar</button>
                 <button className='btn btn-danger'>Cancelar</button>
               </div>
           </div>

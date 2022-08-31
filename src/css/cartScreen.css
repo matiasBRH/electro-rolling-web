@@ -15,7 +15,7 @@
     width: 70px;
 }
 
-td button{
+.td-button{
     width: 50px;
 }
 
@@ -29,7 +29,7 @@ td button{
     transform: translateY(-3%);
 }
 
-tbody{
+.table_body{
     padding: 15px;
     display: flex;
     flex-direction: row;

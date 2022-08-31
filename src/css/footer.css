@@ -1,10 +1,19 @@
+footer{
+    margin-top:auto;
+}
+
+.footer{
+    margin-top:auto;
+}
+
 .img-logo-footer{
-    width: 180px;
+    width: 120px;
 }
 
 .col-links ul{
     list-style: none;
 }
+
 
 .col-links-2 ul{
     list-style: none;

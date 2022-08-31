@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {Link, NavLink, useNavigate} from "react-router-dom"
 import NumberFormat from 'react-number-format';
-import '../css/productDetails.css'
-import '../css/cssEffects.css'
-
 import { useParams } from "react-router-dom";
 import { getProductById } from "../helpers/fetchApi";
 
-const ProductDetails = () => {
+import '../css/productDetails.css'
+import '../css/cssEffects.css'
 
+const ProductDetails = () => {
 
 
 // let tarea = document.getElementById("text_tarea");
@@ -45,7 +44,7 @@ const ProductDetails = () => {
     if (carrito.length==0){      
        arrayID = 0
     } else {
-       arrayID = carrito[carrito.length - 1].id + 1;
+        arrayID = carrito[carrito.length - 1].id + 1;
     }
     
     let newProduct = {
@@ -59,7 +58,7 @@ const ProductDetails = () => {
   }
   
   return (
-   <main className="mt-5 pt-4">
+    <main className="mt-5">
     {loading ? (
       <div className="container">
         <div className="row">
@@ -68,8 +67,8 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-) :
-(
+      ) :
+      (
     <>
     <div className="container container-breadcrumb animate__animated animate__fadeIn">
         <nav aria-label="breadcrumb">
@@ -82,19 +81,12 @@ const ProductDetails = () => {
         </div>
 
     <div className="container dark-grey-text mt-5 animate__animated animate__fadeIn">        
-
       <div className="row wow fadeIn">
-
         <div className="col-md-6 mb-4 product-img-container pt-4 pb-4 card-details">
-
           <img src={post.img} className="img-fluid" alt=""/>
-
         </div>
-        <div className="col-md-6 mb-4">
-
-      
+        <div className="col-md-6 mb-4">    
           <div className="p-4">
-
             <div className="mb-3">
               <h2>{post.nombre}</h2>  
               <a href="">
@@ -112,6 +104,7 @@ const ProductDetails = () => {
             </p>
 
             <p className="lead font-weight-bold">Descripción</p>
+            
             <hr/>
 
             <p>{post.detalle}</p>
@@ -121,19 +114,11 @@ const ProductDetails = () => {
               <button className="btn btn-primary btn-md my-0 p" onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
                 <i className="fas fa-shopping-cart ml-1"></i>
               </button>
-
             </form>
 
           </div>
-
         </div>
-
       </div>
-
-
-     
-     
-
     </div>
     </>
     )}

@@ -11,7 +11,7 @@ const ModalLogin = ({ show, handleClose }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState([]);
 
   const validarDatos = () => {    
     const datos = {
@@ -20,7 +20,9 @@ const ModalLogin = ({ show, handleClose }) => {
     };
     postAuth(datos).then((respuesta) => {
       console.log(respuesta);
-      if (respuesta?.token) {
+
+      if (respuesta?.token) 
+      {
         setMessage({ ok: true, msg: "Login ok" });
         localStorage.setItem("token", JSON.stringify(respuesta.token));
         navigate("/");
@@ -49,7 +51,7 @@ const ModalLogin = ({ show, handleClose }) => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="*******" required/>
+                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="*******" minLength={6} maxLength={10} required/>
                 </div>
             </form>
             <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
@@ -65,7 +67,7 @@ const ModalLogin = ({ show, handleClose }) => {
                 Ingresar
             </Button>
             <Button variant="success" onClick={handleClose}>
-                Google
+                Cancelar
             </Button>
             
         </Modal.Footer>

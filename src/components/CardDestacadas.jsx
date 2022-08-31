@@ -15,7 +15,7 @@ const CardDestacadas = (props) => {
             <img src={producto.img} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h6 className="card-title">{producto.nombre}</h6>
-                <Link to={`/productos/${producto._id}`} className="btn btn-card-product btn-primary float-right img-wrap" data-abc="true">Ver producto</Link>
+                <Link to={`/productos/${producto._id}`} className="btn btn-card-product btn-success float-right img-wrap" data-abc="true">Ver producto</Link>
             </div>
         </div>
 

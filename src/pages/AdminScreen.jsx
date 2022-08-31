@@ -12,8 +12,8 @@ const AdminScreen = () => {
   
   return (
     <div className="container">
-      <button className="btn btn-primary mt-3 mb-3" onClick={()=>setAdminProducts(true)}>Administrar Productos</button>
-      <button className="btn btn-primary mt-3 mb-3 ms-3" onClick={()=>setAdminProducts(false)}>Administrar Usuarios</button>
+      <button className="btn btn-success mt-3 mb-3" onClick={()=>setAdminProducts(true)}>Administrar Productos</button>
+      <button className="btn btn-success mt-3 mb-3 ms-3" onClick={()=>setAdminProducts(false)}>Administrar Usuarios</button>
       {
         adminProducts ?
         (
