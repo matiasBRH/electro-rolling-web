@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link, NavLink, useNavigate} from "react-router-dom"
 import ModalLogin from "../components/ModalLogin"
-
 import logo from "../assets/icon.png"
 import SearchProd from './SearchProd';
 import "../css/navBar.css"

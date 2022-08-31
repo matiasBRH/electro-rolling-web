@@ -15,14 +15,14 @@ const AdminTableRowUsers = (props) => {
       <td>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          className="btn btn-warning me-1"
           onclick="showUserEditBox('+object['id']+')"
         >
           Edit
         </button>
         <button
           type="button"
-          className="btn btn-outline-danger"
+          className="btn btn-danger"
           onclick="userDelete('+object['id']+')"
         >
           Del
