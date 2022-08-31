@@ -10,14 +10,13 @@ import { getProductById } from "../helpers/fetchApi";
 const ProductDetails = () => {
 
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 // let tarea = document.getElementById("text_tarea");
 // carrito.push(tarea.value);
 // localStorage.setItem("carrito", JSON.stringify(carrito));
 
 
-
-  console.log(carrito)
+  
 
   const { id } = useParams();
   const [post, setPost] = useState({});
@@ -40,6 +39,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   const agregarCarrito=()=>{
    
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    console.log(carrito)
     let arrayID=0
     if (carrito.length==0){      
        arrayID = 0

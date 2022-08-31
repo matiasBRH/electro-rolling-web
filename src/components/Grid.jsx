@@ -14,6 +14,7 @@ const Grid = () => {
 
   const [loading, setLoading] = useState(true);
   const [mensaje, setMensaje] = useState("");
+  
   useEffect(()=>{
     getProduct(registro, limite).then((respuesta)=>{
       console.log(respuesta);

@@ -9,7 +9,7 @@ const Card = (props) => {
   return (
     <div className="col-12 col-md-6 col-lg-3 animate__animated animate__fadeIn">
     <div className="container d-flex justify-content-center">
-    <figure className="card card-product card-product-grid card-lg"> <Link to={`/productos/${producto._id}`} className="img-wrap" data-abc="true"><img src={producto.img}></img></Link>
+    <figure className="card card-product card-product-grid card-lg"><Link to={`/productos/${producto._id}`} className="img-wrap" data-abc="true"><img src={producto.img}></img></Link>
         <figcaption className="info-wrap">
             <div className="row">
                 <div className="col-md-9"> <a href="#" className="title card-title" data-abc="true">{producto.nombre}</a> </div>
