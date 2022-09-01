@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminTableRowProducts from '../components/AdminTableRowProducts';
-import { getAllProduct } from '../helpers/fetchApi';
+import { getAllProduct, deleteProduct } from '../helpers/fetchApi';
 import NuevoProducto from "../components/NuevoProducto"
 
 const AdminProducts = () => {
@@ -14,7 +14,9 @@ const AdminProducts = () => {
     
       const [loading, setLoading] = useState(true);
       const [mensaje, setMensaje] = useState("");
+      const [refresh, setRefresh] = useState(0)
     
+      
       useEffect(()=>{    
         getAllProduct().then((respuesta)=>{
           console.log(respuesta);
@@ -28,13 +30,40 @@ const AdminProducts = () => {
           }
           setLoading(false);
         });
-      }, [registro]);
+      }, [refresh]);
 
       // Seccion para abrir modal de Nuevo producto
       const [show, setShow] = useState(false);
 
       const handleShow = () => setShow(true);
       const handleClose = () => setShow(false);
+
+      const inactivarProducto = (id) => {    
+        deleteProduct(id).then((respuesta)=>{
+          console.log(respuesta);
+          if (respuesta?.msg) {
+            console.log(registro)
+            alert("Producto desactivado con exito.");
+            getAllProduct().then((respuesta)=>{
+              console.log(respuesta);
+              if (respuesta?.msg) {
+                setMensaje(respuesta.msg);
+              } else {
+                setPosts({
+                  products: respuesta.producto,
+                  total: respuesta.total,
+                });
+              }
+              setLoading(false);
+            });
+            setRefresh(refresh+1) 
+          } else {
+            console.log(registro)
+            
+          }
+          
+        });
+     };
 
 
   return (
@@ -70,7 +99,7 @@ const AdminProducts = () => {
               (
                 <>
             {posts.products.map((producto, index) => (
-              <AdminTableRowProducts key={producto._id} producto={producto} index={index} />
+              <AdminTableRowProducts key={producto._id} producto={producto} index={index} inactivarProducto={inactivarProducto} />
             ))}
                 </>
               )}

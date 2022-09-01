@@ -6,6 +6,7 @@ import NuevoProducto from "../components/NuevoProducto"
 
 const AdminTableRowProducts = (props) => {
   const { producto } = props;
+  const {inactivarProducto} = props
   const [index, setIndex] = useState(props.index)
   
 
@@ -30,9 +31,7 @@ const AdminTableRowProducts = (props) => {
         </button>
         <NuevoProducto show={show} handleClose={handleClose}/>
 
-        <button type="button" className="btn btn-danger" onClick="userDelete('+object['id']+')">
-          Del
-        </button>
+        <button type="button" className="btn btn-danger" onClick={event => inactivarProducto(producto._id)}>Inactivar</button>
       </td>
     </tr>
   );

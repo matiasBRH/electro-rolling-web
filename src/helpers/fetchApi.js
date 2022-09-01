@@ -39,8 +39,7 @@ export const postAuth = async (datos) => {
     },
   });
 
-  const data = await resp.json();
-  localStorage.setItem("dataUser", JSON.stringify({rol_user: data.usuario.role}));
+  const data = await resp.json();  
   return data;
 };
 
@@ -248,5 +247,19 @@ export const getProdCarrito = async () => {
 
   const data = await resp.json();
   console.log(data)
+  return data;
+};
+
+//eliminar producto
+export const deleteProduct = async (id) => {
+  const resp = await fetch(`${url}/productos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+    },
+  });
+  const data = await resp.json();
+
   return data;
 };

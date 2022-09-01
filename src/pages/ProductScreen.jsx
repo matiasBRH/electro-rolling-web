@@ -22,6 +22,7 @@ const { id } = useParams();
 const [post, setPost] = useState({});
 const [loading, setLoading] = useState(true);
 const [mensaje, setMensaje] = useState("");
+const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favoritos")) || [])
 const navigate = useNavigate();
 
 
@@ -64,6 +65,23 @@ const agregarCarrito=()=>{
   
   localStorage.setItem("carrito", JSON.stringify(carrito));
   navigate(`/cart`);
+}
+
+const agregarFavorito=()=>{
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  let arrayID=0
+  if (favoritos.length==0){      
+     arrayID = 0
+  } else {
+      arrayID = favoritos[favoritos.length - 1].id + 1;
+  }
+  
+  let newProduct = {
+    "id": arrayID,
+    "productID": id
+  };  
+  favoritos.push(newProduct);        
+  localStorage.setItem("favoritos", JSON.stringify(favoritos));
 }
 
   return (
@@ -138,7 +156,11 @@ const agregarCarrito=()=>{
             <form className="d-flex justify-content-left">
               <input id="itemCant" type="number" defaultValue="1" min="1" aria-label="Search" className="form-control" style={{width: 100}}/>
               <button className="btn btn-primary btn-md my-0 p"  onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
-              <i className="fa fa-shopping-cart fa-x text-white" aria-hidden="true"></i>
+                <div class='large-font text-center top-20' onClick={agregarFavorito}>
+                <ion-icon name="heart">
+                <div class='red-bg'></div>
+                </ion-icon>
+              </div>
               </button>
             </form>
 

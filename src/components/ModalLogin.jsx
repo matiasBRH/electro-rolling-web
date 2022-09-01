@@ -25,6 +25,7 @@ const ModalLogin = ({ show, handleClose }) => {
       {
         setMessage({ ok: true, msg: "Login ok" });
         localStorage.setItem("token", JSON.stringify(respuesta.token));
+        localStorage.setItem("dataUser", JSON.stringify(respuesta.usuario.role));
         navigate("/");
         handleClose();
         document.location.reload()
