@@ -86,11 +86,10 @@ const topFunction=()=>{
     <div class="sidebar">
       <h4>CATEGORIAS</h4>
       <NavLink className="nav-link" to="/category/televisores" >Televisores</NavLink>
-      <NavLink className="nav-link" to="/category/celulares" >Celulares</NavLink>   
-    
-    <NavLink to="/category/notebooks" className="nav-link">Notebooks</NavLink>
-    <NavLink to="/category/tablets" className="nav-link" >Tablets</NavLink>
-  </div>
+      <NavLink className="nav-link" to="/category/celulares" >Celulares</NavLink>    
+      <NavLink to="/category/notebooks" className="nav-link">Notebooks</NavLink>
+      <NavLink to="/category/tablets" className="nav-link" >Tablets</NavLink>
+    </div>
     <div className="container mt-3">
       <div className="row">
 

@@ -7,6 +7,7 @@ import { getProductById } from "../helpers/fetchApi";
 import '../css/productDetails.css'
 import '../css/cssEffects.css'
 import '../css/loaderProducto.css'
+import "../css/pantallaTotal.css"
 
 
 const ProductScreen = () => {
@@ -66,7 +67,8 @@ const agregarCarrito=()=>{
 }
 
   return (
-    <main className="mt-5">
+
+    <main className="mt-5 alturaParaFooter">
     {loading ? (
       <div className="div div-animation">
 

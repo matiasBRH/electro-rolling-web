@@ -37,7 +37,7 @@ const TablaCart = (props) => {
                         <td className='text-center colImg'><img className='imgCarrito' src={post.img}/></td>
                         <td className='me-5 listProd'><h6>{post.nombre}</h6></td>
                         <td className='ms-5 '><h6><NumberFormat value={post.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$ '} /></h6></td>
-                        <td ><button className="btn btn-danger btn-sm td-button" onClick={event => deleteCart(id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        <td ><button className="btn btn-danger btn-sm td-button mt-4" onClick={event => deleteCart(id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
                     </tbody>
                 </table>
             </div>

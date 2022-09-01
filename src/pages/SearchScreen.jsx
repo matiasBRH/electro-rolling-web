@@ -6,7 +6,7 @@ import { buscarProducto } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
 import '../css/sidebar.css'
 import '../css/grid.css'
-
+import "../css/pantallaTotal.css"
 
 const SearchScreen = () => {
 //     console.log(useParams().id)

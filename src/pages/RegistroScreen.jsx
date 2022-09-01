@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from "react-router-dom"
 import '../css/registro.css';
+import "../css/pantallaTotal.css"
 
 const RegistroScreen = () => {
 
@@ -55,7 +56,8 @@ const RegistroScreen = () => {
 
 
   return (
-    <div className="container mb-5 mt-5">
+    <div className="container alturaParaFooter mb-5 mt-5">
+      
       <div className="row my-3 mb-4 mt-5">
         <div className="col text-center">
           <h3>
@@ -64,6 +66,7 @@ const RegistroScreen = () => {
           </h3>
         </div>
       </div>
+
       <div className="row">
         <div className="col-12 col-md-6 offset-md-3">
         <form onSubmit={handleSubmit}>

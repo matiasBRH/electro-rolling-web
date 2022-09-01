@@ -29,13 +29,14 @@
     transform: translateY(-3%);
 }
 
-.table_body{
+#table_body{
+    background-color: white !important;
     padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 .sumador{

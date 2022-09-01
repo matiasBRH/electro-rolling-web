@@ -25,7 +25,7 @@ const AdminTableRowProducts = (props) => {
       <td>{producto.categoria}</td>
       <td><NumberFormat value={producto.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$'} /></td>
       <td>
-        <button type="button" className="btn btn-warning" onClick={handleShow}>
+        <button type="button" className="btn btn-warning me-1" onClick={handleShow}>
           Edit
         </button>
         <NuevoProducto show={show} handleClose={handleClose}/>
