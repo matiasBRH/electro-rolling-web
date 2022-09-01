@@ -1,51 +1,51 @@
 import React, { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom"
 import TablaCart from '../components/TablaCart';
-import "../css/cartScreen.css"
 
 const CartScreen = () => {
 
   const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
   const [total, setTotal] = useState(0)
+  const [refresh, setRefresh] = useState(0)
+  const [botonComprar, setBotonComprar] = useState(false)
 
   useEffect(()=>{
-    carrito.forEach((element) => {
-      console.log(element.precio)
-      setTotal(total+parseFloat(element.precio))
-      
+    carrito.forEach((element) => {      
+      setTotal(total+parseFloat(element.precio))   
+      console.log(total)   
     });
     testing()    
-  }, []);
+    if (carrito.length==0){            
+      setBotonComprar(false)      
+  } else {          
+      setBotonComprar(true)
+  }
+
+  }, [refresh]);
 
   const testing =()=>{
     console.log(total)
   }
 
-  const deleteCart = () => {
-    
-      console.log("borrado");
-    
+  const deleteCart = (id) => {    
+      console.log(id);
+      let carritoTemp=carrito
+      carritoTemp.splice(id, 1);
+      setCarrito([...carritoTemp])
+      console.log(carrito)
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      // juegos.splice(index, 1);
+      setRefresh(refresh+1)    
   };
 
 
-  const agregarProdCarrito =()=>{
-    let arrayID=0
-    if (carrito.length==0){      
-       arrayID = 0
-    } else {
-       arrayID = carrito[carrito.length - 1].id + 1;
-    }
-    
-    let newProduct = {
-      "id": arrayID,
-      "productID": "62fc443baacdf236b060ca9e"
-    };
-    setCarrito([...carrito, newProduct]);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+  const realizarCompra=()=>{
+
   }
 
   return (
-    <>
+
+    <div className="alturaParaFooter">
       <div className="container mt-5">
         <div className="row">
           <div className="col">
@@ -59,7 +59,7 @@ const CartScreen = () => {
         <div className="row">        
           <div className='listado col-12 col-md-8 col-lg-8'>
               {carrito.map((producto, index) => (
-                <TablaCart key={index} producto={producto} deleteCart={deleteCart} />
+                <TablaCart key={index} index={index} producto={producto} deleteCart={deleteCart} />
                 ))}
           </div>
 
@@ -83,13 +83,18 @@ const CartScreen = () => {
 
               <hr />
               <div className="botones">
-                <button className='btn btn-success' onClick={agregarProdCarrito}>Pagar</button>
-                <button className='btn btn-danger'>Cancelar</button>
+              {botonComprar
+              ? <button className='btn btn-success' onClick={realizarCompra}>Comprar</button>
+              : <button className='btn btn-success ' disabled >Comprar</button>
+              }
+
+               
+                <button className='btn btn-danger'>Vaciar Carrito</button>
               </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

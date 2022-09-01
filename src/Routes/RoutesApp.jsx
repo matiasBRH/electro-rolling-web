@@ -33,8 +33,10 @@ const RoutesApp = () => {
         <Route path="/register" element={<RegistroScreen/>}/>
         <Route path="/password" element={<PasswordScreen/>}/>
         <Route path="/search" element={<SearchScreen />} />             
+        <Route path="/404" element={<ErrorScreen/>}/>        
+        <Route path="/password" element={<PasswordScreen/>}/>            
         <Route path="*" element={<ErrorScreen/>}/>        
-      </Routes>
+    </Routes>
     <Footer/>
     </>
   )

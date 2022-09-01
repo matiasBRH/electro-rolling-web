@@ -39,8 +39,7 @@ export const postAuth = async (datos) => {
     },
   });
 
-  const data = await resp.json();
-
+  const data = await resp.json();  
   return data;
 };
 
@@ -130,6 +129,22 @@ export const buscarBlog = async (termino) => {
 //   return data;
 // };
 
+    //Agregar un producto
+    export const postProductos = async (datos) => {
+      const resp = await fetch(`${url}/productos`, {
+        method: "POST",
+        body: JSON.stringify(datos),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-token": JSON.parse(localStorage.getItem("token")),
+        },
+      });
+    
+      const data = await resp.json();
+    
+      return data;
+    };
+
 
     //Traer 10 productos
     export const getProduct = async (registro = 0,limite) => {
@@ -174,8 +189,9 @@ export const buscarBlog = async (termino) => {
     };
 
 
-    //Traer una producto por su id
+  //Traer una producto por su id
   export const getProductById = async (id) => {
+    try {
   const resp = await fetch(`${url}/productos/${id}`, {
     method: "GET",
     headers: {
@@ -186,6 +202,9 @@ export const buscarBlog = async (termino) => {
   const data = await resp.json();
 
   return data;
+} catch (error) {
+  console.log(error);
+}
 };
 
 //Busqueda de producto x nombre
@@ -228,5 +247,19 @@ export const getProdCarrito = async () => {
 
   const data = await resp.json();
   console.log(data)
+  return data;
+};
+
+//eliminar producto
+export const deleteProduct = async (id) => {
+  const resp = await fetch(`${url}/productos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+    },
+  });
+  const data = await resp.json();
+
   return data;
 };

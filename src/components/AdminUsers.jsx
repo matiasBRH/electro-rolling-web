@@ -54,7 +54,7 @@ const AdminUsers = () => {
       <tbody id="mytable">
 
       {loading ? (
-         <tr>
+          <tr>
           <th scope="row" colspan="5">Cargando...</th>
         </tr> 
         ) :

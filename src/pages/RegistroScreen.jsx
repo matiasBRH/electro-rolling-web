@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { postUsuario } from "../helpers/fetchApi";
-import '../css/registro.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from "react-router-dom"
+import '../css/registro.css';
+import "../css/pantallaTotal.css"
 
 const RegistroScreen = () => {
 
@@ -32,8 +33,10 @@ const RegistroScreen = () => {
     e.preventDefault();
 
     postUsuario(formValues).then((respuesta) => {
+
       console.log(respuesta);
-      if (respuesta?.errors) {
+
+      if (respuesta?.errors){
         setMessage(respuesta.errors);
       } else {
         // setMessage([{ ok: true, msg: "Registro exitoso!" }]);
@@ -51,8 +54,10 @@ const RegistroScreen = () => {
     });
   };
 
+
   return (
-    <div className="container mb-5 mt-5">
+    <div className="container alturaParaFooter mb-5 mt-5">
+      
       <div className="row my-3 mb-4 mt-5">
         <div className="col text-center">
           <h3>
@@ -61,6 +66,7 @@ const RegistroScreen = () => {
           </h3>
         </div>
       </div>
+
       <div className="row">
         <div className="col-12 col-md-6 offset-md-3">
         <form onSubmit={handleSubmit}>
@@ -94,10 +100,11 @@ const RegistroScreen = () => {
                 name="password"
                 value={formValues.password}
                 onChange={handleChange}
+                id="pass1"
                 required
               />
             </div>
-            {/* <div className="form-group">
+            <div className="form-group">
               <label>Repita la contraseña</label>
               <input
                 type="password"
@@ -105,9 +112,10 @@ const RegistroScreen = () => {
                 name="password"
                 value={formValues.p}
                 onChange={handleChange}
+                id="pass2"
                 required
               />
-            </div> */}
+            </div>
             <div className="d-grid">
             <button className="btn btn-success mt-3 px-2">Registrar</button>
             {/* <Button variant="success" onClick={handleShow}>Registrar</Button> */}
@@ -124,7 +132,6 @@ const RegistroScreen = () => {
           <NavLink className="nav-link" to="/"><Button variant="success" onClick={handleClose}>
             Regresar
           </Button></NavLink>
-         
         </Modal.Footer>
       </Modal>
   

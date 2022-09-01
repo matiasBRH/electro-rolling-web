@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { NavLink } from "react-router-dom";
@@ -8,10 +8,10 @@ import { postAuth } from "../helpers/fetchApi";
 const ModalLogin = ({ show, handleClose }) => {
 
     const navigate = useNavigate();
-
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState([]);
 
   const validarDatos = () => {    
     const datos = {
@@ -20,10 +20,15 @@ const ModalLogin = ({ show, handleClose }) => {
     };
     postAuth(datos).then((respuesta) => {
       console.log(respuesta);
-      if (respuesta?.token) {
+
+      if (respuesta?.token) 
+      {
         setMessage({ ok: true, msg: "Login ok" });
         localStorage.setItem("token", JSON.stringify(respuesta.token));
+        localStorage.setItem("dataUser", JSON.stringify(respuesta.usuario.role));
         navigate("/");
+        handleClose();
+        document.location.reload()
       } else {
         setMessage(respuesta);
       }
@@ -49,7 +54,7 @@ const ModalLogin = ({ show, handleClose }) => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="*******" required/>
+                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="*******" minLength={6} maxLength={10} required/>
                 </div>
             </form>
             <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
@@ -65,19 +70,17 @@ const ModalLogin = ({ show, handleClose }) => {
                 Ingresar
             </Button>
             <Button variant="success" onClick={handleClose}>
-                Google
+                Cancelar
             </Button>
             
         </Modal.Footer>
+        
         {message && (
-            <div
-              className={
-                message?.ok
+            <div className = {message?.ok
                   ? "alert alert-success mt-3"
                   : "alert alert-danger mt-3"
               }
-              role="alert"
-            >
+              role="alert">
               {message.msg}
             </div>
           )}

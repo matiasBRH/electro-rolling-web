@@ -12,3 +12,15 @@ li img{
         display: none;
     }
 }
+
+.container-categorias-home li{
+    background-color:rgb(185, 186, 248);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  display: inline-block;
+}
+.container-categorias-home img{
+    margin-top: 30px;
+    object-fit: contain;
+}

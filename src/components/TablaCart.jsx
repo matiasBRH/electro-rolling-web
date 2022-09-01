@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import NumberFormat from 'react-number-format';
 import { getProductById } from "../helpers/fetchApi";
+import "../css/cartScreen.css"
 
 const TablaCart = (props) => {
 
     console.log(props)
 
-    const {producto, deleteCart} = props.producto
+    const id = props.index
+    const {deleteCart} = props
     const [post, setPost] = useState({});
     const [loading, setLoading] = useState(true);
     const [mensaje, setMensaje] = useState("");
+
     
     useEffect(() => {
         getProductById(props.producto.productID).then((respuesta) => {
@@ -29,12 +32,12 @@ const TablaCart = (props) => {
 
         <div className="row">
             <div className="col">
-                <table className="table animate__animated animate__fadeIn">
+                <table className="table ">
                     <tbody id="table_body" className='m-2'>
                         <td className='text-center colImg'><img className='imgCarrito' src={post.img}/></td>
                         <td className='me-5 listProd'><h6>{post.nombre}</h6></td>
                         <td className='ms-5 '><h6><NumberFormat value={post.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$ '} /></h6></td>
-                        <td ><button className="btn btn-danger btn-sm" onClick={deleteCart}><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        <td ><button className="btn btn-danger btn-sm td-button mt-4" onClick={event => deleteCart(id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
                     </tbody>
                 </table>
             </div>
