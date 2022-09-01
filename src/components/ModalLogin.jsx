@@ -73,15 +73,13 @@ const ModalLogin = ({ show, handleClose }) => {
             </Button>
             
         </Modal.Footer>
+        
         {message && (
-            <div
-              className={
-                message?.ok
+            <div className = {message?.ok
                   ? "alert alert-success mt-3"
                   : "alert alert-danger mt-3"
               }
-              role="alert"
-            >
+              role="alert">
               {message.msg}
             </div>
           )}

@@ -111,7 +111,7 @@ const ProductDetails = () => {
 
             <form className="d-flex justify-content-left">
               <input type="number" value="1" aria-label="Search" className="form-control" style={{width: 100}}/>
-              <button className="btn btn-primary btn-md my-0 p" onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
+              <button className="btn btn-success btn-md my-0 p" onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
                 <i className="fas fa-shopping-cart ml-1"></i>
               </button>
             </form>

@@ -9,3 +9,7 @@
     border-radius: 5px;
     line-height: 1.7;
 }
+
+.alturaParaFooter{
+    min-height:44.5vh;
+}
