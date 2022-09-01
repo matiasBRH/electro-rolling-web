@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import { buscarProducto } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
+import '../css/sidebar.css'
+import '../css/grid.css'
+
 
 const SearchScreen = () => {
 //     console.log(useParams().id)
@@ -32,7 +35,7 @@ useEffect(() => {
     } else {
       setPosts({
         products: respuesta.results,
-        total: respuesta.results.length,
+        total: respuesta.total,
       });
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
@@ -80,15 +83,19 @@ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 return (
+  <>
+    {/* <div class="sidebar">
+      <h4>CATEGORIAS</h4>
+      <NavLink className="nav-link" to="/category/televisores" >Televisores</NavLink>
+      <NavLink className="nav-link" to="/category/celulares" >Celulares</NavLink>    
+      <NavLink to="/category/notebooks" className="nav-link">Notebooks</NavLink>
+      <NavLink to="/category/tablets" className="nav-link" >Tablets</NavLink>
+    </div> */}
   <div className="container">
     <div className="row">
-      <div className="col-2">
-          <div className="btn-group-vertical">
-              <button className="btn btn-primary"><NavLink className="nav-link" to="/category/televisores">Televisores</NavLink></button>
-              <button className="btn btn-primary"><NavLink className="nav-link" to="/category/celulares">Celulares</NavLink></button>
-              <button className="btn btn-primary"><NavLink className="nav-link" to="/category/heladeras">Heladeras</NavLink></button>
-          </div>    
-      </div> 
+      
+     
+      
 
       {loading ? (
     <div className="container">
@@ -100,9 +107,10 @@ return (
     </div>
 ) :
 (
-      <div className="col-10 col-md-10">
+      <div className="col">
         
         <h3>Resultados de la búsqueda: "{termino}"</h3>
+        <h4>Se encontraron {posts.total} resultados</h4>
         <hr />
 
         {posts.total > 0 ? (
@@ -134,7 +142,7 @@ return (
     </div>
     <button onClick={topFunction} id="myBtn" title="Ir arriba">Top</button>
   </div>
-  
+  </>
 );
 };
 

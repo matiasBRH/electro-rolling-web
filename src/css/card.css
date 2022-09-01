@@ -2,6 +2,10 @@
     background-color: red !important;
 } */
 
+.col-20{
+    width: calc(100% / 5);
+  }
+
 .card-product a {
     text-decoration: none !important
 }

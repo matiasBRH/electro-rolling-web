@@ -192,6 +192,7 @@ export const buscarBlog = async (termino) => {
 
   //Traer una producto por su id
   export const getProductById = async (id) => {
+    try {
   const resp = await fetch(`${url}/productos/${id}`, {
     method: "GET",
     headers: {
@@ -202,6 +203,9 @@ export const buscarBlog = async (termino) => {
   const data = await resp.json();
 
   return data;
+} catch (error) {
+  console.log(error);
+}
 };
 
 //Busqueda de producto x nombre

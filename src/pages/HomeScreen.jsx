@@ -56,7 +56,7 @@ const HomeScreen = () => {
                 </div>
                 <hr />
             </div>
-
+            <div className="container-fluid banner-novedades"><img src="https://images.milledcdn.com/2021-02-06/MI0Kgvo9M2aKZsrb/1XyvzbdlR2ba.jpeg" alt="" /></div>
             <div className="container mt-5" id='prodDestacados'>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-12">

@@ -12,14 +12,14 @@ const Card = (props) => {
     <figure className="card card-product card-product-grid card-lg"><Link to={`/productos/${producto._id}`} className="img-wrap" data-abc="true"><img src={producto.img}></img></Link>
         <figcaption className="info-wrap">
             <div className="row">
-                <div className="col-md-9"> <a href="#" className="title card-title" data-abc="true">{producto.nombre}</a> </div>
-                <div className="col-md-3">
+                <div className="col-md-9"><h6><a href="#" className="" data-abc="true">{producto.nombre}</a> </h6> </div>
+                {/* <div className="col-md-3">
                     <div className="rating text-right"> <i className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i> </div>
-                </div>
+                </div> */}
             </div>
         </figcaption>
         <div className="bottom-wrap"> <Link className="btn btn-card-product btn-primary float-right" data-abc="true" to={`/productos/${producto._id}`}> Ver Info </Link>
-            <div className="price-wrap"> <span className="price h5"><NumberFormat value={producto.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$'} /></span> <br></br> <small className="text-success">Envío Gratis</small> </div>
+            <div className="price-wrap mt-3"> <span className="price h5"><NumberFormat value={producto.precio} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$'} /></span> <br></br> <small className="text-success">Envío Gratis</small> </div>
         </div>
     </figure>
     </div>

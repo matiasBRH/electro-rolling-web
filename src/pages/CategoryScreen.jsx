@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import { buscarProductoCategoria } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
+import '../css/sidebar.css'
+import '../css/grid.css'
 
 const CategoryScreen = () => {
 //     console.log(useParams().id)
@@ -80,15 +82,17 @@ const topFunction=()=>{
 }
 
   return (
-    <div className="container">
-      <div className="row mt-2">
-        <div className="col-2">
-            <div className="btn-group-vertical">
-                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/televisores">Televisores</NavLink></button>
-                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/celulares">Celulares</NavLink></button>
-                <button className="btn btn-success mb-1 rounded"><NavLink className="nav-link" to="/category/heladeras">Heladeras</NavLink></button>
-            </div>    
-        </div> 
+    <>
+    <div class="sidebar">
+      <h4>CATEGORIAS</h4>
+      <NavLink className="nav-link" to="/category/televisores" >Televisores</NavLink>
+      <NavLink className="nav-link" to="/category/celulares" >Celulares</NavLink>   
+    
+    <NavLink to="/category/notebooks" className="nav-link">Notebooks</NavLink>
+    <NavLink to="/category/tablets" className="nav-link" >Tablets</NavLink>
+  </div>
+    <div className="container mt-3">
+      <div className="row">
 
         {loading ? (
       <div className="container">
@@ -100,9 +104,9 @@ const topFunction=()=>{
       </div>
 ) :
 (
-        <div className="col-10 col-md-10">
+        <div className="col columnasProducto">
           
-          <h3>Resultados de la búsqueda: "{id}"</h3>
+          <h1>{id.toUpperCase()}</h1>
           <hr />
 
           {posts.total > 0 ? (
@@ -134,7 +138,7 @@ const topFunction=()=>{
       </div>
       <button onClick={topFunction} id="myBtn" title="Ir arriba">Top</button>
     </div>
-    
+    </>
   );
 };
 
