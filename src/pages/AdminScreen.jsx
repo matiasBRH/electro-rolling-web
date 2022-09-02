@@ -5,9 +5,6 @@ import Compras from "../components/Compras";
 import '../css/cssEffects.css'
 import "../css/pantallaTotal.css"
 
-
-// import { listaProductos } from "../data/products";
-
 const AdminScreen = () => {
   const [adminProducts, setAdminProducts] = useState(0)
   

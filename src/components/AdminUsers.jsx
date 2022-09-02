@@ -34,9 +34,6 @@ const AdminUsers = () => {
     <>
     <div className="d-flex bd-highlight mb-3">
     <div className="me-auto p-2 bd-highlight"><h2>Lista de Usuarios:</h2></div>
-    {/* <div className="p-2 bd-highlight">
-      <button type="button" className="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
-    </div> */}
   </div>
   
   <div className="table-responsive">

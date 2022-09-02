@@ -19,16 +19,6 @@ const GridDestacados = () => {
           console.log(respuesta);
           setListaDestacados([...listaDestacadosTemp])
           console.log(listaDestacados)
-        //   if (respuesta?.msg) {
-        //     setMensaje(respuesta.msg);
-        //   } else {
-        //     setPosts({
-        //       products: respuesta.producto,
-        //       total: respuesta.total,
-        //     });
-        //     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        //   }
-        //   setLoading(false);
         });
       }, []);
 

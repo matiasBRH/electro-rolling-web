@@ -17,22 +17,11 @@ export const NavbarApp = () => {
     const resetUserInfo=()=>{
         localStorage.removeItem('dataUser')
         localStorage.removeItem('token')
-            setUserInfo({})
+        localStorage.setItem("carrito", JSON.stringify([]));
+        localStorage.setItem("favoritos", JSON.stringify([]));
+        setUserInfo({})
         return document.location.reload();
         };
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (inputValue) {
-
-        navigate(`/search/${inputValue}`);
-        // buscarBlog(inputValue).then((respuesta) => {
-        //   console.log(respuesta);
-        //   navigate(`/search/${inputValue}`);
-        // });
-        }
-    };
     
     useEffect(()=>{
 
