@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {NavLink} from "react-router-dom"
 import TablaCart from '../components/TablaCart';
+import "../css/pantallaTotal.css"
 
 const CartScreen = () => {
 

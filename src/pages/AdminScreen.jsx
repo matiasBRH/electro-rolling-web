@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminProducts from "../components/AdminProducts";
 import AdminUsers from "../components/AdminUsers";
 import '../css/cssEffects.css'
-
+import "../css/pantallaTotal.css"
 
 
 // import { listaProductos } from "../data/products";

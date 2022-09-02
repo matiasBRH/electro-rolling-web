@@ -3,7 +3,7 @@ import "../css/destacados.css"
 import emailjs from "emailjs-com"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import "../css/pantallaTotal.css"
+import "../css/contacto.css"
 
 const ContactoScreen = () => {
 

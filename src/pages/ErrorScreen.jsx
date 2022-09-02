@@ -1,8 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import "../css/pantallaTotal.css"
 
-import "../css/error.css"
+// import "../css/error.css"
 
 const ErrorScreen = () => {
   return (
