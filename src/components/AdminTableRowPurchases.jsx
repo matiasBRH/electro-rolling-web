@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import Moment from 'moment';
 
-const AdminTableRowUsers = (props) => {
+const AdminTableRowPurchases = (props) => {
   console.log(props)
-  const { user } = props;
+  const { compra } = props;
   const [index, setIndex] = useState(props.index)
-
+  
   return (
     <tr>
       <td>{index}</td>
-      <td>{user.nombre}</td>
-      <td>{user.email}</td>
-      <td>{user.role}</td>
-      <td>{user.estado ? "Activo" : "Desactivado"}</td>
-      <td>
+      <td>{Moment(compra.fecha).format('DD-MM-YYYY hh:mm:ss')}</td>
+      <td>{compra.producto.length}</td>
+      <td>{compra.usuario.email}</td>
+      {/* <td>{user.estado ? "Activo" : "Desactivado"}</td> */}
+      {/* <td>
         <button
           type="button"
           className="btn btn-warning me-1"
@@ -28,9 +29,9 @@ const AdminTableRowUsers = (props) => {
         >
           Del
         </button>
-      </td>
+      </td> */}
     </tr>
   );
 };
 
-export default AdminTableRowUsers;
+export default AdminTableRowPurchases;

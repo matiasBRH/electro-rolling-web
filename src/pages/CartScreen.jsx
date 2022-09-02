@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {NavLink} from "react-router-dom"
+import {NavLink, useNavigate} from "react-router-dom"
 import TablaCart from '../components/TablaCart';
+import NumberFormat from 'react-number-format';
+import PurchaseConfirm from '../components/PurchaseConfirm';
+import { postCompras } from "../helpers/fetchApi";
 
 const CartScreen = () => {
 
@@ -8,23 +11,34 @@ const CartScreen = () => {
   const [total, setTotal] = useState(0)
   const [refresh, setRefresh] = useState(0)
   const [botonComprar, setBotonComprar] = useState(false)
+  const [productos, setProductos] = useState([]);
+  const [body, setBody] = useState("");
+  const [mensaje, setMensaje] = useState([]);
+  const [thanks, setThanks] = useState(false)
+  const navigate = useNavigate();
+  
+  
 
-  useEffect(()=>{
-    carrito.forEach((element) => {      
-      setTotal(total+parseFloat(element.precio))   
-      console.log(total)   
-    });
-    testing()    
+  useEffect(()=>{    
+    calcularTotal()    
     if (carrito.length==0){            
       setBotonComprar(false)      
   } else {          
       setBotonComprar(true)
   }
 
-  }, [refresh]);
+  }, [refresh, thanks]);
 
-  const testing =()=>{
-    console.log(total)
+
+  const calcularTotal =()=>{
+    setTotal(0)  
+    let sumando=0      
+    console.log(carrito)
+    carrito.forEach((element) => {      
+      sumando=sumando+parseFloat(element.precio)
+      setTotal(sumando)
+      console.log(total)
+    });
   }
 
   const deleteCart = (id) => {    
@@ -40,61 +54,113 @@ const CartScreen = () => {
 
 
   const realizarCompra=()=>{
+    
+    let arreglo = [];
+    carrito.forEach((element) => {
+      const { productID } = element;
+      arreglo.push(productID);
+    });
+    
+    let datos = {
+      usuario: "6303f5aab2c76d7cec6899df",
+      producto: arreglo
+    };
+    console.log(datos)
+    
+    postCompras(datos).then((respuesta) => {
+      console.log(respuesta);
+      if (respuesta?.errors) {
+        setMensaje(respuesta.errors);
+      } else {      
+        setMensaje([{ msg: "Compra realizada!" }]);
+        setCarrito([])
+        console.log("compra")
+        localStorage.setItem("carrito", JSON.stringify([]));
+        setThanks("true")
+        setTimeout(() => {
+          setMensaje("");
+          console.log("compra tiempo")
+          navigate(`/`);
+        }, 3000);
+      }      
+      setTimeout(() => {
+        setMensaje("");
+        console.log("compra tiempo")
+      }, 3000);
+    });
+  };
 
+  const vaciarCarrito=()=>{
+    localStorage.setItem("carrito", JSON.stringify([]));
+    setCarrito([])    
+    setRefresh(refresh+1)    
   }
 
+
   return (
-
-    <div className="alturaParaFooter">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col">
-            <h1>Mi carrito 🛒</h1>
-            <hr />
-          </div>
-        </div>
-      </div>
-
-      <div className="container mainCarrito">
-        <div className="row">        
-          <div className='listado col-12 col-md-8 col-lg-8'>
-              {carrito.map((producto, index) => (
-                <TablaCart key={index} index={index} producto={producto} deleteCart={deleteCart} />
-                ))}
-          </div>
-
-          <div className="sumador card p-2 h-50 mb-3 col-6 col-md-3 col-lg-3">
-
-              <div className="subTotal">
-                  <h6 className="text-muted mb-1">Subtotal</h6>
-                  <h6 className='text-muted precio'>$</h6>
-              </div>
-
-              <div className="total">
-                  <h5 className="mb-1">Total</h5>
-                  <h5 className='precio'>$</h5>
-              </div>
-
-              <div className="mt-2 envio d-flex justify-content-start align-bottom">
-
-                <input type="text" className='form-control me-2 w-25' placeholder='C.P' required />
-                <NavLink to="/*" className="btn btn-warning me-2" >Calcular envio</NavLink>
-              </div>
-
+    <>
+    {thanks ? (
+      <PurchaseConfirm/>
+      ) : (
+        <div className="alturaParaFooter">
+        <div className="container mt-5">
+          <div className="row">
+            <div className="col">
+              <h1>Mi carrito 🛒</h1>
               <hr />
-              <div className="botones">
-              {botonComprar
-              ? <button className='btn btn-success' onClick={realizarCompra}>Comprar</button>
-              : <button className='btn btn-success ' disabled >Comprar</button>
-              }
+            </div>
+          </div>
+        </div>
+  
+        <div className="container mainCarrito">
+          <div className="row">        
+            <div className='listado col-12 col-md-8 col-lg-8'>
 
-               
-                <button className='btn btn-danger'>Vaciar Carrito</button>
-              </div>
+            {carrito.length==0 ? (
+              <h1>El carrito está vacio.</h1>
+              ) : (
+                carrito.map((producto, index) => (
+                  <TablaCart key={index} index={index} producto={producto} deleteCart={deleteCart} />
+                  ))
+                )}
+              
+            </div>
+  
+            <div className="sumador card p-2 h-50 mb-3 col-6 col-md-3 col-lg-3">
+  
+                {/* <div className="subTotal">
+                    <h6 className="text-muted mb-1">Subtotal</h6>
+                    <h6 className='text-muted precio'>$</h6>
+                </div> */}
+  
+                <div className="total">
+                    <h3 className="ms-1 mt-3">Total: <NumberFormat value={total} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={'2'} fixedDecimalScale={true} prefix={'$ '} /></h3>
+                    {/* <h5 className='precio'>$</h5> */}
+                </div>
+  
+                <div className="mt-2 envio d-flex justify-content-start align-bottom">
+  
+                  {/* <input type="text" className='form-control me-2 w-25' placeholder='C.P' required />
+                  <NavLink to="/*" className="btn btn-warning me-2" >Calcular envio</NavLink> */}
+                </div>
+  
+                <hr />
+                <div className="botones">
+                {botonComprar
+                ? <button className='btn btn-success' onClick={realizarCompra}>Comprar</button>
+                : <button className='btn btn-success ' disabled >Comprar</button>
+                }
+  
+                 
+                  <button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+     )}
+</>
+    
   )
 }
 

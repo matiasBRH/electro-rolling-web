@@ -36,7 +36,10 @@ const AdminProducts = () => {
       const [show, setShow] = useState(false);
 
       const handleShow = () => setShow(true);
-      const handleClose = () => setShow(false);
+      const handleClose = () => {
+        setShow(false);
+        setRefresh(refresh+1) 
+      }
 
       const inactivarProducto = (id) => {    
         deleteProduct(id).then((respuesta)=>{

@@ -263,3 +263,36 @@ export const deleteProduct = async (id) => {
 
   return data;
 };
+
+
+  //Agregar una compra
+  export const postCompras = async (datos) => {
+    const resp = await fetch(`${url}/compras`, {
+      method: "POST",
+      body: JSON.stringify(datos),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+    });
+  
+    const data = await resp.json();
+  
+    return data;
+  };
+
+
+
+  //Traer todos las compras
+  export const getPurchase = async () => {
+    const resp = await fetch(`${url}/compras`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+    });
+    const data = await resp.json();
+    console.log(data)
+    return data;
+  };

@@ -55,7 +55,7 @@ const AdminUsers = () => {
 
       {loading ? (
           <tr>
-          <th scope="row" colspan="5">Cargando...</th>
+          <th scope="row" colSpan="5"><div className="lds-ring"><div></div><div></div><div></div><div></div></div>Cargando...</th>
         </tr> 
         ) :
         (
