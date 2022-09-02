@@ -39,7 +39,8 @@ export const postAuth = async (datos) => {
     },
   });
 
-  const data = await resp.json();  
+  const data = await resp.json();
+  localStorage.setItem("dataUser", JSON.stringify({rol_user: data.usuario.role}));
   return data;
 };
 

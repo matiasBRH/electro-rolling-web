@@ -28,7 +28,7 @@ const [mensaje, setMensaje] = useState("");
 const [productos, setProductos] = useState([]);
 
 useEffect(() => {
-  buscarProducto(termino, registro, ).then((respuesta) => {
+  buscarProducto(termino, registro, limite).then((respuesta) => {
     console.log(respuesta);
     if (respuesta?.msg) {
       setMensaje(respuesta.msg);
