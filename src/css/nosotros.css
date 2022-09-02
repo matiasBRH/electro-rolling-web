@@ -1,0 +1,15 @@
+.alturaParaFooter{
+    min-height:75vh;
+}
+
+.bannerAboutUs{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+}
+
+.bannerAboutUs img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}

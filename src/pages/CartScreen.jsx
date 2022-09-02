@@ -4,6 +4,7 @@ import TablaCart from '../components/TablaCart';
 import NumberFormat from 'react-number-format';
 import PurchaseConfirm from '../components/PurchaseConfirm';
 import { postCompras } from "../helpers/fetchApi";
+import "../css/pantallaTotal.css"
 
 const CartScreen = () => {
 

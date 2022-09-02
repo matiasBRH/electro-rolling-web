@@ -12,7 +12,7 @@ const PasswordScreen = () => {
 
 
   return (
-    <div className="container alturaParaFooter mb-5 mt-5">
+    <div className="container alturaParaFooter mt-5">
 
       <div className="row my-3 mb-4 mt-5">
         <div className="col text-center">

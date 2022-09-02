@@ -115,7 +115,7 @@ return (
 </div>
 ) :
 (
-      <div className="col">
+      <div className="col mt-4">
         
         <h3>Resultados de la búsqueda: "{termino}"</h3>
         <h4>Se encontraron {posts.total} resultados</h4>

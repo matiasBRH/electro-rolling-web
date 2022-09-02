@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminTableRowProducts from '../components/AdminTableRowProducts';
-import { getAllProduct, deleteProduct } from '../helpers/fetchApi';
+import { getProduct, deleteProduct } from '../helpers/fetchApi';
 import NuevoProducto from "../components/NuevoProducto"
 
 const AdminProducts = () => {
@@ -10,15 +10,18 @@ const AdminProducts = () => {
         total: 0,
       });
     
-      const [registro, setRegistro] = useState(0);
+      // const [registro, setRegistro] = useState(0);
     
       const [loading, setLoading] = useState(true);
       const [mensaje, setMensaje] = useState("");
       const [refresh, setRefresh] = useState(0)
+
+      const registro = 0;  
+      const limite = 200;  
     
       
       useEffect(()=>{    
-        getAllProduct().then((respuesta)=>{
+        getProduct(registro, limite).then((respuesta)=>{
           console.log(respuesta);
           if (respuesta?.msg) {
             setMensaje(respuesta.msg);

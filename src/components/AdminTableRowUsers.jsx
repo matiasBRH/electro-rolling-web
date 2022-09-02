@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const AdminTableRowUsers = (props) => {
-  console.log(props)
   const { user } = props;
   const [index, setIndex] = useState(props.index)
 

@@ -31,7 +31,7 @@ const RegistroScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     postUsuario(formValues).then((respuesta) => {
 
       console.log(respuesta);
@@ -56,7 +56,7 @@ const RegistroScreen = () => {
 
 
   return (
-    <div className="container alturaParaFooter mb-5 mt-5">
+    <div className="container alturaParaFooter mt-5">
       
       <div className="row my-3 mb-4 mt-5">
         <div className="col text-center">
@@ -109,8 +109,8 @@ const RegistroScreen = () => {
               <input
                 type="password"
                 className="form-control mb-2"
-                name="password"
-                value={formValues.p}
+                name="password2"
+                value={formValues.password2}
                 onChange={handleChange}
                 id="pass2"
                 required
