@@ -4,12 +4,12 @@ import "../css/pantallaTotal.css"
 
 import "../css/error.css"
 
-const ErrorScreen = () => {
+const ContructionScreen = () => {
   
   return (
 
     <div className='container-404 alturaParaFooter container mt-5 '>
-      <img src="https://cdn.dribbble.com/users/366584/screenshots/2527274/media/d12508b6af16c7ffc53596fcecd96988.gif" alt="" />
+      <img src="https://us.lifelovingfoods.com/wp-content/uploads/2020/12/under-construction-gif-11.gif" alt="" />
       <div className="row">
       <div className="col text-center">
       <p>Esta pagina no se encuentra disponible en estos momentos. Disculpa las molestias</p>
@@ -23,4 +23,4 @@ const ErrorScreen = () => {
   )
 }
 
-export default ErrorScreen
+export default ContructionScreen

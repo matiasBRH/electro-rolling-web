@@ -24,8 +24,7 @@ const ModalLogin = ({ show, handleClose }) => {
       if (respuesta?.token) 
       {
         setMessage({ ok: true, msg: "Login ok" });
-        localStorage.setItem("token", JSON.stringify(respuesta.token));
-        localStorage.setItem("dataUser", JSON.stringify(respuesta.usuario.role));
+        localStorage.setItem("token", JSON.stringify(respuesta.token));        
         navigate("/");
         handleClose();
         document.location.reload()
@@ -54,19 +53,18 @@ const ModalLogin = ({ show, handleClose }) => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="*******" minLength={6} maxLength={10} required/>
+                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="***" minLength={6} maxLength={10} required/>
                 </div>
+                {/* <button className="btn btn-success" onClick={validarDatos}>Ingresar</button> */}
             </form>
             <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
             <NavLink to='/register'><Button variant='link' onClick={handleClose}>Registrate</Button></NavLink>
-
-
-            
+          
             
 
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="success" onClick={validarDatos}>
+            <Button variant="success" type="submit" onClick={validarDatos}>
                 Ingresar
             </Button>
             <Button variant="success" onClick={handleClose}>

@@ -40,6 +40,7 @@ const NuevoProducto = ({ show, handleClose }) => {
                     precio: "0",
                     img: ""
                 });
+                alert("Producto creado con éxito!")
                 handleClose()
                 setTimeout(() => {
                 setMessage([]);
@@ -87,7 +88,7 @@ const NuevoProducto = ({ show, handleClose }) => {
                         </div>
                         <div className="form-group">
                            
-                           <button class="btn btn-primary" type='submit'>Guardar</button>
+                           <button class="btn btn-success" type='submit'>Guardar</button>
                         </div>
                     </form>
                     {message.length > 0 &&
@@ -110,9 +111,9 @@ const NuevoProducto = ({ show, handleClose }) => {
                     <Button variant="danger" onClick={handleClose}>
                         Cerrar
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
+                    {/* <Button variant="success" onClick={handleClose}>
                         Guardar
-                    </Button>
+                    </Button> */}
                 </Modal.Footer>
             </Modal>
         </>

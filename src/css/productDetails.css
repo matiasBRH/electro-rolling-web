@@ -31,3 +31,9 @@
         border-style: none;
     }
 }
+
+
+.btn-fav{
+    border-style: none;
+    background-color: transparent;
+}

@@ -8,6 +8,7 @@ import RegistroScreen from '../pages/RegistroScreen'
 import SearchScreen from "../pages/SearchScreen";
 import PasswordScreen from '../pages/PasswordScreen'
 import ErrorScreen from '../pages/ErrorScreen';
+import ContructionScreen from '../pages/ContructionScreen';
 import HomeScreen from "../pages/HomeScreen";
 import Footer from "../components/Footer";
 import AdminScreen from "../pages/AdminScreen";
@@ -34,7 +35,8 @@ const RoutesApp = () => {
         <Route path="/password" element={<PasswordScreen/>}/>
         <Route path="/search" element={<SearchScreen />} />             
         <Route path="/404" element={<ErrorScreen/>}/>        
-        <Route path="/password" element={<PasswordScreen/>}/>            
+        <Route path="/password" element={<PasswordScreen/>}/>     
+        <Route path="/highlight" element={<ContructionScreen/>}/> 
         <Route path="*" element={<ErrorScreen/>}/>        
     </Routes>
     <Footer/>

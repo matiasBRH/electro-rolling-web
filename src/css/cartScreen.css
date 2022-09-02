@@ -72,3 +72,19 @@
         display: none;
     }
 }
+
+.thanks-purchase{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    /* position: absolute; */
+    
+}
+
+.thanks-purchase img{
+    margin: auto;  /* Magic! */
+    max-width: 100%;
+    height: 70vh;
+    object-fit: contain;
+  
+}

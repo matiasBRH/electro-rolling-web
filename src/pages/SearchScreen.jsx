@@ -98,16 +98,24 @@ return (
       
 
       {loading ? (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="loader">Loading...</div>
-        </div>
-      </div>
-    </div>
+ <div className="div div-animation">
+
+
+ <div className="divSpinner" id="containerSpinner">
+ <svg viewBox="0 0 100 100">
+   <defs>
+     <filter id="shadow">
+       <feDropShadow dx="0" dy="0" stdDeviation="1.5" 
+         floodColor="#fc6767"/>
+     </filter>
+   </defs>
+   <circle id="spinner" cx="50" cy="50" r="45"/>
+</svg>
+</div>
+</div>
 ) :
 (
-      <div className="col">
+      <div className="col mt-4">
         
         <h3>Resultados de la búsqueda: "{termino}"</h3>
         <h4>Se encontraron {posts.total} resultados</h4>

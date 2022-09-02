@@ -79,7 +79,7 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" aria-current="page" to="/">Home <i className="fa fa-home loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/*">Destacado <i className="fa fa-thumb-tack loguito" aria-hidden="true"></i></NavLink>
+                                <NavLink className="nav-link" to="/highlight">Destacado <i className="fa fa-thumb-tack loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/contacto">Contacto <i className="fa fa-commenting-o loguito" aria-hidden="true"></i></NavLink>

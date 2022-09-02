@@ -1,16 +1,20 @@
 import React from 'react'
-import about1 from "../assets/aboutus1.jpg"
+import about1 from "../assets/banner.jpg"
 import about2 from "../assets/aboutus2.jpg"
 import about3 from "../assets/aboutus3.jpg"
 import "../css/destacados.css"
-import "../css/pantallaTotal.css"
+import "../css/nosotros.css"
 
 const AboutScreen = () => {
   return (
-
+    <>
+    <div className=" bannerAboutUs">
+          <img src={about1} alt="banner"/>
+        </div>
     <div className="container alturaParaFooter">
       <div className="row">
-        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        
+        {/* <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={about1} className='d-block w-100' alt="1" />
@@ -22,7 +26,7 @@ const AboutScreen = () => {
               <img src={about3} className="d-block w-100" alt="3" />
             </div>
           </div> 
-        </div>
+        </div> */}
       </div>
       <div className="row my-3">
         <div className="col-sm-12 col-md-6 col-lg-6">
@@ -50,6 +54,7 @@ const AboutScreen = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

@@ -3,6 +3,8 @@ import {Link, NavLink, useNavigate} from "react-router-dom"
 import NumberFormat from 'react-number-format';
 import { useParams } from "react-router-dom";
 import { getProductById } from "../helpers/fetchApi";
+import fav from "../assets/fav.png"
+import favNot from "../assets/favNot.png"
 
 import '../css/productDetails.css'
 import '../css/cssEffects.css'
@@ -23,10 +25,20 @@ const [post, setPost] = useState({});
 const [loading, setLoading] = useState(true);
 const [mensaje, setMensaje] = useState("");
 const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favoritos")) || [])
+const [star, setStar] = useState(false)
 const navigate = useNavigate();
 
 
 useEffect(() => {
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];  
+  if (favoritos.find(element => element == id)) {
+    console.log("esta en fav")
+    setStar(true)
+  } else{
+    console.log("no esta en fav")
+    setStar(false )
+  }
+  console.log(star)
   getProductById(id).then((respuesta) => {
     console.log(respuesta);
     if (respuesta.errors) {      
@@ -39,7 +51,7 @@ useEffect(() => {
   }).catch((respuesta)=>{
     
   });
-}, [id]);
+}, [id, star]);
 
 const agregarCarrito=()=>{
  
@@ -68,20 +80,23 @@ const agregarCarrito=()=>{
 }
 
 const agregarFavorito=()=>{
-  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-  let arrayID=0
-  if (favoritos.length==0){      
-     arrayID = 0
-  } else {
-      arrayID = favoritos[favoritos.length - 1].id + 1;
-  }
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];  
   
-  let newProduct = {
-    "id": arrayID,
-    "productID": id
-  };  
-  favoritos.push(newProduct);        
-  localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  let fav = id
+  if (favoritos.find(element => element == id)) {
+
+    let borrar = favoritos.indexOf(id);
+      if ( borrar !== -1) {
+        favoritos.splice(borrar, 1);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        setStar(false)
+}
+  } else{
+    favoritos.push(fav);        
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    setStar(true)
+  }
+  console.log(favoritos)
 }
 
   return (
@@ -132,7 +147,13 @@ const agregarFavorito=()=>{
         <div className="col-md-6 mb-4">    
           <div className="p-4">
             <div className="mb-3">
-              <h2>{post.nombre}<button className="btn btn-danger"></button></h2>  
+            {star ? (
+              <button  className="btn-fav" onClick={agregarFavorito}><img src={fav} alt=""></img></button>
+                ) : (
+              <button  className="btn-fav" onClick={agregarFavorito}><img src={favNot} alt=""></img></button>
+            )}    
+            
+              <h2>{post.nombre}</h2>  
               <a href="">
                 <span className="badge bg-success mr-1"><Link className="text-decoration-none link-unstyled text-white" to={`/category/${post.categoria.toLowerCase()}`}>{post.categoria}</Link></span>
               </a>
@@ -155,12 +176,8 @@ const agregarFavorito=()=>{
 
             <form className="d-flex justify-content-left">
               <input id="itemCant" type="number" defaultValue="1" min="1" aria-label="Search" className="form-control" style={{width: 100}}/>
-              <button className="btn btn-primary btn-md my-0 p"  onClick={agregarCarrito} type="submit">AGREGAR AL CARRO
-                <div class='large-font text-center top-20' onClick={agregarFavorito}>
-                <ion-icon name="heart">
-                <div class='red-bg'></div>
-                </ion-icon>
-              </div>
+              <button className="btn btn-primary btn-md my-0 p"  onClick={agregarCarrito} type="submit">AGREGAR AL CARRITO
+              <i className="fa fa-shopping-cart ml-1 text-white"></i>
               </button>
             </form>
 

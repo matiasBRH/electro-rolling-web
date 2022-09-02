@@ -12,7 +12,7 @@ const BtnPaginacion = ({ registro, total, prevPage, nextPage }) => {
       </button>
       <button
         className="btn btn-primary"
-        disabled={total - registro <= 10 && true}
+        disabled={total - registro <= 8 && true}
         onClick={nextPage}
       >
         Siguiente
