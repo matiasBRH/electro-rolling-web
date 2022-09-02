@@ -12,10 +12,7 @@ const Card = (props) => {
     <figure className="card card-product card-product-grid card-lg "><Link to={`/productos/${producto._id}`} className="img-wrap" data-abc="true"><img src={producto.img}></img></Link>
         <figcaption className="info-wrap">
             <div className="row">
-                <div className="col-md-9 "><h6><Link to={`/productos/${producto._id}`} className="" data-abc="true">{producto.nombre}</Link> </h6> </div>
-                {/* <div className="col-md-3">
-                    <div className="rating text-right"> <i className="fa fa-star"></i> <i className="fa fa-star"></i> <i className="fa fa-star"></i> </div>
-                </div> */}
+                <div className="col-md-9 "><h6><Link to={`/productos/${producto._id}`} className="" data-abc="true">{producto.nombre}</Link> </h6> </div>               
             </div>
         </figcaption>
         <div className="bottom-wrap text-center"> <Link className="btn btn-card-product btn-primary float-right" data-abc="true" to={`/productos/${producto._id}`}> Ver Info </Link>

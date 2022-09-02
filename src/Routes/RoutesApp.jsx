@@ -18,7 +18,6 @@ import CategoryScreen from '../pages/CategoryScreen'
 
 const RoutesApp = () => {
   return (
-
     <>
     <NavbarApp />   
     <Routes >
