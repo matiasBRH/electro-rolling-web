@@ -5,13 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import { NavLink } from "react-router-dom";
 import { postAuth } from "../helpers/fetchApi";
 
-const ModalLogin = ({ show, handleClose }) => {
+const ModalLogin = ({ show, handleClose, setBoton, setShow }) => {
 
     const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
+
 
   const validarDatos = () => {    
     const datos = {
@@ -27,7 +28,9 @@ const ModalLogin = ({ show, handleClose }) => {
         localStorage.setItem("token", JSON.stringify(respuesta.token));        
         navigate("/");
         handleClose();
-        document.location.reload()
+        setShow(false)
+        setBoton(true)
+
       } else {
         setMessage(respuesta);
       }

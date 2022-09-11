@@ -22,6 +22,7 @@ const RegistroScreen = () => {
   const [message, setMessage] = useState([]);
 
   const handleChange = (e) => {
+    
     setFormValues({
       ...formValues,
       [e.target.name]: e.target.value,
@@ -40,7 +41,6 @@ const RegistroScreen = () => {
         setMessage(respuesta.errors);
       } 
       else {
-        // setMessage([{ ok: true, msg: "Registro exitoso!" }]);
         handleShow()
         setFormValues({
           nombre: "",
