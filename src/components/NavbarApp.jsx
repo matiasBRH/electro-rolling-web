@@ -33,7 +33,6 @@ export const NavbarApp = () => {
                 setUserInfo({role:JSON.parse(localStorage.getItem('dataUser')).rol_user})
         } 
         window.addEventListener('storage', storageEventHandler, false);
-        console.log("Hola guerra")
         console.log(userInfo.role)
 
     }, [location.pathname]);

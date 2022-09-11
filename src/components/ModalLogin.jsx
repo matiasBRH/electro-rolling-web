@@ -37,51 +37,49 @@ const ModalLogin = ({ show, handleClose }) => {
     return (
 
         <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-            <Modal.Title>
-                <h2>
-                    <i className="fa fa-user-circle-o me-3" aria-hidden="true"></i>
-                    Iniciar Sesion
-                </h2>
-            </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <form>
-                <div className="mb-3">
-                    <label className="form-label">Correo Electonico</label>
-                    <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com" required/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="***" minLength={6} maxLength={10} required/>
-                </div>
-                {/* <button className="btn btn-success" onClick={validarDatos}>Ingresar</button> */}
-            </form>
-            <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
-            <NavLink to='/register'><Button variant='link' onClick={handleClose}>Registrate</Button></NavLink>
-          
-            
+          <Modal.Header closeButton>
+              <Modal.Title>
+                  <h2>
+                      <i className="fa fa-user-circle-o me-3" aria-hidden="true"></i>
+                      Iniciar Sesion
+                  </h2>
+              </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+              <form>
+                  <div className="mb-3">
+                      <label className="form-label">Correo Electonico</label>
+                      <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com" required/>
+                  </div>
+                  <div className="mb-3">
+                      <label className="form-label">Contraseña</label>
+                      <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="***" minLength={6} maxLength={10} required/>
+                  </div>
+                  {/* <button className="btn btn-success" onClick={validarDatos}>Ingresar</button> */}
+              </form>
+              <NavLink to='/password'><Button variant='link' onClick={handleClose}>¿Olvidaste tu contraseña?</Button></NavLink>
+              <NavLink to='/register'><Button variant='link' onClick={handleClose}>Registrate</Button></NavLink>
+          </Modal.Body>
+          <Modal.Footer>
+              <Button variant="success" type="submit" onClick={validarDatos}>
+                  Ingresar
+              </Button>
+              <Button variant="success" onClick={handleClose}>
+                  Cancelar
+              </Button>
+              
+          </Modal.Footer>
 
-        </Modal.Body>
-        <Modal.Footer>
-            <Button variant="success" type="submit" onClick={validarDatos}>
-                Ingresar
-            </Button>
-            <Button variant="success" onClick={handleClose}>
-                Cancelar
-            </Button>
+          {message && (
+              <div className = {message?.ok
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert">
+                {message.msg}
+              </div>
+            )}
             
-        </Modal.Footer>
-        
-        {message && (
-            <div className = {message?.ok
-                  ? "alert alert-success mt-3"
-                  : "alert alert-danger mt-3"
-              }
-              role="alert">
-              {message.msg}
-            </div>
-          )}
         </Modal>
     );
 };
