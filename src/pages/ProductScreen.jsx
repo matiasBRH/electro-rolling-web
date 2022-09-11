@@ -175,7 +175,7 @@ const agregarFavorito=()=>{
             <p>{post.detalle}</p>
 
             <form className="d-flex justify-content-left">
-              <input id="itemCant" type="number" defaultValue="1" min="1" aria-label="Search" className="form-control" style={{width: 100}}/>
+              <input id="itemCant" type="number" defaultValue="1" min="1" max="10" aria-label="Search" className="form-control" style={{width: 100}}/>
               <button className="btn btn-primary btn-md my-0 p"  onClick={agregarCarrito} type="submit">AGREGAR AL CARRITO
               <i className="fa fa-shopping-cart ml-1 text-white"></i>
               </button>
