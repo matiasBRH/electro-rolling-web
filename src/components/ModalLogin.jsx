@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Form from 'react-bootstrap/Form';
 import { NavLink } from "react-router-dom";
 import { postAuth } from "../helpers/fetchApi";
 
@@ -64,10 +65,10 @@ const ModalLogin = ({ show, handleClose }) => {
 
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="success" type="submit" onClick={validarDatos}>
+            <Button variant="primary" type="submit" onClick={validarDatos}>
                 Ingresar
             </Button>
-            <Button variant="success" onClick={handleClose}>
+            <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>
             

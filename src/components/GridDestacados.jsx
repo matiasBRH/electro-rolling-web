@@ -27,11 +27,11 @@ const GridDestacados = () => {
 
         <>          
             
-            <div className="mt-5 mb-5 ps-5 pe-5 text-center d-flex justify-content-center align-baseline flex-wrap">
+            <div className="row mb-5 mt-3">
                     {listaDestacados.map((producto) => (
                         <CardDestacadas key={producto.id} producto={producto} />
                     ))}
-            </div>
+           </div>
         </>
     )
 }
