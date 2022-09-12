@@ -2,35 +2,43 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from 'react-bootstrap/Form';
 import { NavLink } from "react-router-dom";
 import { postAuth } from "../helpers/fetchApi";
 
 const ModalLogin = ({ show, handleClose }) => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
 
-  const validarDatos = () => {    
+  const validarDatos = () => {
     const datos = {
       email,
       password,
     };
+    console.log(datos)
     postAuth(datos).then((respuesta) => {
       console.log(respuesta);
 
       if (respuesta?.token) 
       {
-        setMessage({ ok: true, msg: "Login ok" });
-        localStorage.setItem("token", JSON.stringify(respuesta.token));        
-        navigate("/");
+        setMessage([{ ok: true, msg: "Login ok" }]);
+        localStorage.setItem("token", JSON.stringify(respuesta.token));
+        localStorage.setItem("dataUser",JSON.stringify({ rol_user: respuesta.usuario.role }));
         handleClose();
-        document.location.reload()
+        navigate("/");        
+        // document.location.reload()
+
+        console.log(message)
       } else {
-        setMessage(respuesta);
+        if (respuesta.errors){
+          setMessage(respuesta.errors);        
+        } else{
+          setMessage([respuesta]);        
+        }
+        
       }
     });
   };
@@ -54,7 +62,7 @@ const ModalLogin = ({ show, handleClose }) => {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="***" minLength={6} maxLength={10} required/>
+                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="***" required/>
                 </div>
                 {/* <button className="btn btn-success" onClick={validarDatos}>Ingresar</button> */}
             </form>
@@ -65,24 +73,29 @@ const ModalLogin = ({ show, handleClose }) => {
 
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="primary" type="submit" onClick={validarDatos}>
+            <Button variant="success" type="submit" onClick={validarDatos}>
                 Ingresar
             </Button>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="success" onClick={handleClose}>
                 Cancelar
             </Button>
             
         </Modal.Footer>
         
-        {message && (
-            <div className = {message?.ok
-                  ? "alert alert-success mt-3"
-                  : "alert alert-danger mt-3"
-              }
-              role="alert">
-              {message.msg}
-            </div>
-          )}
+        {message &&
+            message.map((item, index) => (
+              <div
+                className={
+                  item?.ok
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert"
+                key={index}
+              >
+                {item.msg}
+              </div>
+            ))}
         </Modal>
     );
 };
