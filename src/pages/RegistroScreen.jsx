@@ -3,6 +3,7 @@ import { postUsuario } from "../helpers/fetchApi";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from "react-router-dom"
+import Alerta from "../components/Alerta"
 import "../css/registro.css"
 
 const RegistroScreen = () => {
@@ -21,7 +22,7 @@ const RegistroScreen = () => {
   });
 
   const [message, setMessage] = useState([]);
-  const [message2, setMessage2] = useState([]);
+  const [alerta, setAlerta] = useState([]);
 
   const handleChange = (e) => {
     
@@ -39,7 +40,10 @@ const RegistroScreen = () => {
   
     if (pass1 !== pass2)
     {
-      alert("Las pass no coinciden")
+      setAlerta({
+        msg:"Las contraseñas no coinciden",
+        error: true
+      })
 
     }else {
       
@@ -68,6 +72,7 @@ const RegistroScreen = () => {
     }
   };
   
+  const {msg} = alerta
   
   return (
       <div className="container alturaParaFooter">     
@@ -85,19 +90,19 @@ const RegistroScreen = () => {
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Nombre</label>
-                <input type="text" className="form-control mb-2" name="nombre" value={formValues.nombre} onChange={handleChange} required/>
+                <input type="text" className="form-control mb-2" name="nombre" value={formValues.nombre} onChange={handleChange} maxLength="35" minLength="1" required/>
               </div>
               <div className="form-group">
                 <label>Correo</label>
-                <input type="email" className="form-control mb-2" name="email" value={formValues.email} onChange={handleChange} required/>
+                <input type="email" className="form-control mb-2" name="email" value={formValues.email} onChange={handleChange} maxLength="35"  required/>
               </div>
               <div className="form-group">
                 <label>Contraseña</label>
-                <input type="password" className="form-control mb-2" name="password"  value={formValues.password} onChange={handleChange} id="pass1" required/>
+                <input type="password" className="form-control mb-2" name="password"  value={formValues.password} onChange={handleChange} id="pass1" minLength="6" maxLength="12" required/>
               </div>
               <div className="form-group">
                 <label>Repita la contraseña</label>
-                <input type="password" className="form-control mb-2" name="password2" value={formValues.password2} onChange={handleChange} id="pass2" required/>
+                <input type="password" className="form-control mb-2" name="password2" value={formValues.password2} onChange={handleChange} id="pass2" minLength="6" maxLength="12" required/>
               </div>
               <div className="d-grid">
                 <button className="btn btn-success mt-3 px-2">Registrar</button>
@@ -119,6 +124,8 @@ const RegistroScreen = () => {
                 </Modal>
               </div>
             </form>
+
+            {msg && <Alerta alerta= {alerta}/>}
 
             {message.length > 0 &&
               message.map((item, index) => (
