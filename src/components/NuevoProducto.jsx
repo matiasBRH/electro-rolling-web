@@ -10,7 +10,7 @@ const NuevoProducto = ({ show, handleClose }) => {
         nombre: "",
         detalle: "",
         categoria: "",
-        precio: "0",
+        precio: "1",
         img: ""
     });
 
@@ -61,17 +61,17 @@ const NuevoProducto = ({ show, handleClose }) => {
                 <Modal.Body>
                     <form onSubmit={handleSubmit} >
                         <div className="form-group">
-                            <label>Nombre del producto</label>
-                            <input type="text"className="form-control mb-2" name="nombre" value={formValues.nombre} onChange={handleChange} required/>
+                            <label>Nombre del producto (3 a 30 caracteres)</label>
+                            <input type="text" className="form-control mb-2" pattern="[A-Z a-z 0-9]{3,30}" name="nombre" value={formValues.nombre} onChange={handleChange} required/>
                         </div>
                         <div className="form-group">
-                            <label>Detalle del producto</label>
-                            <input type="textarea"className="form-control mb-2" name="detalle" value={formValues.detalle} onChange={handleChange} required/>
+                            <label>Detalle del producto (3 a 100 caracteres) </label>
+                            <textarea  type="textarea"className="form-control mb-2" pattern="[A-Z a-z]{3,100}" name="detalle" rows="3" value={formValues.detalle} onChange={handleChange} required/>
                         </div>
                         <div className="form-group">
                             <label>Categoria</label>                            
                             <select class="form-select" aria-label="Default select example" name="categoria" value={formValues.categoria} onChange={handleChange} required>
-                                <option selected></option>
+                                <option selected>Elegir Categoria</option>
                                 <option value="CELULARES">CELULARES</option>
                                 <option value="HELADERAS">HELADERAS</option>
                                 <option value="NOTEBOOKS">NOTEBOOKS</option>
@@ -83,8 +83,8 @@ const NuevoProducto = ({ show, handleClose }) => {
                             <input type="text"className="form-control mb-2" name="img" value={formValues.img} onChange={handleChange} required/>
                         </div>
                         <div className="form-group">
-                            <label>Precio</label>
-                            <input type="number"className="form-control mb-2" name="precio" value={formValues.precio} onChange={handleChange} required/>
+                            <label>Precio $</label>
+                            <input type="number"className="form-control mb-2" name="precio" min="1" max="10000000" value={formValues.precio} onChange={handleChange} required/>
                         </div>
                         <div className="form-group">
                            
