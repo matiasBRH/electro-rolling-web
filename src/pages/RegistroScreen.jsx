@@ -7,6 +7,7 @@ import "../css/registro.css"
 
 const RegistroScreen = () => {
 
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,6 +21,7 @@ const RegistroScreen = () => {
   });
 
   const [message, setMessage] = useState([]);
+  const [message2, setMessage2] = useState([]);
 
   const handleChange = (e) => {
     
@@ -31,31 +33,42 @@ const RegistroScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    postUsuario(formValues).then((respuesta) => {
 
-      console.log(respuesta);
+    const pass1 = document.getElementById("pass1").value
+    const pass2 = document.getElementById("pass2").value
+  
+    if (pass1 !== pass2)
+    {
+      alert("Las pass no coinciden")
 
-      if (respuesta?.errors)
-      {
-        setMessage(respuesta.errors);
-      } 
-      else {
-        handleShow()
-        setFormValues({
-          nombre: "",
-          email: "",
-          password: "",
-          role: "USER_ROLE",
-        });
-        setTimeout(() => {
-          setMessage([]);
-        }, 2000);
-      }
-    });
+    }else {
+      
+      postUsuario(formValues).then((respuesta) => {
+        
+        console.log(respuesta);
+        
+        if (respuesta?.errors)
+        {
+          setMessage(respuesta.errors);
+        } 
+        else {
+
+          handleShow()
+          setFormValues({
+            nombre: "",
+            email: "",
+            password: "",
+            role: "USER_ROLE",
+          });
+          setTimeout(() => {
+            setMessage([]);
+          }, 2000);
+        }
+      });
+    }
   };
-
-
+  
+  
   return (
       <div className="container alturaParaFooter">     
         <div className="row my-3 mb-4 ">
@@ -80,7 +93,7 @@ const RegistroScreen = () => {
               </div>
               <div className="form-group">
                 <label>Contraseña</label>
-                <input type="password" className="form-control mb-2" name="password" value={formValues.password} onChange={handleChange} id="pass1" required/>
+                <input type="password" className="form-control mb-2" name="password"  value={formValues.password} onChange={handleChange} id="pass1" required/>
               </div>
               <div className="form-group">
                 <label>Repita la contraseña</label>
