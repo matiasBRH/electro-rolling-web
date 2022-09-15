@@ -15,6 +15,7 @@ import AdminScreen from "../pages/AdminScreen";
 import ProductScreen from "../pages/ProductScreen";
 import CartScreen from "../pages/CartScreen";
 import CategoryScreen from '../pages/CategoryScreen'
+import ProtectedRoutes from "../routes/ProtectedRoutes";
 
 const RoutesApp = () => {
   return (
@@ -24,7 +25,15 @@ const RoutesApp = () => {
         <Route path='/' element={<HomeScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
         <Route path="/contacto" element={<ContactoScreen/>}/>
-        <Route path="/admin" element={<AdminScreen/>}/>
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoutes>
+              <AdminScreen />
+            </ProtectedRoutes>
+          }
+        />
+        
         <Route path="/productos/:id" element={<ProductScreen/>}/>
         <Route path="/category/:id" element={<CategoryScreen/>}/>
         <Route path="/search/:termino" element={<SearchScreen/>}/>
@@ -35,7 +44,7 @@ const RoutesApp = () => {
         <Route path="/search" element={<SearchScreen />} />             
         <Route path="/404" element={<ErrorScreen/>}/>        
         <Route path="/password" element={<PasswordScreen/>}/>     
-        <Route path="/highlight" element={<ContructionScreen/>}/> 
+        <Route path="/highlight" element={<ContructionScreen/>}/>        
         <Route path="*" element={<ErrorScreen/>}/>        
     </Routes>
     <Footer/>
