@@ -20,8 +20,8 @@ const CartScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    calcularTotal();
-    if (carrito.length == 0) {
+    calcularTotal();    
+    if (carrito.length == 0 || JSON.parse(localStorage.getItem('dataUser'))==null) {
       setBotonComprar(false);
     } else {
       setBotonComprar(true);

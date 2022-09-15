@@ -38,15 +38,28 @@ useEffect(() => {
         total: respuesta.total,
       });
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
+    }    
     setLoading(false);
+    
   });
+
+  
 }, [termino, registro]);
+
+
 
 useEffect(() => {
   setRegistro(0)
 }, [termino])
 
+useEffect(() => {
+  let array = []
+  for (let index = 0; index < (posts.total/8)+1; index++) {
+    array.push("a")
+  }
+  console.log(array)
+
+}, [posts.total]);
 
 const nextPage = () => {
   if (posts.total - registro > 8) {
@@ -84,7 +97,7 @@ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
 return (
   <>
-    {/* <div class="sidebar">
+    {/* <div className="sidebar">
       <h4>CATEGORIAS</h4>
       <NavLink className="nav-link" to="/category/televisores" >Televisores</NavLink>
       <NavLink className="nav-link" to="/category/celulares" >Celulares</NavLink>    
@@ -143,6 +156,14 @@ return (
               <span className="text-muted">No se encontraron registros</span>
           )}
 
+
+            {/* <nav aria-label="...">
+              <ul className="pagination pagination-lg">
+                <li className="page-item"><a className="page-link" href="#" onClick={() => setRegistro("0")}>1</a></li>
+                <li className="page-item"><a className="page-link" href="#" onClick={() => setRegistro("8")} >2</a></li>
+                <li className="page-item"><a className="page-link" href="#" onClick={() => setRegistro("16")}>3</a></li>
+              </ul>
+            </nav> */}
       </div>
 )}
       

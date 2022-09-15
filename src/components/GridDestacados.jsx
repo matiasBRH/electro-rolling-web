@@ -29,7 +29,7 @@ const GridDestacados = () => {
             
             <div className="row mb-5 mt-3">
                     {listaDestacados.map((producto) => (
-                        <CardDestacadas key={producto.id} producto={producto} />
+                        <CardDestacadas key={producto._id} producto={producto} />
                     ))}
            </div>
         </>

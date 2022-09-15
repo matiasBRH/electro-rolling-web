@@ -7,7 +7,7 @@ li img{
     height: 150px;
 }
 
-@media screen and (max-width: 590px){
+@media screen and (max-width: 800px){
     #categoriasHome{
         display: none;
     }
