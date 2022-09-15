@@ -13,14 +13,14 @@ const GridDestacados = () => {
     
     useEffect(()=>{
         getProduct(registro, limite).then((respuesta)=>{
-          let listaDestacadosTemp=respuesta.producto
-          listaDestacadosTemp = listaDestacadosTemp.reverse().slice(0, 10);
-          
-          console.log(respuesta);
-          setListaDestacados([...listaDestacadosTemp])
-          console.log(listaDestacados)
+            let listaDestacadosTemp=respuesta.producto
+            listaDestacadosTemp = listaDestacadosTemp.reverse().slice(0, 10);
+            
+            console.log(respuesta);
+            setListaDestacados([...listaDestacadosTemp])
+            console.log(listaDestacados)
         });
-      }, []);
+    }, []);
 
 
     return (

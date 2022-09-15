@@ -11,32 +11,49 @@ export const NavbarApp = () => {
     const [inputValue, setInputValue] = useState("");
     const [userData, setUserData] = useState({})
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
+    const [admin, setAdmin] = useState(false)
+    const [boton, setBoton] = useState(false) //false siendo que aparezca iniciar sesión
     const location = useLocation()
     const [userInfo,setUserInfo]=useState({role: undefined})
+    
 
+    
     const resetUserInfo=()=>{
         localStorage.removeItem('dataUser')
         localStorage.removeItem('token')
         localStorage.setItem("carrito", JSON.stringify([]));
         localStorage.setItem("favoritos", JSON.stringify([]));
         setUserInfo({})
-        return document.location.reload();
+        setBoton(false)
         };
-    
+        
+
     useEffect(()=>{
 
         setUserData(JSON.parse(localStorage.getItem('dataUser'))); 
 
         if (JSON.parse(localStorage.getItem('dataUser'))!==null) {
+
             console.log("OKEY")
             console.log(localStorage.getItem('dataUser').rol_user);
                 setUserInfo({role:JSON.parse(localStorage.getItem('dataUser')).rol_user})
         } 
         window.addEventListener('storage', storageEventHandler, false);
-        console.log("Hola guerra")
         console.log(userInfo.role)
 
-    }, [location.pathname]);
+        
+        if (userInfo.role !== undefined) {
+
+            setBoton(true);
+        }
+
+        if (boton && userInfo.role === "ADMIN_ROLE") {
+            setAdmin(true)
+        }else{
+            setAdmin(false)
+        }
+
+    }, [location.pathname, userInfo.role, boton]);
     
     function storageEventHandler() {
         setUserDataLocalStorage(JSON.parse(localStorage.getItem('dataUser')));  
@@ -50,8 +67,8 @@ export const NavbarApp = () => {
     const handleShow = () => setShow(true);
     
     return (
-        <>
 
+        <>
             <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark w-100'>
                 <div className="container-fluid ms-5">
                     <div className="logo me-5">
@@ -80,7 +97,8 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i className="fa fa-star-o loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                {userInfo.role === "ADMIN_ROLE" ?
+
+                                {admin ?
 
                                 (<NavLink className="nav-link" to="/admin">Administracion <i class="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>)
                                 
@@ -95,7 +113,8 @@ export const NavbarApp = () => {
 
                         <div className="d-flex me-2 d-flex align-baseline">
                             <div>
-                                {userInfo.role !== undefined ?
+                                
+                                {boton ?
                                 (<button className="btn btn-danger me-2" onClick={resetUserInfo}>
                                     Cerrar Sesion
                                     </button>)
@@ -107,7 +126,7 @@ export const NavbarApp = () => {
                                 }
                                 
                             </div>
-                            <ModalLogin show={show} handleClose={handleClose} />
+                            <ModalLogin show={show} setShow={setShow} setBoton={setBoton} handleClose={handleClose} />
                             <NavLink className="nav-link btn" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
                         <button type="button" className="btn">
