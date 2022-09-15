@@ -25,13 +25,14 @@ export const NavbarApp = () => {
         localStorage.setItem("favoritos", JSON.stringify([]));
         setUserInfo({})
         setBoton(false)
+        navigate("/");
         };
         
 
     useEffect(()=>{
 
         setUserData(JSON.parse(localStorage.getItem('dataUser'))); 
-
+        setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
         if (JSON.parse(localStorage.getItem('dataUser'))!==null) {
 
             console.log("OKEY")
@@ -53,7 +54,7 @@ export const NavbarApp = () => {
             setAdmin(false)
         }
 
-    }, [location.pathname, userInfo.role, boton]);
+    }, [location.pathname, userInfo.role, boton, carrito]);
     
     function storageEventHandler() {
         setUserDataLocalStorage(JSON.parse(localStorage.getItem('dataUser')));  
