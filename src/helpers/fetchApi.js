@@ -59,6 +59,22 @@ export const postProductos = async (datos) => {
   return data;
 };
 
+//Modificar un producto
+export const putProductos = async (datos) => {
+  const resp = await fetch(`${url}/productos/${datos.id}`, {
+    method: "PUT",
+    body: JSON.stringify(datos),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+    },
+  });
+
+  const data = await resp.json();
+
+  return data;
+};
+
 //Traer productos
 export const getProduct = async (registro = 0, limite) => {
   const resp = await fetch(
