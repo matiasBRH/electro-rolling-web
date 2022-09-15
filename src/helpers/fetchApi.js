@@ -76,9 +76,9 @@ export const putProductos = async (datos) => {
 };
 
 //Traer productos
-export const getProduct = async (registro = 0, limite) => {
+export const getProduct = async (registro = 0, limite, reverse = false) => {
   const resp = await fetch(
-    `${url}/productos?desde=${registro}&limite=${limite}`,
+    `${url}/productos?desde=${registro}&limite=${limite}&reverse=${reverse}`,
     {
       method: "GET",
       headers: {

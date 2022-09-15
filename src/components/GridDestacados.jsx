@@ -6,19 +6,15 @@ import "../css/destacados.css"
 
 const GridDestacados = () => {
 
+    const [posts, setPosts] = useState([])
     const registro = 0;
-    const limite = 500;  
+    const limite = 10;  
 
     const [listaDestacados, setListaDestacados] = useState([])
     
     useEffect(()=>{
-        getProduct(registro, limite).then((respuesta)=>{
-            let listaDestacadosTemp=respuesta.producto
-            listaDestacadosTemp = listaDestacadosTemp.reverse().slice(0, 10);
-            
-            console.log(respuesta);
-            setListaDestacados([...listaDestacadosTemp])
-            console.log(listaDestacados)
+        getProduct(registro, limite, true ).then((respuesta)=>{
+            setPosts(respuesta.producto)
         });
     }, []);
 
@@ -28,7 +24,7 @@ const GridDestacados = () => {
         <>          
             
             <div className="row mb-5 mt-3">
-                    {listaDestacados.map((producto) => (
+                    {posts.map((producto) => (
                         <CardDestacadas key={producto._id} producto={producto} />
                     ))}
            </div>

@@ -65,9 +65,14 @@ const NuevoProducto = ({ show, handleClose }) => {
                             <input type="text" className="form-control mb-2" pattern="[a-zA-Z0-9]{3,30}" name="nombre" value={formValues.nombre} onChange={handleChange} required/>
                         </div>
                         <div className="form-group">
+                            <label>Imagen</label>
+                            <input type="text"className="form-control mb-2" name="img" pattern="^https?:\/\/.*\..{3,4}$" value={formValues.img} onChange={handleChange} required/>
+                        </div>
+                        <div className="form-group">
                             <label>Detalle del producto (3 a 100 caracteres) </label>
                             <textarea  type="textarea"className="form-control mb-2" pattern=".{3,100}" name="detalle" rows="3" value={formValues.detalle} onChange={handleChange} required/>
                         </div>
+                        
                         <div className="form-group">
                             <label>Categoria</label>                            
                             <select class="form-select" aria-label="Default select example" name="categoria" value={formValues.categoria} onChange={handleChange} required>
@@ -78,10 +83,7 @@ const NuevoProducto = ({ show, handleClose }) => {
                                 <option value="TELEVISORES">TELEVISORES</option>
                             </select>
                         </div>
-                        <div className="form-group">
-                            <label>Imagen</label>
-                            <input type="text"className="form-control mb-2" name="img" value={formValues.img} onChange={handleChange} required/>
-                        </div>
+                        
                         <div className="form-group">
                             <label>Precio $</label>
                             <input type="number"className="form-control mb-2" name="precio" min="1" max="10000000" value={formValues.precio} onChange={handleChange} required/>

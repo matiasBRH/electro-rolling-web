@@ -32,7 +32,7 @@ export const NavbarApp = () => {
     useEffect(()=>{
 
         setUserData(JSON.parse(localStorage.getItem('dataUser'))); 
-        setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
+        
         if (JSON.parse(localStorage.getItem('dataUser'))!==null) {
 
             console.log("OKEY")

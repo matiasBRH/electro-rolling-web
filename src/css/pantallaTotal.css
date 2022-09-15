@@ -1,3 +1,8 @@
 .alturaParaFooter{
     min-height:68vh;
 }
+
+.container-admin{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

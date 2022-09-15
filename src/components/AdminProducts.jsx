@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminTableRowProducts from '../components/AdminTableRowProducts';
-import { getProduct, deleteProduct } from '../helpers/fetchApi';
+import { getProduct, deleteProduct, putProductos } from '../helpers/fetchApi';
 import NuevoProducto from "../components/NuevoProducto"
 import EditarProducto from "./EditarProducto";
 
@@ -18,14 +18,13 @@ const AdminProducts = () => {
       const [refresh, setRefresh] = useState(0)
       const [datos, setDatos] = useState(null)
       
-
       const registro = 0;  
       const limite = 200;  
-    
-      
+          
       useEffect(()=>{    
         getProduct(registro, limite).then((respuesta)=>{
           console.log(respuesta);
+          console.log("se volvio a cargaaaaaaaaaaaaaaaaaaaaaar")
           if (respuesta?.msg) {
             setMensaje(respuesta.msg);
           } else {
@@ -36,7 +35,7 @@ const AdminProducts = () => {
           }
           setLoading(false);
         });
-      }, [refresh]);
+        }, [refresh]);
 
       // Seccion para abrir modal de Nuevo producto
       const [show, setShow] = useState(false);
@@ -58,40 +57,72 @@ const AdminProducts = () => {
         setRefresh(refresh+1) 
       }
 
-      const inactivarProducto = (id) => {
-        
+      const inactivarProducto = (id) => {        
         if (confirm('Está seguro de que desea desactivar el producto?')) {
           deleteProduct(id).then((respuesta)=>{
             console.log(respuesta);
             if (respuesta?.msg) {
               console.log(registro)
-              setRefresh(refresh+1)
+              // setRefresh(refresh+1)
               alert("Producto desactivado con exito.");
-              getAllProduct().then((respuesta)=>{
-                console.log(respuesta);
-                if (respuesta?.msg) {
-                  setMensaje(respuesta.msg);
-                } else {
-                  setPosts({
-                    products: respuesta.producto,
-                    total: respuesta.total,
-                  });
-                }
-                setLoading(false);
-              });
-               
-            } else {
-              console.log(registro)
               
-            }
-            
+              // getProduct(registro, limite).then((respuesta)=>{
+              //   console.log(respuesta);
+              //   if (respuesta?.msg) {
+              //     setMensaje(respuesta.msg);
+              //   } else {
+              //     setPosts({
+              //       products: respuesta.producto,
+              //       total: respuesta.total,
+              //     });
+              //   }
+              //   setLoading(false);
+              // });
+              
+            } else {
+              console.log(registro)              
+            }            
           });
-        } else {
-        
         }
-
-       
      };
+
+     const activarProducto = (producto) => {    
+      
+         const formValues = {
+           nombre: producto.nombre,
+           detalle: producto.detalle,
+           categoria: producto.categoria,
+           precio: producto.precio,
+           img: producto.img,
+           id: producto._id,
+	         estado: true
+         };      
+      
+        putProductos(formValues).then((respuesta) => {
+            console.log(respuesta);
+            if (respuesta?.msg) {
+              console.log(registro)
+              // setRefresh(refresh+1)
+              alert("Producto activado con exito.");
+
+              // getProduct(registro, limite).then((respuesta)=>{
+              //   console.log(respuesta);
+              //   if (respuesta?.msg) {
+              //     setMensaje(respuesta.msg);
+              //   } else {
+              //     setPosts({
+              //       products: respuesta.producto,
+              //       total: respuesta.total,
+              //     });
+              //   }
+              //   setLoading(false);
+              // });
+              
+            } else {
+              console.log(registro)              
+            }            
+          });
+   };
 
 
   return (
@@ -131,7 +162,7 @@ const AdminProducts = () => {
               (
                 <>
             {posts.products.map((producto, index) => (
-              <AdminTableRowProducts key={producto._id} producto={producto} index={index} inactivarProducto={inactivarProducto} handleShowE={handleShowE}/>
+              <AdminTableRowProducts key={producto._id} producto={producto} index={index} inactivarProducto={inactivarProducto} activarProducto={activarProducto} handleShowE={handleShowE}/>
             ))}
                 </>
               )}
