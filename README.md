@@ -40,6 +40,12 @@ O también clonando el repositorio
 - Rodio Dorado
 - Santiago Comolli
 
+## 🌟 Website 🌟
+
+Apliación subida a Netlify
+
+- [Electro Rolling Website](https://electrorolling.netlify.app/)
+
 ## Cómo contribuir 👍
 
 Si es un proyecto open source describe la forma en la que deberían crearse las contribuciones.
@@ -47,11 +53,3 @@ Si es un proyecto open source describe la forma en la que deberían crearse las 
 ## Licencia 📄
 
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
-
----
-
-## Website
-
-Apliación subida a Netlify
-
-- [Electro Rolling Website](https://electrorolling.netlify.app/)

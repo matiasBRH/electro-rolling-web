@@ -7,7 +7,7 @@ const Card = (props) => {
   console.log(props)
   const {producto} = props
   return (
-    <div className="col-12 col-md-6 col-lg-3 animate__animated animate__fadeIn">
+    <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 animate__animated animate__fadeIn">
     <div className="container d-flex justify-content-center">
     <figure className="card card-product card-product-grid card-lg "><Link to={`/productos/${producto._id}`} className="img-wrap" data-abc="true"><img src={producto.img}></img></Link>
         <figcaption className="info-wrap">

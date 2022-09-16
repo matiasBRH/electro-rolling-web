@@ -15,7 +15,7 @@ import AdminScreen from "../pages/AdminScreen";
 import ProductScreen from "../pages/ProductScreen";
 import CartScreen from "../pages/CartScreen";
 import CategoryScreen from '../pages/CategoryScreen'
-import ProtectedRoutes from "../routes/ProtectedRoutes";
+import ProtectedRoutes from "../Routes/ProtectedRoutes";
 
 const RoutesApp = () => {
   return (
