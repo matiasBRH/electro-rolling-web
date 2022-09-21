@@ -24,7 +24,7 @@ const AdminTableRowProducts = (props) => {
 
   return (
     <tr>
-      <td>{index}</td>
+      <td>{index+1}</td>
       <td>
         <img width="50px" src={producto.img} onError={noImage} className="avatar" alt=""></img>
       </td>

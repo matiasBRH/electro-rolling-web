@@ -55,7 +55,7 @@ const EditarProducto = ({ show, handleClose, datos }) => {
                     precio: "0",
                     img: ""
                 });
-                alert("Producto creado con éxito!")
+                alert("Producto editado correctamente")
                 handleClose()
                 setTimeout(() => {
                 setMessage([]);

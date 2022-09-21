@@ -7,7 +7,7 @@ const AdminTableRowUsers = (props) => {
 
   return (
     <tr>
-      <td>{index}</td>
+      <td>{index+1}</td>
       <td>{user.nombre}</td>
       <td>{user.email}</td>
       <td>{user.role}</td>

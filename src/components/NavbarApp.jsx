@@ -4,63 +4,53 @@ import ModalLogin from "../components/ModalLogin"
 import logo from "../assets/icon.png"
 import SearchProd from './SearchProd';
 import "../css/navBar.css"
+import {getUserbyToken} from "../helpers/fetchApi"
 
 export const NavbarApp = () => {
 
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState("");
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState("")
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
-    const [admin, setAdmin] = useState(false)
-    const [boton, setBoton] = useState(false) //false siendo que aparezca iniciar sesión
+    const [boton, setBoton] = useState(false)
+    const [refresh, setRefresh] = useState(0)
     const location = useLocation()
-    const [userInfo,setUserInfo]=useState({role: undefined})
     
 
     
     const resetUserInfo=()=>{
-        localStorage.removeItem('dataUser')
+        
         localStorage.removeItem('token')
         localStorage.setItem("carrito", JSON.stringify([]));
         localStorage.setItem("favoritos", JSON.stringify([]));
-        setUserInfo({})
-        setBoton(false)
+        setUserData("")
+        console.log("logout")
         navigate("/");
+        setBoton(false)        
         };
         
 
-    useEffect(()=>{
-
-        setUserData(JSON.parse(localStorage.getItem('dataUser'))); 
-        
-        if (JSON.parse(localStorage.getItem('dataUser'))!==null) {
-
-            console.log("OKEY")
-            console.log(localStorage.getItem('dataUser').rol_user);
-                setUserInfo({role:JSON.parse(localStorage.getItem('dataUser')).rol_user})
-        } 
-        window.addEventListener('storage', storageEventHandler, false);
-        console.log(userInfo.role)
-
-        
-        if (userInfo.role !== undefined) {
-
-            setBoton(true);
-        }
-
-        if (boton && userInfo.role === "ADMIN_ROLE") {
-            setAdmin(true)
-        }else{
-            setAdmin(false)
-        }
-
-    }, [location.pathname, userInfo.role, boton, carrito]);
+    useEffect(()=>{       
+        getUserbyToken().then((respuesta) => {
+            console.log(respuesta);
+            setUserData(respuesta.usuario)  
+            if (respuesta.errors) {      
+          
+          
+            } else {
+                
+            }
     
-    function storageEventHandler() {
-        setUserDataLocalStorage(JSON.parse(localStorage.getItem('dataUser')));  
-    }
+            }).catch((respuesta)=>{
+            
+            });
+    }, [location.pathname, carrito, boton]);
 
 
+    useEffect(() => {       
+    }, [userData])
+    
+    
     // Seccion para abrir modal de Login
     const [show, setShow] = useState(false);
 
@@ -99,11 +89,8 @@ export const NavbarApp = () => {
                             </li>
                             <li className="nav-item">
 
-                                {admin ?
-
-                                (<NavLink className="nav-link" to="/admin">Administracion <i class="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>)
-                                
-                                :""
+                                {userData?.role==="ADMIN_ROLE" &&
+                                    (<NavLink className="nav-link" to="/admin">Administracion <i className="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>)                              
                                 }
 
                             </li>
@@ -115,7 +102,7 @@ export const NavbarApp = () => {
                         <div className="d-flex me-2 d-flex align-baseline">
                             <div>
                                 
-                                {boton ?
+                                {userData?.role!=null ?
                                 (<button className="btn btn-danger me-2" onClick={resetUserInfo}>
                                     Cerrar Sesion
                                     </button>)
