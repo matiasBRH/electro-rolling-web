@@ -4,15 +4,12 @@ import { getProductById } from "../helpers/fetchApi";
 import "../css/cartScreen.css"
 
 const TablaCart = (props) => {
-
-    console.log(props)
-
+  
     const id = props.index
     const {deleteCart} = props
     const [post, setPost] = useState({});
     const [loading, setLoading] = useState(true);
     const [mensaje, setMensaje] = useState("");
-
     
     useEffect(() => {
         getProductById(props.producto.productID).then((respuesta) => {
@@ -26,10 +23,7 @@ const TablaCart = (props) => {
         });
       }, []);
 
-
-
     return (
-
         <div className="row">
             <div className="col">
                 <table className="table ">

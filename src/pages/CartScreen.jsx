@@ -3,7 +3,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import TablaCart from "../components/TablaCart";
 import NumberFormat from "react-number-format";
 import PurchaseConfirm from "../components/PurchaseConfirm";
-import { postCompras } from "../helpers/fetchApi";
+import { postCompras , getUserbyToken } from "../helpers/fetchApi";
+
 import "../css/pantallaTotal.css";
 
 const CartScreen = () => {
@@ -17,7 +18,9 @@ const CartScreen = () => {
   const [body, setBody] = useState("");
   const [mensaje, setMensaje] = useState([]);
   const [thanks, setThanks] = useState(false);
+  const [userData, setUserData] = useState("")
   const navigate = useNavigate();
+  console.log(carrito)
 
   useEffect(() => {
     calcularTotal();    
@@ -26,7 +29,7 @@ const CartScreen = () => {
     } else {
       setBotonComprar(true);
     }
-  }, [refresh, thanks]);
+  }, [ thanks, carrito]);
 
   const calcularTotal = () => {
     setTotal(0);
@@ -42,12 +45,11 @@ const CartScreen = () => {
   const deleteCart = (id) => {
     console.log(id);
     let carritoTemp = carrito;
-    carritoTemp.splice(id, 1);
+    carritoTemp.splice(id, 1);    
     setCarrito([...carritoTemp]);
+    console.log(carritoTemp)
     console.log(carrito);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    // juegos.splice(index, 1);
-    setRefresh(refresh + 1);
   };
 
   const realizarCompra = () => {
@@ -56,9 +58,23 @@ const CartScreen = () => {
       const { productID } = element;
       arreglo.push(productID);
     });
+    getUserbyToken().then((respuesta) => {
+      console.log(respuesta);
+      setUserData(respuesta.usuario)
+      if (respuesta.errors) {      
+    
+    
+      } else {
+          
+      }
+
+      }).catch((respuesta)=>{
+          console.log("No se realizó la compra")
+          return
+      });
 
     let datos = {
-      usuario: "6303f5aab2c76d7cec6899df",
+      usuario: userData.uid,
       producto: arreglo,
     };
     console.log(datos);
@@ -89,7 +105,7 @@ const CartScreen = () => {
   const vaciarCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify([]));
     setCarrito([]);
-    setRefresh(refresh + 1);
+    // setRefresh(refresh + 1);
   };
 
   return (
@@ -115,7 +131,7 @@ const CartScreen = () => {
                 ) : (
                   carrito.map((producto, index) => (
                     <TablaCart
-                      key={index}
+                      key={producto.id}
                       index={index}
                       producto={producto}
                       deleteCart={deleteCart}
