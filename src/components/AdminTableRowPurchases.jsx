@@ -9,9 +9,10 @@ const AdminTableRowPurchases = (props) => {
   
   return (
     <tr>
-      <td>{index}</td>
+      <td>{index+1}</td>
       <td>{Moment(compra.fecha).format('DD-MM-YYYY hh:mm:ss')}</td>
       <td>{compra.producto.length}</td>
+      <td>{compra.usuario.nombre}</td>      
       <td>{compra.usuario.email}</td>      
     </tr>
   );

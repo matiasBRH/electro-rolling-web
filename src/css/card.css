@@ -46,7 +46,7 @@
 
 .card-product-grid .img-wrap {
     border-radius: 0.2rem 0.2rem 0 0;
-    height: 220px
+    /* height: 220px */
 }
 
 .card-product .img-wrap {
@@ -54,12 +54,12 @@
 }
 
 .card-lg .img-wrap {
-    height: 280px
+    /* height: 280px */
 }
 
 .card-product-grid .img-wrap {
     border-radius: 0.2rem 0.2rem 0 0;
-    height: 275px;
+    /* height: 275px; */
     padding: 16px
 }
 

@@ -45,6 +45,7 @@ const Compras = () => {
           <th scope="col">Fecha</th>
           <th scope="col"># de Productos</th>
           <th scope="col">Usuario</th>          
+          <th scope="col">Email</th>          
         </tr>
       </thead>
       <tbody id="mytable">

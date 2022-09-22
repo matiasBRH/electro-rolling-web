@@ -1,4 +1,4 @@
-const url = "https://electroroliing.herokuapp.com/api";
+const url = "http://electroroliing.herokuapp.com/api";
 
 //Traer todos los usuarios
 export const getAllUsers = async () => {
@@ -40,10 +40,6 @@ export const postAuth = async (datos) => {
   });
 
   const data = await resp.json();
-  localStorage.setItem(
-    "dataUser",
-    JSON.stringify({ rol_user: data.usuario.role })
-  );
   return data;
 };
 
@@ -63,10 +59,26 @@ export const postProductos = async (datos) => {
   return data;
 };
 
+//Modificar un producto
+export const putProductos = async (datos) => {
+  const resp = await fetch(`${url}/productos/${datos.id}`, {
+    method: "PUT",
+    body: JSON.stringify(datos),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "x-token": JSON.parse(localStorage.getItem("token")),
+    },
+  });
+
+  const data = await resp.json();
+
+  return data;
+};
+
 //Traer productos
-export const getProduct = async (registro = 0, limite) => {
+export const getProduct = async (registro = 0, limite, reverse = false) => {
   const resp = await fetch(
-    `${url}/productos?desde=${registro}&limite=${limite}`,
+    `${url}/productos?desde=${registro}&limite=${limite}&reverse=${reverse}`,
     {
       method: "GET",
       headers: {
@@ -196,8 +208,8 @@ export const postCompras = async (datos) => {
 };
 
 //Traer todos las compras
-export const getPurchase = async () => {
-  const resp = await fetch(`${url}/compras`, {
+export const getPurchase = async (limite = 200) => {
+  const resp = await fetch(`${url}/compras?limite=${limite}`, {
     method: "GET",
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -207,4 +219,23 @@ export const getPurchase = async () => {
   const data = await resp.json();
   console.log(data);
   return data;
+};
+
+
+//Traer un usuario por token
+export const getUserbyToken = async () => {
+  try {
+    const resp = await fetch(`${url}/usuarios/validar`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-token": JSON.parse(localStorage.getItem("token")),
+      },
+    });
+    const data = await resp.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };

@@ -4,45 +4,53 @@ import ModalLogin from "../components/ModalLogin"
 import logo from "../assets/icon.png"
 import SearchProd from './SearchProd';
 import "../css/navBar.css"
+import {getUserbyToken} from "../helpers/fetchApi"
 
 export const NavbarApp = () => {
 
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState("");
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState("")
     const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
+    const [boton, setBoton] = useState(false)
+    const [refresh, setRefresh] = useState(0)
     const location = useLocation()
-    const [userInfo,setUserInfo]=useState({role: undefined})
+    
 
+    
     const resetUserInfo=()=>{
-        localStorage.removeItem('dataUser')
+        
         localStorage.removeItem('token')
         localStorage.setItem("carrito", JSON.stringify([]));
         localStorage.setItem("favoritos", JSON.stringify([]));
-        setUserInfo({})
-        return document.location.reload();
+        setUserData("")
+        console.log("logout")
+        navigate("/");
+        setBoton(false)        
         };
+        
+
+    useEffect(()=>{       
+        getUserbyToken().then((respuesta) => {
+            console.log(respuesta);
+            setUserData(respuesta.usuario)  
+            if (respuesta.errors) {      
+          
+          
+            } else {
+                
+            }
     
-    useEffect(()=>{
+            }).catch((respuesta)=>{
+            
+            });
+    }, [location.pathname, carrito, boton]);
 
-        setUserData(JSON.parse(localStorage.getItem('dataUser'))); 
 
-        if (JSON.parse(localStorage.getItem('dataUser'))!==null) {
-            console.log("OKEY")
-            console.log(localStorage.getItem('dataUser').rol_user);
-                setUserInfo({role:JSON.parse(localStorage.getItem('dataUser')).rol_user})
-        } 
-        window.addEventListener('storage', storageEventHandler, false);
-        console.log("Hola guerra")
-        console.log(userInfo.role)
-
-    }, [location.pathname]);
+    useEffect(() => {       
+    }, [userData])
     
-    function storageEventHandler() {
-        setUserDataLocalStorage(JSON.parse(localStorage.getItem('dataUser')));  
-    }
-
-
+    
     // Seccion para abrir modal de Login
     const [show, setShow] = useState(false);
 
@@ -50,8 +58,8 @@ export const NavbarApp = () => {
     const handleShow = () => setShow(true);
     
     return (
-        <>
 
+        <>
             <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark w-100'>
                 <div className="container-fluid ms-5">
                     <div className="logo me-5">
@@ -80,11 +88,9 @@ export const NavbarApp = () => {
                                 <NavLink className="nav-link" to="/favorites">Favoritos <i className="fa fa-star-o loguito" aria-hidden="true"></i></NavLink>
                             </li>
                             <li className="nav-item">
-                                {userInfo.role === "ADMIN_ROLE" ?
 
-                                (<NavLink className="nav-link" to="/admin">Administracion <i class="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>)
-                                
-                                :""
+                                {userData?.role==="ADMIN_ROLE" &&
+                                    (<NavLink className="nav-link" to="/admin">Administracion <i className="fa fa-id-card loguito" aria-hidden="true"></i></NavLink>)                              
                                 }
 
                             </li>
@@ -95,7 +101,8 @@ export const NavbarApp = () => {
 
                         <div className="d-flex me-2 d-flex align-baseline">
                             <div>
-                                {userInfo.role !== undefined ?
+                                
+                                {userData?.role!=null ?
                                 (<button className="btn btn-danger me-2" onClick={resetUserInfo}>
                                     Cerrar Sesion
                                     </button>)
@@ -107,7 +114,7 @@ export const NavbarApp = () => {
                                 }
                                 
                             </div>
-                            <ModalLogin show={show} handleClose={handleClose} />
+                            <ModalLogin show={show} setShow={setShow} setBoton={setBoton} handleClose={handleClose} />
                             <NavLink className="nav-link btn" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
                         <button type="button" className="btn">

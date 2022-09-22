@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import "../css/pantallaTotal.css"
+import "../css/registro.css"
 
 
 const PasswordScreen = () => {
@@ -12,7 +12,7 @@ const PasswordScreen = () => {
 
 
   return (
-    <div className="container alturaParaFooter mt-5">
+    <div className="container alturaParaFooterRegis">
 
       <div className="row my-3 mb-4 mt-5">
         <div className="col text-center">
