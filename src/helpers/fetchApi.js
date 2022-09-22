@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api";
+const url = "http://electroroliing.herokuapp.com/api";
 
 //Traer todos los usuarios
 export const getAllUsers = async () => {
