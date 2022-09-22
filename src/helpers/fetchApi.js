@@ -1,4 +1,4 @@
-const url = "http://electroroliing.herokuapp.com/api";
+const url = "https://electroroliing.herokuapp.com/api";
 
 //Traer todos los usuarios
 export const getAllUsers = async () => {
