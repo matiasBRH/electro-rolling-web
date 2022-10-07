@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import { buscarProductoCategoria } from "../helpers/fetchApi";
 import BtnPaginacion from "../components/BtnPaginacion";
+import Footer from "../components/Footer"
 import '../css/sidebar.css'
 import '../css/grid.css'
 
@@ -94,21 +95,21 @@ const topFunction=()=>{
       <div className="row">
 
         {loading ? (
-       <div className="div div-animation">
+        <div className="div div-animation">
 
 
-       <div className="divSpinner" id="containerSpinner">
-       <svg viewBox="0 0 100 100">
-         <defs>
-           <filter id="shadow">
-             <feDropShadow dx="0" dy="0" stdDeviation="1.5" 
-               floodColor="#fc6767"/>
-           </filter>
-         </defs>
-         <circle id="spinner" cx="50" cy="50" r="45"/>
-     </svg>
-     </div>
-     </div>
+        <div className="divSpinner" id="containerSpinner">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="0" stdDeviation="1.5" 
+                floodColor="#fc6767"/>
+            </filter>
+          </defs>
+          <circle id="spinner" cx="50" cy="50" r="45"/>
+        </svg>
+      </div>
+    </div>
 ) :
 (
         <div className="col columnasProducto">
@@ -145,6 +146,7 @@ const topFunction=()=>{
       </div>
       <button onClick={topFunction} id="myBtn" title="Ir arriba">Top</button>
     </div>
+    <Footer/>
     </>
   );
 };

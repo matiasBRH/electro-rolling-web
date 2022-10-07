@@ -4,6 +4,7 @@ import TablaCart from "../components/TablaCart";
 import NumberFormat from "react-number-format";
 import PurchaseConfirm from "../components/PurchaseConfirm";
 import { postCompras , getUserbyToken } from "../helpers/fetchApi";
+import Footer from "../components/Footer"
 
 import "../css/pantallaTotal.css";
 
@@ -182,6 +183,10 @@ const CartScreen = () => {
           </div>
         </div>
       )}
+      <div className="fixed-bottom">
+
+        <Footer/>
+      </div>
     </>
   );
 };

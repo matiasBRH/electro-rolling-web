@@ -1,3 +1,5 @@
-.alturaParaFooter{
-    min-height:68vh;
+.acomodar{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }

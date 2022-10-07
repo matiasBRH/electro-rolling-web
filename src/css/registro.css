@@ -1,4 +1,5 @@
-.alturaParaFooterRegis {
-    margin-top:150px;
-    margin-bottom:112px;
+.acomodar{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }

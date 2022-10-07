@@ -7,6 +7,7 @@ import oferta2 from "../assets/banner2.webp"
 import oferta3 from "../assets/banner3.png"
 import oferta4 from "../assets/banner4.png"
 import novedades from "../assets/novedades.webp"
+import Footer from "../components/Footer"
 
 import "../css/destacados.css"
 
@@ -71,9 +72,7 @@ const HomeScreen = () => {
                 </div>
             </div>
             
-            <div>
-
-            </div>
+            <Footer/>
         </>
     )
 }

@@ -3,6 +3,7 @@ import "../css/destacados.css"
 import emailjs from "emailjs-com"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Footer from "../components/Footer"
 import "../css/contacto.css"
 
 
@@ -41,8 +42,8 @@ const ContactoScreen = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <>
-            <div className="container alturaParaFooter my-4">
+        <div className="acomodar">
+            <div className="container my-4">
                 <div className="row">
                     <div className="col-sm-12 col-md-6 col-lg-6" id="fondo">
                         <h2> CONTACTO </h2>
@@ -84,18 +85,18 @@ const ContactoScreen = () => {
 
                             <div className="mb-3 md-2">
                             <Button type="submit" onClick={handleShow} className="btn btn-success me-4" value="Enviar">
-                             Enviar 
+                                Enviar 
                             </Button>
                             <Modal show={show} onHide={handleClose} animation={false}>
-                            <Modal.Header closeButton>
-                            <Modal.Title>¡Mensaje envíado!</Modal.Title>
-                           </Modal.Header>
-                           <Modal.Body>¡Nos pondremos en contacto con vos cuanto antes!</Modal.Body>
-                           <Modal.Footer>
-                           <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-                           <Button variant="success" onClick={handleClose}>Aceptar</Button>
-                           </Modal.Footer>
-                           </Modal>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>¡Mensaje envíado!</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>¡Nos pondremos en contacto con vos cuanto antes!</Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose}>Cerrar</Button>
+                                    <Button variant="success" onClick={handleClose}>Aceptar</Button>
+                                </Modal.Footer>
+                            </Modal>
                             </div>
                         </form>
                     </div>
@@ -118,7 +119,10 @@ const ContactoScreen = () => {
                     </div>
                 </div>
             </div>
-        </>
+            <div className='fixed-bottom'>
+                <Footer/>
+            </div>
+        </div>
         
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Footer from "../components/Footer"
 import "../css/registro.css"
 
 
@@ -12,6 +13,7 @@ const PasswordScreen = () => {
 
 
   return (
+    <>
     <div className="container alturaParaFooterRegis">
 
       <div className="row my-3 mb-4 mt-5">
@@ -54,6 +56,11 @@ const PasswordScreen = () => {
         </div>
       </div>
     </div>
+    <div className="fixed-bottom">
+
+      <Footer/>
+    </div>
+    </>
   )
 }
 

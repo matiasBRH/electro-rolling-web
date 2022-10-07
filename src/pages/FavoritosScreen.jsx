@@ -4,6 +4,7 @@ import TablaFavs from '../components/TablaFavs';
 import NumberFormat from 'react-number-format';
 import PurchaseConfirm from '../components/PurchaseConfirm';
 import { postCompras } from "../helpers/fetchApi";
+import Footer from "../components/Footer"
 import "../css/pantallaTotal.css"
 
 
@@ -22,52 +23,45 @@ const FavoritosScreen = () => {
   
 
   useEffect(()=>{    
-   
-    
 
   }, []);
-
-
-
-    
-    
-    
-
 
   return (
     <>
     {thanks ? (
       <PurchaseConfirm/>
       ) : (
+        
         <div className="alturaParaFooter">
-        <div className="container mt-5">
-          <div className="row">
-            <div className="col">
-              <h1>Favoritos</h1>
-              <hr />
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col">
+                <h1>Favoritos</h1>
+                <hr />
+              </div>
             </div>
           </div>
-        </div>
   
-        <div className="container mainCarrito">
-          <div className="row">        
-            <div className='listado col-12 col-md-8 col-lg-8'>
+          <div className="container mainCarrito">
+              <div className="row">        
+                  <div className='listado col-12 col-md-8 col-lg-8'>
 
-            {carrito.length==0 ? (
-              <h2>No tienes productos favoritos</h2>
-              ) : (
-                carrito.map((producto, index) => (
-                  <TablaFavs key={index} producto={producto}  />
-                  ))
-                )}
-              
-            </div>
-  
-         
+                  {carrito.length==0 ? (
+                    <h2>No tienes productos favoritos</h2>
+                    ) : (
+                      carrito.map((producto, index) => (
+                        <TablaFavs key={index} producto={producto}  />
+                        ))
+                      )}
+                    
+                  </div>
+              </div>
           </div>
         </div>
+      )}
+      <div className="fixed-bottom">
+        <Footer/>
       </div>
-     )}
 </>
     
   )

@@ -10,7 +10,7 @@ import PasswordScreen from '../pages/PasswordScreen'
 import ErrorScreen from '../pages/ErrorScreen';
 import ContructionScreen from '../pages/ContructionScreen';
 import HomeScreen from "../pages/HomeScreen";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import AdminScreen from "../pages/AdminScreen";
 import ProductScreen from "../pages/ProductScreen";
 import CartScreen from "../pages/CartScreen";
@@ -47,7 +47,7 @@ const RoutesApp = () => {
         <Route path="/highlight" element={<ContructionScreen/>}/>        
         <Route path="*" element={<ErrorScreen/>}/>        
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }

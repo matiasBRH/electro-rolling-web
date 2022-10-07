@@ -3,6 +3,7 @@ import { postUsuario } from "../helpers/fetchApi";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { NavLink } from "react-router-dom"
+import Footer from "../components/Footer"
 import Alerta from "../components/Alerta"
 import "../css/registro.css"
 
@@ -72,6 +73,7 @@ const RegistroScreen = () => {
   const {msg} = alerta
   
   return (
+    <>
       <div className="container alturaParaFooter">     
         <div className="row my-3 mb-4 ">
           <div className="col text-center">
@@ -138,6 +140,11 @@ const RegistroScreen = () => {
           </div>
         </div>
       </div>
+      <div className="fixed-bottom">
+
+        <Footer/>
+      </div>
+    </>
   )
 }
 
