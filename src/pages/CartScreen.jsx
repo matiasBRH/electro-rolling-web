@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import TablaCart from "../components/TablaCart";
 import NumberFormat from "react-number-format";
 import PurchaseConfirm from "../components/PurchaseConfirm";
 import { postCompras , getUserbyToken } from "../helpers/fetchApi";
+import CarritoContext from "../components/CarritoContext"
 
 import "../css/pantallaTotal.css";
 
 const CartScreen = () => {
-  const [carrito, setCarrito] = useState(
-    JSON.parse(localStorage.getItem("carrito")) || []
-  );
+  const {carrito, setCarrito} = useContext(CarritoContext)
   const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
   const [botonComprar, setBotonComprar] = useState(false);
@@ -113,7 +112,7 @@ const CartScreen = () => {
       {thanks ? (
         <PurchaseConfirm />
       ) : (
-        <div className="alturaParaFooter">
+        <div className="alturaParaFooter carritoAlturaFooter">
           <div className="container mt-5">
             <div className="row">
               <div className="col">

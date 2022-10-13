@@ -20,20 +20,17 @@ import ProtectedRoutes from "../Routes/ProtectedRoutes";
 const RoutesApp = () => {
   return (
     <>
-    <NavbarApp />   
+    <NavbarApp/>   
     <Routes >
         <Route path='/' element={<HomeScreen/>}/>
         <Route path="/about" element={<AboutScreen/>}/>
-        <Route path="/contacto" element={<ContactoScreen/>}/>
-        <Route
-          path="/admin"
-          element={
+        <Route path="/admin" element={
             <ProtectedRoutes>
               <AdminScreen />
             </ProtectedRoutes>
           }
         />
-        
+        <Route path="/contacto" element={<ContactoScreen/>}/>        
         <Route path="/productos/:id" element={<ProductScreen/>}/>
         <Route path="/category/:id" element={<CategoryScreen/>}/>
         <Route path="/search/:termino" element={<SearchScreen/>}/>
