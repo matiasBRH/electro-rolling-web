@@ -42,7 +42,7 @@ const ContactoScreen = () => {
 
     return (
         <>
-            <div className="container alturaParaFooter my-4">
+            <div className="container alturaParaFooter my-4 carritoAlturaFooter">
                 <div className="row">
                     <div className="col-sm-12 col-md-6 col-lg-6" id="fondo">
                         <h2> CONTACTO </h2>

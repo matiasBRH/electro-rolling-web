@@ -104,7 +104,7 @@ return (
       <NavLink to="/category/notebooks" className="nav-link">Notebooks</NavLink>
       <NavLink to="/category/tablets" className="nav-link" >Tablets</NavLink>
     </div> */}
-  <div className="container">
+  <div className="container container-search">
     <div className="row">
       
      
