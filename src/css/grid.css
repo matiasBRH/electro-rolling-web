@@ -2,3 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
+.container-search{
+    min-height: 700px;
+}

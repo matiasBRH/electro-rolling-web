@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {Link, NavLink, useNavigate} from "react-router-dom"
 import NumberFormat from 'react-number-format';
 import { useParams } from "react-router-dom";
 import { getProductById } from "../helpers/fetchApi";
 import fav from "../assets/fav.png"
 import favNot from "../assets/favNot.png"
-import Footer from "../components/Footer"
+import CarritoContext from "../components/CarritoContext"
 
 import '../css/productDetails.css'
 import '../css/cssEffects.css'
@@ -14,12 +14,9 @@ import "../css/pantallaTotal.css"
 
 
 const ProductScreen = () => {
-  // let tarea = document.getElementById("text_tarea");
-// carrito.push(tarea.value);
-// localStorage.setItem("carrito", JSON.stringify(carrito));
 
 
-  
+const {carrito, setCarrito} = useContext(CarritoContext) 
 
 const { id } = useParams();
 const [post, setPost] = useState({});
@@ -55,6 +52,8 @@ useEffect(() => {
 }, [id, star]);
 
 const agregarCarrito=()=>{
+
+  
  
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   console.log(carrito)
@@ -77,6 +76,8 @@ const agregarCarrito=()=>{
   }
   
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  setCarrito(carrito)
+  console.log("esta fuincionnnnnnnnnnnnnn")
   navigate(`/cart`);
 }
 
@@ -172,8 +173,6 @@ const agregarFavorito=()=>{
               <p className="lead font-weight-bold">Descripción</p>
               
               <hr/>
-
-              <p>{post.detalle}</p>
 
               <form className="d-flex justify-content-left">
                 <input id="itemCant" type="number" defaultValue="1" min="1" max="10" aria-label="Search" className="form-control" style={{width: 100}}/>

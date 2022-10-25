@@ -42,13 +42,9 @@ O también clonando el repositorio
 
 ## 🌟 Website 🌟
 
-Apliación subida a Netlify
+App subida a Netlify
 
 - [Electro Rolling Website](https://electrorolling.netlify.app/)
-
-## Cómo contribuir 👍
-
-Si es un proyecto open source describe la forma en la que deberían crearse las contribuciones.
 
 ## Licencia 📄
 

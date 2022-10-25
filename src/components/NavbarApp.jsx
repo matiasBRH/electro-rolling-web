@@ -1,17 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {Link, NavLink, useNavigate, useLocation} from "react-router-dom"
 import ModalLogin from "../components/ModalLogin"
 import logo from "../assets/icon.png"
 import SearchProd from './SearchProd';
 import "../css/navBar.css"
 import {getUserbyToken} from "../helpers/fetchApi"
+import CarritoContext from "../components/CarritoContext"
 
 export const NavbarApp = () => {
+
+    const {carrito, setCarrito} = useContext(CarritoContext)
 
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState("");
     const [userData, setUserData] = useState("")
-    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
+    // const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
     const [boton, setBoton] = useState(false)
     const [refresh, setRefresh] = useState(0)
     const location = useLocation()
@@ -44,11 +47,16 @@ export const NavbarApp = () => {
             }).catch((respuesta)=>{
             
             });
-    }, [location.pathname, carrito, boton]);
+            // setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
+    }, [boton]);
 
 
     useEffect(() => {       
     }, [userData])
+
+
+    // useEffect(() => {       
+    // }, [carrito])
     
     
     // Seccion para abrir modal de Login
@@ -118,7 +126,9 @@ export const NavbarApp = () => {
                             <NavLink className="nav-link btn" to="/cart"><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></NavLink>
                         </div>
                         <button type="button" className="btn">
+                            <NavLink to="/cart">
                             <span className="badge rounded-pill bg-secondary">{carrito.length}</span>
+                            </NavLink>
                         </button>
                     </div>
                 </div>

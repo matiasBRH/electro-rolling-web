@@ -1,5 +1,4 @@
-.acomodar{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+.alturaParaFooterRegis {
+    margin-top:150px;
+    height: 60vh;
 }
