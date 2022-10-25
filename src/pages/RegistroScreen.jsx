@@ -73,12 +73,8 @@ const RegistroScreen = () => {
   const {msg} = alerta
   
   return (
-<<<<<<< HEAD
     <>
-      <div className="container alturaParaFooter">     
-=======
       <div className="container alturaParaFooter carritoAlturaFooter">     
->>>>>>> 6cb121d1ee2f63c55dc27d0ec44e044edfd06042
         <div className="row my-3 mb-4 ">
           <div className="col text-center">
             <h3>

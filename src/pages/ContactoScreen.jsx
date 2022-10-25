@@ -122,7 +122,7 @@ const ContactoScreen = () => {
             <div className='fixed-bottom'>
                 <Footer/>
             </div>
-        </div>
+        </>
         
     )
 }
