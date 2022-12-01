@@ -27,7 +27,7 @@ const GridDestacados = () => {
                     {posts.map((producto) => (
                         <CardDestacadas key={producto._id} producto={producto} />
                     ))}
-           </div>
+            </div>
         </>
     )
 }

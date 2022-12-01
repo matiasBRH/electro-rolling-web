@@ -15,9 +15,7 @@ const ErrorScreen = () => {
       <p>Esta pagina no se encuentra disponible en estos momentos. Disculpa las molestias</p>
       <Link to="/" className='btn btn-warning'>Pagina principal</Link>
       </div>
-      
       </div>
-   
     </div>
 
   )

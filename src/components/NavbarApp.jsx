@@ -71,7 +71,7 @@ export const NavbarApp = () => {
             <nav className='navbar sticky-top navbar-expand-lg navbar-dark bg-dark w-100'>
                 <div className="container-fluid ms-5">
                     <div className="logo me-5">
-                    <NavLink className="nav-link" aria-current="page" to="/"><img className="img-logo" src={logo} alt="logo"/></NavLink>
+                        <NavLink className="nav-link" aria-current="page" to="/"><img className="img-logo" src={logo} alt="logo"/></NavLink>
                     </div>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
